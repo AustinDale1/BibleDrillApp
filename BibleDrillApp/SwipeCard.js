@@ -1,5 +1,8 @@
 import React, { Component, useState } from 'react';
 import { Text, Pressable, View, PanResponder, StyleSheet } from 'react-native';
+import { Avatar, Button, Card } from 'react-native-paper';
+
+
 
 const SwipeExample = ( {onSwipeLeft, onSwipeRight, cards} ) => {
     const [isFlipped, setIsFlipped] = useState(true);
@@ -11,18 +14,18 @@ const SwipeExample = ( {onSwipeLeft, onSwipeRight, cards} ) => {
     }
 
     const handleNext = () => {
+        setIsFlipped(true);
         if(cards.length > index + 1){
           setIndex(index + 1);
-          setIsFlipped(true);
         } else {
             setIndex(0);
         }
     }
 
     const handleReturn = () => {
+        setIsFlipped(true);
         if(index > 0){
           setIndex(index - 1);
-          setIsFlipped(true);
         } else{
             setIndex(cards.length-1);
         }
@@ -42,8 +45,8 @@ const SwipeExample = ( {onSwipeLeft, onSwipeRight, cards} ) => {
     })
 
       return (
-        <View style={styles.container} {...panResponder.panHandlers}>
-            <Pressable onPress={handleFlip}>
+        <Card style={styles.container} {...panResponder.panHandlers}>
+            <Pressable onPress={handleFlip} style={styles.box}>
                 {isFlipped?(
                     <View>
                         <Text>{cards[index].front}</Text>
@@ -53,9 +56,9 @@ const SwipeExample = ( {onSwipeLeft, onSwipeRight, cards} ) => {
                         <Text>{cards[index].back}</Text>
                     </View>
                 )}
-                <View style={styles.box} />
+                {/* <View style={styles.box} /> */}
             </Pressable>
-        </View>
+        </Card>
       );
 };
 
@@ -64,11 +67,18 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: 'white',
+        userSelect: 'none',
+        width: 300,
+        height: 400,
+        display: 'flex',
     },
     box: {
-        width: 100,
-        height: 100,
-        backgroundColor: 'blue',
+        width: 300,
+        height: 400,
+        justifyContent: 'center',
+        alignItems: 'center',
+        // backgroundColor: 'blue',
     },
 });
 
