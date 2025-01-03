@@ -8,15 +8,12 @@ import SelectGame from './SelectGame';
 import {
   PaperProvider, BottomNavigation
 } from "react-native-paper";
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
-const MusicRoute = () => <Text>Music</Text>;
+const Tab = createBottomTabNavigator();
 
-const AlbumsRoute = () => <Text>Albums</Text>;
-
-const RecentsRoute = () => <Text>Recents</Text>;
-
-const NotificationsRoute = () => <Text>Notifications</Text>;
 
 export default function App() {
     let [cards2, setCards2] = useState([
@@ -29,41 +26,63 @@ export default function App() {
       { front: "Mark", back: "Matthew Mark Luke" }];
 
   const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
-    { key: 'music', title: 'Favorites', focusedIcon: 'heart', unfocusedIcon: 'heart-outline'},
-    { key: 'albums', title: 'Albums', focusedIcon: 'album' },
-    { key: 'recents', title: 'Recents', focusedIcon: 'history' },
-    { key: 'notifications', title: 'Notifications', focusedIcon: 'bell', unfocusedIcon: 'bell-outline' },
-  ]);
-
-  const renderScene = BottomNavigation.SceneMap({
-    music: MusicRoute,
-    albums: AlbumsRoute,
-    recents: RecentsRoute,
-    notifications: NotificationsRoute,
-  });
-
+  
   return (
-    <PaperProvider>
+    <NavigationContainer>
+      <Tab.Navigator>
+      <Tab.Screen 
+        name="Books"
+        children={(props) => (
+          <SwipeCard
+            {...props}
+            onSwipeLeft={() => console.log('Rejected')}
+            onSwipeRight={() => console.log('Accepted')}
+            cards={cards2}
+          />
+        )}
+      />
+      <Tab.Screen 
+        name="Verses"
+        children={(props) => (
+          <TextInputGame
+            {...props}
+            verse='ok here we go'
+          />
+        )}
+      />
+      <Tab.Screen 
+        name="Key Passages"
+        children={(props) => (
+          <TextInputGame
+            {...props}
+            verse='ok here we go'
+          />
+        )}
+      />
+      </Tab.Navigator>
+    </NavigationContainer>
 
-    <View style={styles.container}>  
-    {/* <SwipeCard
-      onSwipeLeft={() => console.log('Rejected')}
-      onSwipeRight={() => console.log('Accepted')}
-      cards={cards2}
-    /> */}
+
+    // <PaperProvider>
+
+    // <View style={styles.container}>  
+    // {/* <SwipeCard
+    //   onSwipeLeft={() => console.log('Rejected')}
+    //   onSwipeRight={() => console.log('Accepted')}
+    //   cards={cards2}
+    // /> */}
     
-    <TextInputGame verse='ok here we go' />
+    // {/* <TextInputGame verse='ok here we go' /> */}
 
 
-    {/* <SelectGame book='Psalms'/>
-    <BottomNavigation
-          navigationState={{ index, routes }}
-          onIndexChange={setIndex}
-          renderScene={renderScene}
-        /> */}
-    </View>
-    </PaperProvider>
+    // {/* <SelectGame book='Psalms'/> */}
+    // <BottomNavigation
+    //       navigationState={{ index, routes }}
+    //       onIndexChange={setIndex}
+    //       renderScene={renderScene}
+    //     />
+    // </View>
+    // </PaperProvider>
   );
 }
 
