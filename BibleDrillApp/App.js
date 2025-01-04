@@ -5,6 +5,9 @@ import Flashcard from './Flashcard';
 import SwipeCard from './SwipeCard';
 import TextInputGame from './TextInput';
 import SelectGame from './SelectGame';
+import Verses from './Verses';
+import Books from './Books';
+import KeyPassages from './KeyPassages';
 import {
   PaperProvider, BottomNavigation
 } from "react-native-paper";
@@ -33,30 +36,19 @@ export default function App() {
       <Tab.Screen 
         name="Books"
         children={(props) => (
-          <SwipeCard
-            {...props}
-            onSwipeLeft={() => console.log('Rejected')}
-            onSwipeRight={() => console.log('Accepted')}
-            cards={cards2}
-          />
+          <Books/>
         )}
       />
       <Tab.Screen 
         name="Verses"
         children={(props) => (
-          <TextInputGame
-            {...props}
-            verse='ok here we go'
-          />
+          <Verses/>
         )}
       />
       <Tab.Screen 
         name="Key Passages"
         children={(props) => (
-          <TextInputGame
-            {...props}
-            verse='ok here we go'
-          />
+          <KeyPassages/>
         )}
       />
       </Tab.Navigator>
