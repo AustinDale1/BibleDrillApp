@@ -6,20 +6,17 @@ import SwipeCard from './SwipeCard';
 import TextInputGame from './TextInput';
 import SelectGame from './SelectGame';
 import {
-  PaperProvider, BottomNavigation
+  PaperProvider, BottomNavigation,
+  Card
 } from "react-native-paper";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import CardSelector from './CardSelector';
+import bibleBooks from './BooksOfBible';
 
 
 export default function Books() {
   let [mode, setMode] = useState('main');
-   let [cards2, setCards2] = useState([
-			{ front: "John", back: "Luke John Acts" },
-			{ front: "Acts", back: "John Acts Romans" },
-			{ front: "Mark", back: "Matthew Mark Luke" }
-		])
 
   const buttonPressed = (buttonLabel) => {
 	setMode(buttonLabel);
@@ -31,15 +28,21 @@ export default function Books() {
                 <Pressable onPress={() => buttonPressed('flash')}>
                     <Text>Flash Cards</Text>
                 </Pressable>
+                <Pressable onPress={() => buttonPressed('random')}>
+                    <Text>Random Flash Cards</Text>
+                </Pressable>
                 <Pressable onPress={() => buttonPressed('bubble')}>
                     <Text>Blank Bubbles</Text>
                 </Pressable>
             </View>
         )
     } else if(mode == 'flash') {
-		return(<Flashcard onSwipeLeft={() => console.log('Rejected')}
-		   onSwipeRight={() => console.log('Accepted')}
-		   cards={cards2}/>)
+		return(<CardSelector/>)
+	} else if(mode == 'random') {
+		return(<SwipeCard
+		   	cards={bibleBooks}
+       	book='Psalms'
+			  isRandom={true}/>)
 	} else if(mode == 'bubble') {
 		return (<SelectGame book='Psalms'/>)
 	} else {

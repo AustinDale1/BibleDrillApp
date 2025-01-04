@@ -1,11 +1,11 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Text, Pressable, View, PanResponder, StyleSheet } from 'react-native';
 import { Avatar, Button, Card } from 'react-native-paper';
 
 
 
-const SwipeExample = ( {onSwipeLeft, onSwipeRight, cards} ) => {
-    const [isFlipped, setIsFlipped] = useState(true);
+const SwipeExample = ( {cards, book, isRandom} ) => {
+    const [isFlipped, setIsFlipped] = useState(false);
     const [index, setIndex] = useState(0);
     let i = 0
 
@@ -14,7 +14,11 @@ const SwipeExample = ( {onSwipeLeft, onSwipeRight, cards} ) => {
     }
 
     const handleNext = () => {
-        setIsFlipped(true);
+        setIsFlipped(false);
+        if(isRandom) {
+            randomGen();
+            return;
+        }
         if(cards.length > index + 1){
           setIndex(index + 1);
         } else {
@@ -23,11 +27,24 @@ const SwipeExample = ( {onSwipeLeft, onSwipeRight, cards} ) => {
     }
 
     const handleReturn = () => {
-        setIsFlipped(true);
+        setIsFlipped(false);
+        if(isRandom) {
+            randomGen();
+            return;
+        }
         if(index > 0){
           setIndex(index - 1);
         } else{
             setIndex(cards.length-1);
+        }
+    }
+
+    const randomGen = () => {
+        let random = Math.floor(Math.random() * 66);
+        if(random != index) {
+            setIndex(random);
+        } else {
+            setIndex(5);
         }
     }
 
@@ -37,17 +54,34 @@ const SwipeExample = ( {onSwipeLeft, onSwipeRight, cards} ) => {
         },
         onPanResponderRelease: (evt, gestureState) => {
             if (gestureState.dx > 0) {
-                handleNext();
-            } else if (gestureState.dx < 0) {
                 handleReturn();
+            } else if (gestureState.dx < 0) {
+                handleNext();
             }
         },
-    })
+    })  
+    
+    useEffect(() => {
+        myMethod();
+    }, []);
+
+    const myMethod = () => {
+        if(isRandom)
+        {
+            setIndex(Math.floor(Math.random() * 66));
+        } else
+        {
+            setIndex(cards.findIndex(bookName => 
+                bookName.front.toLowerCase() === book.toLowerCase()));
+        }
+    }
+
+
 
       return (
         <Card style={styles.container} {...panResponder.panHandlers}>
             <Pressable onPress={handleFlip} style={styles.box}>
-                {isFlipped?(
+                {!isFlipped?(
                     <View>
                         <Text>{cards[index].front}</Text>
                     </View>
