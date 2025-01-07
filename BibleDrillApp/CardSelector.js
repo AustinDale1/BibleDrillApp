@@ -34,6 +34,11 @@ export default function CardSelector() {
 		console.log(book + ' a ' + bookSelected);
 		setIsSelected(true);
 	}
+
+	const backButton = () => {
+		setMode('main');
+	  }
+	  
 	return (
 		<View>
 			{isSelected ? 

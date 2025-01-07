@@ -23,61 +23,55 @@ const SelectGame = (book) => {
     'Jude', 'Revelation'
   ];
   let [choiceArray, setChoiceArray] = useState(['', '', '', '', '']);
-  let [flipper, setFlipper] = useState(true);
   let [correctArray, setCorrectArray] = useState([]);
-  theBook = 'test';
-  let temp = [];
+  let [theBook, setTheBook] = useState(book.book);
 
-  //Ok put in method that gets correct after, from the prop, 
-  //skip whatever random element it is
-  //Correct after maybe from js array method tht gets element of
   const handleSubmit = (bookSelected) => {
-    let correctBook = bookArray[bookArray.indexOf(theBook) + 1]
+	let currentIndex = bookArray.indexOf(theBook);
+	let correctBook = bookArray[currentIndex + 1];
     if(bookSelected == correctBook)
     {
-      setCorrectArray([
-        ...correctArray,
-        bookSelected
-      ]);
+      const newArray = [...correctArray, bookSelected];
+      setCorrectArray(newArray);
+      setTheBook(bookSelected);
+	  let newChoices = generateChoices(bookSelected);
+      setChoiceArray(newChoices);
     } else{
-      console.log('wrong' + bookSelected + ' ' + correctBook + ' a ' + theBook);
+      console.log('wrong is ' + bookSelected + ' correct is ' + correctBook);
     }
   }
 
-  const myMethod = () => {
-    theBook = book.book;
-    console.log('the ' + theBook + ' aa' + book.book);
-    setCorrectArray([
-      ...correctArray,
-      theBook
-    ]);
-    let bookNum = bookArray.indexOf(theBook);
-    let correctPlace = Math.floor(Math.random() * 5);
-    temp = [...choiceArray];
-    temp[correctPlace] = bookArray[bookNum + 1];
-    console.log('book num ' + bookNum + ' boo ' + temp[correctPlace] + theBook);
-    //choiceArray[correctPlace] = bookArray[bookNum + 1];
-    let correct = 5;
-    for(let i = 0; i < 5; i++){
-      if(i == correctPlace){
-        continue;
-      }
-      let randomBook = bookArray[Math.floor(Math.random() * bookArray.length)];
-      if(theBook == randomBook || choiceArray.includes(randomBook))
-      {
-        i--;
-        continue;
-      }
-      temp[i] = randomBook;
+  const generateChoices = (currentBook) =>
+  {
+    const nextBook = bookArray[bookArray.indexOf(currentBook) + 1];
+	const correctPos = Math.floor(Math.random() * 5);
+
+	let newChoices = new Array(5).fill('');
+    newChoices[correctPos] = nextBook;
+
+    for (let i = 0; i < 5; i++) {
+      if (i === correctPos) continue;
+      
+      let randomBook;
+      do {
+        randomBook = bookArray[Math.floor(Math.random() * bookArray.length)];
+      } while (
+        randomBook === currentBook ||
+        randomBook === nextBook ||
+        newChoices.includes(randomBook)
+      );
+      
+      newChoices[i] = randomBook;
     }
-    setChoiceArray(temp);
-    setFlipper(!flipper);
-    console.log('book aaa claude ' + theBook);
-  };
+
+    return newChoices;
+  }
 
   useEffect(() => {
-    myMethod();
-  }, []);
+    setCorrectArray([book.book]);
+	const initChoices = generateChoices(book.book);
+	setChoiceArray(initChoices)
+  }, [book.book]);
 
   return (
     <View>
@@ -92,10 +86,7 @@ const SelectGame = (book) => {
           <Pressable onPress={() => handleSubmit(choiceArray[2])}><Text>{choiceArray[2]}</Text></Pressable>
           <Pressable onPress={() => handleSubmit(choiceArray[3])}><Text>{choiceArray[3]}</Text></Pressable>
           <Pressable onPress={() => handleSubmit(choiceArray[4])}><Text>{choiceArray[4]}</Text></Pressable>
-          <Button icon="camera" mode="contained" onPress={() => console.log('Pressed')}>
-              Press me
-            </Button>
-    
+      <Text>{theBook}</Text>
     </View>
   );
 };

@@ -10,6 +10,7 @@ const SwipeExample = ( {cards, book, isRandom} ) => {
     let i = 0
 
     const handleFlip = () => {
+        console.log('flipping, ');
         setIsFlipped(!isFlipped);
     }
 
@@ -91,6 +92,7 @@ const SwipeExample = ( {cards, book, isRandom} ) => {
                     </View>
                 )}
                 {/* <View style={styles.box} /> */}
+                <Text>{isFlipped ? 'should be back' : 'front/notflip'}</Text>
             </Pressable>
         </Card>
       );

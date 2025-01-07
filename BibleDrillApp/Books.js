@@ -49,8 +49,13 @@ export default function Books() {
 		return(<Text>Error</Text>)
 	}
   }
+
+  const backButton = () => {
+    setMode('main');
+  }
   return (
     <View>
+        <Pressable onPress={backButton}><Text>&larr;</Text></Pressable>
         {pageRenderer()}
     </View>
   );
