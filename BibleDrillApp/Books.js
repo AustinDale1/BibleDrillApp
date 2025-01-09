@@ -19,6 +19,8 @@ export default function Books() {
   let [mode, setMode] = useState('main');
 
   const buttonPressed = (buttonLabel) => {
+    console.log('ok here');
+    console.log(bibleBooks);
 	setMode(buttonLabel);
   }
   function pageRenderer() {

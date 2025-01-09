@@ -5,13 +5,13 @@ import {Card} from 'react-native-paper';
 
 
     let textColor = 'red';
-    const TextInputGame = (verse) => {
+    const TextInputGame = ({verses2}) => {
     const [text, onChangeText] = React.useState('');
     const [number, onChangeNumber] = React.useState('');
     const [isFlipped, setIsFlipped] = useState(true);
     const [index, setIndex] = useState(0);
   
-  const verses = ['ok test one', 'ok test two', 'ok test three'];
+  const verses = verses2;
   //let textColor = 'red';
     const getColor = () => {
         console.log(verses[index]);

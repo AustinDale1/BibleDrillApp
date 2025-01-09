@@ -1,23 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import React, {useState} from 'react';
-import Flashcard from './Flashcard';
+import { StyleSheet, Text, View, Pressable} from 'react-native';
+import React, {use, useState} from 'react';
 import SwipeCard from './SwipeCard';
-import TextInputGame from './TextInput';
-import SelectGame from './SelectGame';
 import {
   PaperProvider, BottomNavigation
 } from "react-native-paper";
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import ChildrenVerses from './children';
 
 
 
 export default function KeyPassages() {
-  
+  const [isMain, setIsMain] = useState(true);
+  const [currentCard, setCurrentCard] = useState('');
+  var kp = new ChildrenVerses();
+  let kpArray = kp.getKeyPassages();
+
+  const handlePress = (kpSelected) => {
+    console.log(kpArray);
+    setCurrentCard(kpSelected.front);
+    setIsMain(false);
+  }
   return (
     <View>
-        <Text>Key Passages</Text>
+        {isMain ? 
+        kpArray.map((choice, index) => (
+              <Pressable key={index} onPress={() => handlePress(choice)}><Text>{choice.front}</Text></Pressable>
+            ))
+        : <SwipeCard 
+        cards={kpArray}
+        book={currentCard}
+       isRandom={false}/>
+        }
     </View>
   );
 }
