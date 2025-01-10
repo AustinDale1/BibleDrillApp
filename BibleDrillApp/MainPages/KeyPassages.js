@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View, Pressable} from 'react-native';
 import React, {use, useState} from 'react';
-import SwipeCard from './SwipeCard';
+import SwipeCard from '../GameComponents/SwipeCard';
 import {
   PaperProvider, BottomNavigation
 } from "react-native-paper";
-import ChildrenVerses from './children';
+import ChildrenVerses from '../StaticFiles/children';
 
 
 
@@ -17,6 +17,7 @@ export default function KeyPassages() {
   const handlePress = (kpSelected) => {
     console.log(kpArray);
     setCurrentCard(kpSelected.front);
+    console.log(' ok coffee test ' + kpSelected.front);
     setIsMain(false);
   }
   return (

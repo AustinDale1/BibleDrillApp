@@ -1,10 +1,10 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import React, {useState} from 'react';
-import SwipeCard from './SwipeCard';
+import SwipeCard from '../GameComponents/SwipeCard';
 import {
   PaperProvider, BottomNavigation
 } from "react-native-paper";
-import bibleBooks from './BooksOfBible';
+import bibleBooks from '../StaticFiles/BooksOfBible';
 
 export default function CardSelector() {
 	const bookArray = [

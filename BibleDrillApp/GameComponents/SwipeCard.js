@@ -29,6 +29,8 @@ const SwipeExample = ( {cards, book, isRandom} ) => {
 
     const handleReturn = () => {
         setIsFlipped(false);
+        //Do we really want random gen when we
+        //go backwards??
         if(isRandom) {
             randomGen();
             return;

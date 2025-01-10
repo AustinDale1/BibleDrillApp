@@ -1,13 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import React, {useState} from 'react';
-import Flashcard from './Flashcard';
-import SwipeCard from './SwipeCard';
-import TextInputGame from './TextInput';
-import SelectGame from './SelectGame';
-import Verses from './Verses';
-import Books from './Books';
-import KeyPassages from './KeyPassages';
+import Verses from './MainPages/Verses';
+import Books from './MainPages/Books';
+import KeyPassages from './MainPages/KeyPassages';
 import {
   PaperProvider, BottomNavigation
 } from "react-native-paper";

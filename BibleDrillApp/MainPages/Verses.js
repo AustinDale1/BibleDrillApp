@@ -1,16 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import React, {useState} from 'react';
-import Flashcard from './Flashcard';
-import SwipeCard from './SwipeCard';
-import TextInputGame from './TextInput';
-import SelectGame from './SelectGame';
+import SwipeCard from '../GameComponents/SwipeCard';
+import TextInputGame from '../GameComponents/TextInput';
+import VerseSelectGame from '../GameComponents/VerseSelectGame';
 import {
   PaperProvider, BottomNavigation
 } from "react-native-paper";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ChildrenVerses from './children';
+import ChildrenVerses from '../StaticFiles/children';
 
 
 
@@ -18,7 +17,7 @@ export default function Verses() {
   const [mode, setMode] = useState('main');
   const [studyStyleState, setStudyStyleState] = useState('');
   const [isSelected, setIsSelected] = useState(false);
-  const [verse, setVerse] = useState('');
+  const [verse, setVerse] = useState('ok chec');
   let [bookSelected, setBookSelected] = useState('');
   const objForSummoning = new ChildrenVerses();
   const verseArray = objForSummoning.getVersesByTranslation('kjv');
@@ -39,21 +38,25 @@ export default function Verses() {
     </View>
       )
     } else {
-      if(studyStyleState == 'flash') {
+      if(studyStyleState == 'flash' && isSelected) {
+        console.log(' ok coffee test ' + verse);
+
         return(<SwipeCard 
           cards={verseArray}
           isRandom={false}
-          book={verse}
+          book={'Joshua 24:24'}
         />)
-      } if(studyStyleState == 'bubble') {
+      } if(studyStyleState == 'bubble' && isSelected) {
         return(
           <SelectGame
-            book={verse}
+            verse={verse}
+            verseArray={verseArray}
         />)
-      } if(studyStyleState == 'type') {
+      } if(studyStyleState == 'type' && isSelected) {
         return(
           <TextInputGame
-            verses2={verseArray}
+            versesArray={verseArray}
+            verse={verse}
         />)
       } 
       else {
@@ -63,8 +66,10 @@ export default function Verses() {
     }
   } 
 
-  const handleCardPress = (reference) => {
-    setVerse(reference);
+  const handleCardPress = (verseText) => {
+    console.log('ok verse gets changed');
+    setIsSelected(true);
+    setVerse(verseText);
   }
 
   const VerseComponent = (studyStyle) => {
@@ -72,7 +77,7 @@ export default function Verses() {
       <View>
 
         {verseArray.map((choice, index) => (
-            <Pressable key={index} onPress={() => handleCardPress(choice.reference)}><Text>{choice.reference}</Text></Pressable>
+            <Pressable key={index} onPress={() => handleCardPress(choice.back)}><Text>{choice.front}</Text></Pressable>
            ))
         } 
       </View>

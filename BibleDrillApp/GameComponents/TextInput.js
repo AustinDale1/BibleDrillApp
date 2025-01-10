@@ -1,28 +1,27 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {StyleSheet, TextInput, SafeAreaView, PanResponder, SafeAreaProvider, Text} from 'react-native';
 import {Card} from 'react-native-paper';
 // import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
 
     let textColor = 'red';
-    const TextInputGame = ({verses2}) => {
+    const TextInputGame = ({versesArray, verse}) => {
     const [text, onChangeText] = React.useState('');
     const [number, onChangeNumber] = React.useState('');
     const [isFlipped, setIsFlipped] = useState(true);
     const [index, setIndex] = useState(0);
   
-  const verses = verses2;
   //let textColor = 'red';
     const getColor = () => {
-        console.log(verses[index]);
-        if(verses[index].includes(text.toLowerCase()) || text == '') {
+        if((versesArray[index].back.toLowerCase()).substring(0, text.length) == text.toLowerCase() || text == '') {
+            console.log('returning black');
             return 'black';
         } else {
             return 'red';
         }
     }
       const handleNext = () => {
-          if(verses.length > index + 1){
+          if(versesArray.length > index + 1){
             setIndex(index + 1);
           } else {
               setIndex(0);
@@ -33,7 +32,7 @@ import {Card} from 'react-native-paper';
           if(index > 0){
             setIndex(index - 1);
           } else{
-              setIndex(verses.length-1);
+              setIndex(versesArray.length-1);
           }
       }
   
@@ -50,10 +49,25 @@ import {Card} from 'react-native-paper';
           },
       })
 
+       useEffect(() => {
+              myMethod();
+          }, []);
+      
+        const myMethod = () => {
+        console.log('here 0 ' + verse);
+        console.log(versesArray[0]);
+        // setIndex(versesArray.indexOf(verse));
+        setIndex(versesArray.findIndex(verseWords => 
+            verseWords.back.toLowerCase() === verse.toLowerCase()));
+        console.log('here1' + versesArray.findIndex(verseWords => 
+            verseWords.back.toLowerCase() === verse.toLowerCase()));
+
+        }
+
   return (
     // <SafeAreaProvider>
         <SafeAreaView>
-            <Text>{verses[index]}</Text>
+            <Text>{versesArray[index].reference}</Text>
             <Card style={styles.container} {...panResponder.panHandlers}>
             <TextInput
             //style={{ color: getColor() , width: '300px', heigh: '600px'}}

@@ -1,10 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import React, {useState} from 'react';
-import Flashcard from './Flashcard';
-import SwipeCard from './SwipeCard';
-import TextInputGame from './TextInput';
-import SelectGame from './SelectGame';
+import SwipeCard from '../GameComponents/SwipeCard';
+import SelectGame from '../GameComponents/SelectGame';
 import {
   PaperProvider, BottomNavigation,
   Card
@@ -12,7 +10,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import CardSelector from './CardSelector';
-import bibleBooks from './BooksOfBible';
+import bibleBooks from '../StaticFiles/BooksOfBible';
 
 
 export default function Books() {
