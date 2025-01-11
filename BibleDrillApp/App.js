@@ -5,7 +5,7 @@ import Verses from './MainPages/Verses';
 import Books from './MainPages/Books';
 import KeyPassages from './MainPages/KeyPassages';
 import {
-  PaperProvider, BottomNavigation
+  PaperProvider, BottomNavigation, Button
 } from "react-native-paper";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';

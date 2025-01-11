@@ -74,6 +74,10 @@ class ChildrenVerses {
     getKeyPassages() {
       return this.keyPassages;
     }
+
+    getWordBank() {
+      return this.wordBank;
+    }
   
   }
   

@@ -48,7 +48,7 @@ export default function Verses() {
         />)
       } if(studyStyleState == 'bubble' && isSelected) {
         return(
-          <SelectGame
+          <VerseSelectGame
             verse={verse}
             verseArray={verseArray}
         />)

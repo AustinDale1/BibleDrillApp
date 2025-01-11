@@ -13,6 +13,7 @@ import {Card} from 'react-native-paper';
   
   //let textColor = 'red';
     const getColor = () => {
+        console.log(versesArray[index].back.toLowerCase());
         if((versesArray[index].back.toLowerCase()).substring(0, text.length) == text.toLowerCase() || text == '') {
             console.log('returning black');
             return 'black';
