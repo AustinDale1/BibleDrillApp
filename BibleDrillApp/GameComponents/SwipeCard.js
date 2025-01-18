@@ -2,19 +2,23 @@ import React, { Component, useEffect, useState } from 'react';
 import { Text, Pressable, View, PanResponder, StyleSheet } from 'react-native';
 import { Avatar, Button, Card } from 'react-native-paper';
 
-
+//Should I add in a queue/stack so swiping back goes actually back
 
 const SwipeExample = ( {cards, book, isRandom} ) => {
+    // console.log('Cards:', cards);
+
     const [isFlipped, setIsFlipped] = useState(false);
     const [index, setIndex] = useState(0);
+    // console.log('Index:', index);
+    // console.log('Current card:', cards[index]);
     let i = 0
 
     const handleFlip = () => {
-        console.log('flipping, ');
         setIsFlipped(!isFlipped);
     }
 
     const handleNext = () => {
+        console.log('ok actualy one ' + cards[index].front);
         setIsFlipped(false);
         if(isRandom) {
             randomGen();
@@ -69,56 +73,65 @@ const SwipeExample = ( {cards, book, isRandom} ) => {
     }, []);
 
     const myMethod = () => {
+        console.log('ok duby00' + cards[index].front);
+        console.log('ok again' + cards[0].front);
+
         if(isRandom)
         {
             setIndex(Math.floor(Math.random() * 66));
         } else
         {
-            console.log('is it here' + book.toLowerCase);
             setIndex(cards.findIndex(bookName => 
-                bookName.front.toLowerCase() === book.toLowerCase()));
-            console.log('is it here, yeah it is');
+            bookName.front.toLowerCase() === book.toLowerCase()));
         }
     }
 
 
 
       return (
-        <Card style={styles.container} {...panResponder.panHandlers}>
-            <Pressable onPress={handleFlip} style={styles.box}>
+        <View style={{ flex: 1 }}>
+
+            <Card style={styles.container} {...panResponder.panHandlers} >
+
+                <Card.Content>
+                {/* <Pressable onPress={handleFlip} > */}
+                {/* <View style={styles.box}> */}
+                <Text>2</Text>
+
                 {!isFlipped?(
                     <View>
-                        <Text>{cards[index].front}</Text>
+                        <Text style={{ fontSize: 24, color: 'black' }}>{cards[index].front} check?</Text>
                     </View>
                 ) : (
                     <View>
-                        <Text>{cards[index].back}</Text>
+                        <Text style={{ fontSize: 24, color: 'black' }}>{cards[index].back} checkw</Text>
                     </View>
                 )}
-                {/* <View style={styles.box} /> */}
-                <Text>{isFlipped ? 'should be back' : 'front/notflip'}</Text>
-            </Pressable>
-        </Card>
+                <Text>{isFlipped ? 'should be back updated2' : 'front/notflip'}</Text>
+                    {/* </View> */}
+                </Card.Content>
+
+                </Card>
+        </View>
       );
 };
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        margin: 10,
         backgroundColor: 'white',
-        userSelect: 'none',
-        width: 300,
-        height: 400,
-        display: 'flex',
+        color: 'black',
+        height: 634,
     },
     box: {
-        width: 300,
-        height: 400,
+        flex: 1,
+        backgroundColor: 'green',
         justifyContent: 'center',
         alignItems: 'center',
-        // backgroundColor: 'blue',
+        color: 'black',
+        minHeight: 634,
+        // borderRadius: 25,
     },
 });
 

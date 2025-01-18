@@ -15,9 +15,7 @@ const VerseSelectGame = ({verse, verseArray}) => {
   let wordBank = kp.getWordBank();
   
   const handleSubmit = (wordSelected) => {
-    console.log('okokok ' + verseIndex);
     let correctVerse = verseSplit[verseIndex];
-    console.log('in the submit, ' + correctVerse);
     if(wordSelected == correctVerse)
     {
       const newArray = [...correctArray, wordSelected];
@@ -27,7 +25,7 @@ const VerseSelectGame = ({verse, verseArray}) => {
       setChoiceArray(newChoices);
       setVerseIndex(prevIndex => prevIndex + 1)
     } else{
-      console.log('word selected is ' + wordSelected + ' correct is ' + correctVerse + 'whole thingis ' + verseSplit);
+      // console.log('word selected is ' + wordSelected + ' correct is ' + correctVerse + 'whole thingis ' + verseSplit);
     }
   }
 
@@ -35,13 +33,8 @@ const VerseSelectGame = ({verse, verseArray}) => {
   {
     const nextWord = verseSplit[verseSplit.indexOf(currentWord) + 1];
     const correctPos = Math.floor(Math.random() * 5);
-    console.log(verseSplit);
-    console.log('correct verse is ' + nextWord);
     let newChoices = new Array(5).fill('');
     newChoices[correctPos] = nextWord;
-
-    console.log('New Choices is ');
-    console.log(newChoices);
 
     for (let i = 0; i < 5; i++) {
       if (i === correctPos) continue;
@@ -55,9 +48,6 @@ const VerseSelectGame = ({verse, verseArray}) => {
       
       newChoices[i] = randomWord;
     }
-
-    console.log('New Choices 2 is ');
-    console.log(newChoices);
 
     return newChoices;
   }

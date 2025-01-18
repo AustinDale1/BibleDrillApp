@@ -17,14 +17,12 @@ export default function Books() {
   let [mode, setMode] = useState('main');
 
   const buttonPressed = (buttonLabel) => {
-    console.log('ok here');
-    console.log(bibleBooks);
 	setMode(buttonLabel);
   }
   function pageRenderer() {
     if(mode == 'main') {
         return (
-            <View>
+            <View style={{ flex: 1 }}>
                 <Pressable onPress={() => buttonPressed('flash')}>
                     <Text>Flash Cards</Text>
                 </Pressable>
@@ -54,7 +52,7 @@ export default function Books() {
     setMode('main');
   }
   return (
-    <View>
+    <View style={{ flex: 1 }}>
         <Pressable onPress={backButton}><Text>&larr;</Text></Pressable>
         {pageRenderer()}
     </View>

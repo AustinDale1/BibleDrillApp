@@ -15,9 +15,7 @@ export default function KeyPassages() {
   let kpArray = kp.getKeyPassages();
 
   const handlePress = (kpSelected) => {
-    console.log(kpArray);
     setCurrentCard(kpSelected.front);
-    console.log(' ok coffee test ' + kpSelected.front);
     setIsMain(false);
   }
   return (

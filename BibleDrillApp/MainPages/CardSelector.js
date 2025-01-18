@@ -31,7 +31,6 @@ export default function CardSelector() {
 	const cardSelected = (book) => {
 		setBookSelected(book);
 		bookSelected = book;
-		console.log(book + ' a ' + bookSelected);
 		setIsSelected(true);
 	}
 

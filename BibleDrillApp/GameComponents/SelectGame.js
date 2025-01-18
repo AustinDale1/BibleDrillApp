@@ -37,7 +37,7 @@ const SelectGame = (book) => {
 	  let newChoices = generateChoices(bookSelected);
       setChoiceArray(newChoices);
     } else{
-      console.log('wrong is ' + bookSelected + ' correct is ' + correctBook);
+      //console.log('wrong is ' + bookSelected + ' correct is ' + correctBook);
     }
   }
 
@@ -77,16 +77,15 @@ const SelectGame = (book) => {
     <View>
       { correctArray.length > 0 ? 
       correctArray.map((choice, index) => (
-          <View key={index}><Text key={index}>choice {choice}</Text></View>
+          <View key={index}><Text key={index}>{choice}</Text></View>
       )) : <Text>a</Text>
       }
-      <Text>Choose after {theBook}</Text>
-          <Pressable onPress={() => handleSubmit(choiceArray[0])}><Text>{choiceArray[0]}</Text></Pressable>
-          <Pressable onPress={() => handleSubmit(choiceArray[1])}><Text>{choiceArray[1]}</Text></Pressable>
-          <Pressable onPress={() => handleSubmit(choiceArray[2])}><Text>{choiceArray[2]}</Text></Pressable>
-          <Pressable onPress={() => handleSubmit(choiceArray[3])}><Text>{choiceArray[3]}</Text></Pressable>
-          <Pressable onPress={() => handleSubmit(choiceArray[4])}><Text>{choiceArray[4]}</Text></Pressable>
-      <Text>{theBook}</Text>
+      <Text>Choose after {correctArray[correctArray.length-1]}</Text>
+          <Pressable onPress={() => handleSubmit(choiceArray[0])} style={{ paddingTop: 18 }}><Text>{choiceArray[0]}</Text></Pressable>
+          <Pressable onPress={() => handleSubmit(choiceArray[1])} style={{ paddingTop: 18 }}><Text>{choiceArray[1]}</Text></Pressable>
+          <Pressable onPress={() => handleSubmit(choiceArray[2])} style={{ paddingTop: 18 }}><Text>{choiceArray[2]}</Text></Pressable>
+          <Pressable onPress={() => handleSubmit(choiceArray[3])} style={{ paddingTop: 18 }}><Text>{choiceArray[3]}</Text></Pressable>
+          <Pressable onPress={() => handleSubmit(choiceArray[4])} style={{ paddingTop: 18 }}><Text>{choiceArray[4]}</Text></Pressable>
     </View>
   );
 };

@@ -13,9 +13,7 @@ import {Card} from 'react-native-paper';
   
   //let textColor = 'red';
     const getColor = () => {
-        console.log(versesArray[index].back.toLowerCase());
         if((versesArray[index].back.toLowerCase()).substring(0, text.length) == text.toLowerCase() || text == '') {
-            console.log('returning black');
             return 'black';
         } else {
             return 'red';
@@ -55,14 +53,9 @@ import {Card} from 'react-native-paper';
           }, []);
       
         const myMethod = () => {
-        console.log('here 0 ' + verse);
-        console.log(versesArray[0]);
         // setIndex(versesArray.indexOf(verse));
         setIndex(versesArray.findIndex(verseWords => 
             verseWords.back.toLowerCase() === verse.toLowerCase()));
-        console.log('here1' + versesArray.findIndex(verseWords => 
-            verseWords.back.toLowerCase() === verse.toLowerCase()));
-
         }
 
   return (
@@ -79,6 +72,8 @@ import {Card} from 'react-native-paper';
             placeholder="Start typing out the verse. Don't worry worry about punctuation or capitilization, this is just about getting the words right."
 
             />
+                        <Text>yoo wassu</Text>
+
             </Card>
         </SafeAreaView>
     //</SafeAreaProvider>

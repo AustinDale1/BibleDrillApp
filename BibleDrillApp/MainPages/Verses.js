@@ -39,8 +39,6 @@ export default function Verses() {
       )
     } else {
       if(studyStyleState == 'flash' && isSelected) {
-        console.log(' ok coffee test ' + verse);
-
         return(<SwipeCard 
           cards={verseArray}
           isRandom={false}
@@ -67,7 +65,6 @@ export default function Verses() {
   } 
 
   const handleCardPress = (verseText) => {
-    console.log('ok verse gets changed');
     setIsSelected(true);
     setVerse(verseText);
   }
