@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import {View, Pressable, Text, StyleSheet, TextInput, SafeAreaView, SafeAreaProvider} from 'react-native';
-import { Button } from 'react-native-paper';
+import React, { useEffect, useState, useRef } from 'react';
+import { View, Pressable, Text, StyleSheet, TextInput, SafeAreaView, ScrollView } from 'react-native';
+import { Button, Divider } from 'react-native-paper';
 
 const SelectGame = (book) => {
   const [text, onChangeText] = React.useState('');
@@ -27,26 +27,24 @@ const SelectGame = (book) => {
   let [theBook, setTheBook] = useState(book.book);
 
   const handleSubmit = (bookSelected) => {
-	let currentIndex = bookArray.indexOf(theBook);
-	let correctBook = bookArray[currentIndex + 1];
-    if(bookSelected == correctBook)
-    {
+    let currentIndex = bookArray.indexOf(theBook);
+    let correctBook = bookArray[currentIndex + 1];
+    if(bookSelected == correctBook) {
       const newArray = [...correctArray, bookSelected];
       setCorrectArray(newArray);
       setTheBook(bookSelected);
-	  let newChoices = generateChoices(bookSelected);
+      let newChoices = generateChoices(bookSelected);
       setChoiceArray(newChoices);
     } else{
       //console.log('wrong is ' + bookSelected + ' correct is ' + correctBook);
     }
   }
 
-  const generateChoices = (currentBook) =>
-  {
+  const generateChoices = (currentBook) => {
     const nextBook = bookArray[bookArray.indexOf(currentBook) + 1];
-	const correctPos = Math.floor(Math.random() * 5);
+    const correctPos = Math.floor(Math.random() * 5);
 
-	let newChoices = new Array(5).fill('');
+    let newChoices = new Array(5).fill('');
     newChoices[correctPos] = nextBook;
 
     for (let i = 0; i < 5; i++) {
@@ -69,26 +67,124 @@ const SelectGame = (book) => {
 
   useEffect(() => {
     setCorrectArray([book.book]);
-	const initChoices = generateChoices(book.book);
-	setChoiceArray(initChoices)
+    const initChoices = generateChoices(book.book);
+    setChoiceArray(initChoices)
   }, [book.book]);
 
+  const scrollViewRef = useRef();
+
   return (
-    <View>
-      { correctArray.length > 0 ? 
-      correctArray.map((choice, index) => (
-          <View key={index}><Text key={index}>{choice}</Text></View>
-      )) : <Text>a</Text>
-      }
-      <Text>Choose after {correctArray[correctArray.length-1]}</Text>
-          <Pressable onPress={() => handleSubmit(choiceArray[0])} style={{ paddingTop: 18 }}><Text>{choiceArray[0]}</Text></Pressable>
-          <Pressable onPress={() => handleSubmit(choiceArray[1])} style={{ paddingTop: 18 }}><Text>{choiceArray[1]}</Text></Pressable>
-          <Pressable onPress={() => handleSubmit(choiceArray[2])} style={{ paddingTop: 18 }}><Text>{choiceArray[2]}</Text></Pressable>
-          <Pressable onPress={() => handleSubmit(choiceArray[3])} style={{ paddingTop: 18 }}><Text>{choiceArray[3]}</Text></Pressable>
-          <Pressable onPress={() => handleSubmit(choiceArray[4])} style={{ paddingTop: 18 }}><Text>{choiceArray[4]}</Text></Pressable>
+    <View style={styles.container}>
+      <View style={styles.scrollContainer}>
+        <ScrollView 
+          ref={scrollViewRef}
+          onContentSizeChange={() => scrollViewRef.current.scrollToEnd({ animated: true })}
+          contentContainerStyle={styles.scrollContent}
+        >
+          {correctArray.length > 0 ? 
+            correctArray.map((choice, index) => (
+              <View key={index} style={styles.choiceContainer}>
+                <Text style={styles.choiceText}>{choice}</Text>
+                <Divider style={styles.divider} />
+              </View>
+            )) : 
+            <Text>Start</Text>
+          }
+        </ScrollView>
+      </View>
+
+      <View style={styles.selectionContainer}>
+        <Text style={styles.promptText}>Choose after {correctArray[correctArray.length-1]}</Text>
+        
+        <View style={styles.buttonRows}>
+          {/* First row - 3 buttons */}
+          <View style={styles.buttonRow}>
+            {[0, 1, 2].map((index) => (
+              <Pressable 
+                key={index}
+                style={styles.button}
+                onPress={() => handleSubmit(choiceArray[index])}
+              >
+                <Text style={styles.buttonText}>{choiceArray[index]}</Text>
+              </Pressable>
+            ))}
+          </View>
+          
+          {/* Second row - 2 buttons */}
+          <View style={styles.buttonRow}>
+            {[3, 4].map((index) => (
+              <Pressable 
+                key={index}
+                style={styles.button}
+                onPress={() => handleSubmit(choiceArray[index])}
+              >
+                <Text style={styles.buttonText}>{choiceArray[index]}</Text>
+              </Pressable>
+            ))}
+          </View>
+        </View>
+      </View>
     </View>
   );
 };
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: '100%',
+  },
+  scrollContainer: {
+    height: 400,
+    width: '100%',
+  },
+  scrollContent: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  choiceContainer: {
+    width: '100%',
+    alignItems: 'center',
+  },
+  choiceText: {
+    paddingVertical: 20,
+    fontSize: 16,
+    textAlign: 'center',
+  },
+  divider: {
+    width: '80%',
+    height: 1,
+  },
+  selectionContainer: {
+    paddingTop: 60,
+    width: '100%',
+    alignItems: 'center',
+  },
+  promptText: {
+    fontSize: 18,
+    marginBottom: 24,
+    textAlign: 'center',
+  },
+  buttonRows: {
+    width: '100%',
+    paddingHorizontal: 20,
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginBottom: 20,
+    width: '100%',
+  },
+  button: {
+    backgroundColor: '#f0f0f0',
+    padding: 15,
+    borderRadius: 8,
+    minWidth: 100,
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontSize: 16,
+  },
+});
 
 export default SelectGame;
