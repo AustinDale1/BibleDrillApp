@@ -13,7 +13,7 @@ import ChildrenVerses from '../StaticFiles/children';
 
 
 
-export default function Verses() {
+export default function Verses({translation, group}) {
   const [mode, setMode] = useState('main');
   const [studyStyleState, setStudyStyleState] = useState('');
   const [isSelected, setIsSelected] = useState(false);

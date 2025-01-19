@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import React, {useState} from 'react';
 import Verses from './MainPages/Verses';
 import Books from './MainPages/Books';
+import Settings from './MainPages/Settings';
 import KeyPassages from './MainPages/KeyPassages';
 import {
   PaperProvider, BottomNavigation, Button
@@ -23,6 +24,9 @@ export default function App() {
     let a = [          { front: "John", back: "Luke John Acts" },
       { front: "Acts", back: "John Acts Romans" },
       { front: "Mark", back: "Matthew Mark Luke" }];
+    const [translation, setTranslation] = useState('ESV');
+    const [group, setGroup] = useState('Children');
+
 
   const [index, setIndex] = React.useState(0);
   
@@ -32,8 +36,10 @@ export default function App() {
       <Tab.Navigator>
       <Tab.Screen 
         name="Books"
-        children={(props) => (
-          <Books/>
+        children={() => (
+          <Books
+          translation={translation} 
+          group={group}/>
         )}
         // options={{
         //   headerRight: () => (
@@ -76,14 +82,28 @@ export default function App() {
       />
       <Tab.Screen 
         name="Verses"
-        children={(props) => (
-          <Verses/>
+        children={() => (
+          <Verses
+          translation={translation} 
+          group={group}/>
         )}
       />
       <Tab.Screen 
         name="Key Passages"
-        children={(props) => (
-          <KeyPassages/>
+        children={() => (
+          <KeyPassages
+          translation={translation} 
+          group={group}/>
+        )}
+      />
+      <Tab.Screen 
+        name="Settings"
+        children={() => (
+          <Settings
+          translation={translation} 
+          setTranslation={setTranslation}
+          group={group}
+          setGroup={setGroup}/>
         )}
       />
       </Tab.Navigator>

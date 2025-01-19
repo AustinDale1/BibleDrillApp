@@ -13,7 +13,7 @@ import CardSelector from './CardSelector';
 import bibleBooks from '../StaticFiles/BooksOfBible';
 
 
-export default function Books() {
+export default function Books({translation, group}) {
   let [mode, setMode] = useState('main');
 
   const buttonPressed = (buttonLabel) => {
@@ -32,6 +32,7 @@ export default function Books() {
                 <Pressable onPress={() => buttonPressed('bubble')}>
                     <Text>Blank Bubbles</Text>
                 </Pressable>
+                <Text>State is {translation}</Text>
             </View>
         )
     } else if(mode == 'flash') {

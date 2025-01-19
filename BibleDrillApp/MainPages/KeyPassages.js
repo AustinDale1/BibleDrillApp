@@ -8,7 +8,7 @@ import ChildrenVerses from '../StaticFiles/children';
 
 
 
-export default function KeyPassages() {
+export default function KeyPassages({translation, group}) {
   const [isMain, setIsMain] = useState(true);
   const [currentCard, setCurrentCard] = useState('');
   var kp = new ChildrenVerses();
