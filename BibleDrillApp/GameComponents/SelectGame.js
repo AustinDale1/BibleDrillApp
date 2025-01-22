@@ -25,18 +25,44 @@ const SelectGame = ({book, translation, group}) => {
   let [choiceArray, setChoiceArray] = useState(['', '', '', '', '']);
   let [correctArray, setCorrectArray] = useState([]);
   let [theBook, setTheBook] = useState(book.book);
+  let [buttonColor, setButtonColor] = useState(['#f0f0f0', '#f0f0f0', '#f0f0f0', '#f0f0f0', '#f0f0f0']);
+  let [isFinished, setIsFinished] = useState(false);
+  
+
+  const setColor = (isCorrect, wordSelected) => {
+    let wordIndex = -1;
+    choiceArray.forEach((choice, index) => {
+      if(choice == wordSelected)
+        wordIndex = index;
+    });
+    console.log('set1');
+    if(isCorrect)
+      setButtonColor(prevColors => [...prevColors.slice(0, wordIndex), 'green', ...prevColors.slice(wordIndex+1)]);
+    else
+      setButtonColor(prevColors => [...prevColors.slice(0, wordIndex), 'red', ...prevColors.slice(wordIndex+1)]);
+    setTimeout(() => {
+      setButtonColor(prevColors => [...prevColors.slice(0, wordIndex), '#f0f0f0', ...prevColors.slice(wordIndex+1)]);
+    }, 200); // Adjust the duration of the flash
+    console.log('set2');
+  }
 
   const handleSubmit = (bookSelected) => {
     let currentIndex = bookArray.indexOf(theBook);
     let correctBook = bookArray[currentIndex + 1];
     if(bookSelected == correctBook) {
+      setColor(true, bookSelected);
       const newArray = [...correctArray, bookSelected];
       setCorrectArray(newArray);
+      if(bookSelected == 'Revelation') {
+        setIsFinished(true);
+        return;
+      }
       setTheBook(bookSelected);
       let newChoices = generateChoices(bookSelected);
       setChoiceArray(newChoices);
     } else{
       //console.log('wrong is ' + bookSelected + ' correct is ' + correctBook);
+      setColor(false, bookSelected);
     }
   }
 
@@ -73,6 +99,13 @@ const SelectGame = ({book, translation, group}) => {
 
   const scrollViewRef = useRef();
 
+  const reset = () => {
+    const initChoices = generateChoices(book.book);
+    setChoiceArray(initChoices);
+    setCorrectArray([]);
+    setIsFinished(false);
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.scrollContainer}>
@@ -93,6 +126,11 @@ const SelectGame = ({book, translation, group}) => {
         </ScrollView>
       </View>
 
+      {isFinished ? 
+        <View style={styles.buttonRow}>
+          {/* <Pressable onPress={reset}><Text>Reset</Text></Pressable> */}
+        </View>
+        :
       <View style={styles.selectionContainer}>
         <Text style={styles.promptText}>Choose after {correctArray[correctArray.length-1]}</Text>
         
@@ -102,7 +140,7 @@ const SelectGame = ({book, translation, group}) => {
             {[0, 1, 2].map((index) => (
               <Pressable 
                 key={index}
-                style={styles.button}
+                style={[styles.button, {backgroundColor: buttonColor[index]}]}
                 onPress={() => handleSubmit(choiceArray[index])}
               >
                 <Text style={styles.buttonText}>{choiceArray[index]}</Text>
@@ -115,15 +153,16 @@ const SelectGame = ({book, translation, group}) => {
             {[3, 4].map((index) => (
               <Pressable 
                 key={index}
-                style={styles.button}
+                style={[styles.button, {backgroundColor: buttonColor[index]}]}
                 onPress={() => handleSubmit(choiceArray[index])}
               >
-                <Text style={styles.buttonText}>{choiceArray[index]}</Text>
+                <Text style={[styles.buttonText, {backgroundColor: buttonColor[index]}]}>{choiceArray[index]}</Text>
               </Pressable>
             ))}
           </View>
         </View>
       </View>
+      }
     </View>
   );
 };

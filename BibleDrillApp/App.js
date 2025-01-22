@@ -88,6 +88,7 @@ export default function App() {
           group={group}/>
         )}
       />
+      {group != 'Youth'? 
       <Tab.Screen 
         name="Key Passages"
         children={() => (
@@ -96,6 +97,8 @@ export default function App() {
           group={group}/>
         )}
       />
+      : <></>
+      }
       <Tab.Screen 
         name="Settings"
         children={() => (
