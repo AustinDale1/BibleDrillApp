@@ -6,7 +6,7 @@ import {
 } from "react-native-paper";
 import bibleBooks from '../StaticFiles/BooksOfBible';
 
-export default function CardSelector() {
+export default function CardSelector({translation, group}) {
 	const bookArray = [
 		'Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy',
 		'Joshua', 'Judges', 'Ruth', '1 Samuel', '2 Samuel',
@@ -39,14 +39,16 @@ export default function CardSelector() {
 	  }
 	  
 	return (
-		<View>
+		<View style={{ flex: 1 }}>
 			{isSelected ? 
 				<SwipeCard
 				cards={bibleBooks}
 				book={bookSelected}
-			   	isRandom={false}/>
+			   	isRandom={false}
+				translation={translation} 
+				group={group}/>
 			:
-			<View>
+			<View style={{ flex: 1 }}>
 			{bookArray.map((choice, index) => (
 					  <Pressable key={index} onPress={() => cardSelected(choice)}><Text>{choice}</Text></Pressable>
 				  ))

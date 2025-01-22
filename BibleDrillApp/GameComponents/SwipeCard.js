@@ -4,7 +4,7 @@ import { Avatar, Button, Card } from 'react-native-paper';
 
 //Should I add in a queue/stack so swiping back goes actually back
 
-const SwipeExample = ( {cards, book, isRandom} ) => {
+const SwipeExample = ( {cards, book, isRandom, translation, group} ) => {
     // console.log('Cards:', cards);
 
     const [isFlipped, setIsFlipped] = useState(false);
@@ -14,11 +14,11 @@ const SwipeExample = ( {cards, book, isRandom} ) => {
     let i = 0
 
     const handleFlip = () => {
+        console.log('we flipping');
         setIsFlipped(!isFlipped);
     }
 
     const handleNext = () => {
-        console.log('ok actualy one ' + cards[index].front);
         setIsFlipped(false);
         if(isRandom) {
             randomGen();
@@ -56,15 +56,22 @@ const SwipeExample = ( {cards, book, isRandom} ) => {
     }
 
     const panResponder = PanResponder.create({
+        onStartShouldSetPanResponder: () => true,
+        onStartShouldSetPanResponderCapture: () => true,
         onMoveShouldSetPanResponder: (evt, gestureState) => {
-            return Math.abs(gestureState.dx) > 5;
+            // return Math.abs(gestureState.dx) > 50;
+            return true;
         },
         onPanResponderRelease: (evt, gestureState) => {
-            if (gestureState.dx > 0) {
-                handleReturn();
-            } else if (gestureState.dx < 0) {
-                handleNext();
-            }
+            if(Math.abs(gestureState.dx) <= 50) {
+                handleFlip();
+            } else { 
+                if (gestureState.dx > 0) {
+                    handleReturn();
+                } else if (gestureState.dx < 0) {
+                    handleNext();
+                }
+            }   
         },
     })  
     
@@ -73,14 +80,13 @@ const SwipeExample = ( {cards, book, isRandom} ) => {
     }, []);
 
     const myMethod = () => {
-        console.log('ok duby00' + cards[index].front);
-        console.log('ok again' + cards[0].front);
 
         if(isRandom)
         {
             setIndex(Math.floor(Math.random() * 66));
         } else
         {
+            console.log('bookpassedin is ' + book);
             setIndex(cards.findIndex(bookName => 
             bookName.front.toLowerCase() === book.toLowerCase()));
         }
@@ -90,28 +96,29 @@ const SwipeExample = ( {cards, book, isRandom} ) => {
 
       return (
         <View style={{ flex: 1 }}>
+            {/* <Pressable onPress={handleFlip} style={{flex: 1}}> */}
+            <Card style={styles.container} onPress={handleFlip} {...panResponder.panHandlers}>
 
-            <Card style={styles.container} {...panResponder.panHandlers} >
-
-                <Card.Content>
+                {/* <Card.Content > */}
                 {/* <Pressable onPress={handleFlip} > */}
                 {/* <View style={styles.box}> */}
                 <Text>2</Text>
 
                 {!isFlipped?(
-                    <View>
-                        <Text style={{ fontSize: 24, color: 'black' }}>{cards[index].front} check?</Text>
+                    <View style={styles.textContainer}>
+                        <Text style={styles.cardText}>{cards[index].front}</Text>
                     </View>
                 ) : (
-                    <View>
-                        <Text style={{ fontSize: 24, color: 'black' }}>{cards[index].back} checkw</Text>
+                    <View style={styles.textContainer}>
+                        <Text style={styles.cardText}>{cards[index].back}</Text>
                     </View>
                 )}
-                <Text>{isFlipped ? 'should be back updated2' : 'front/notflip'}</Text>
+                {/* <Text>{isFlipped ? 'should be back updated2' : 'front/notflip'}</Text> */}
                     {/* </View> */}
-                </Card.Content>
+                {/* </Card.Content> */}
 
                 </Card>
+                {/* </Pressable> */}
         </View>
       );
 };
@@ -133,6 +140,22 @@ const styles = StyleSheet.create({
         minHeight: 634,
         // borderRadius: 25,
     },
+    cardContent: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    textContainer: {
+        // flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        // padding: 20,
+    },
+    cardText: {
+        fontSize: 24,
+        color: 'black',
+    }
 });
 
 export default SwipeExample

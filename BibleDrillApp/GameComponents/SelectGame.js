@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { View, Pressable, Text, StyleSheet, TextInput, SafeAreaView, ScrollView } from 'react-native';
 import { Button, Divider } from 'react-native-paper';
 
-const SelectGame = (book) => {
+const SelectGame = ({book, translation, group}) => {
   const [text, onChangeText] = React.useState('');
   const [number, onChangeNumber] = React.useState('');
   const bookArray = [

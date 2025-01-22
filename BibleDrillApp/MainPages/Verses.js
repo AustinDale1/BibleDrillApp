@@ -14,17 +14,22 @@ import ChildrenVerses from '../StaticFiles/children';
 
 
 export default function Verses({translation, group}) {
-  const [mode, setMode] = useState('main');
-  const [studyStyleState, setStudyStyleState] = useState('');
-  const [isSelected, setIsSelected] = useState(false);
-  const [verse, setVerse] = useState('ok chec');
-  let [bookSelected, setBookSelected] = useState('');
+  // const [mode, setMode] = useState('main');
+  // const [studyStyleState, setStudyStyleState] = useState('');
+  // const [isSelected, setIsSelected] = useState(false);
+  // const [verse, setVerse] = useState('ok chec');
+  const [verseState, setVerseState] = useState({
+    isSelected: false,
+    verse: 'ok chec',
+    mode: 'main',
+    studyStyleState: ''
+  });
   const objForSummoning = new ChildrenVerses();
-  const verseArray = objForSummoning.getVersesByTranslation('kjv');
+  const verseArray = objForSummoning.getVersesByTranslation(translation);
   function pageRenderer() {
-    if(mode == 'main') {
+    if(verseState.mode == 'main') {
       return (
-        <View>
+        <View style={{ flex: 1 }}>
         <Text>How would you like to study?</Text>
         <Pressable onPress={() => handlePress('flash')}>
           <Text>Flashcards</Text>
@@ -38,24 +43,34 @@ export default function Verses({translation, group}) {
     </View>
       )
     } else {
-      if(studyStyleState == 'flash' && isSelected) {
+      console.log(verseState.studyStyleState + ' ' + verseState.isSelected + ' ' + verseState.verse);
+      if(verseState.studyStyleState == 'flash' && verseState.isSelected) {
         return(<SwipeCard 
           cards={verseArray}
           isRandom={false}
-          book={'Joshua 24:24'}
-        />)
-      } if(studyStyleState == 'bubble' && isSelected) {
+          book={verseState.verse}
+          translation={translation} 
+          group={group}/>)
+      } if(verseState.studyStyleState == 'bubble' && verseState.isSelected) {
         return(
           <VerseSelectGame
-            verse={verse}
+            verse={verseState.verse}
             verseArray={verseArray}
-        />)
-      } if(studyStyleState == 'type' && isSelected) {
+            translation={translation} 
+            group={group}/>)
+      } if(verseState.studyStyleState == 'type' && verseState.isSelected) {
+        console.log('okokok ' + verseState.verse + ' ss ' + verseState.verse.back);
+        //Need this bc  it just passes in the reference
+        let fullVerse = verseArray[verseArray.findIndex(verseRef => 
+          verseRef.front.toLowerCase() === verseState.verse.toLowerCase())];
+          console.log('full verse is ' + fullVerse);
+          console.log(fullVerse);
         return(
           <TextInputGame
             versesArray={verseArray}
-            verse={verse}
-        />)
+            verse={fullVerse}
+            translation={translation} 
+            group={group}/>)
       } 
       else {
         return (<VerseComponent />)
@@ -65,16 +80,22 @@ export default function Verses({translation, group}) {
   } 
 
   const handleCardPress = (verseText) => {
-    setIsSelected(true);
-    setVerse(verseText);
+    // setIsSelected(true);
+    // setVerse(verseText);
+    setVerseState(prev => ({
+      ...prev,
+      isSelected: true,
+      verse: verseText,
+      mode: prev.studyStyleState
+    }));
   }
 
   const VerseComponent = (studyStyle) => {
     return (
-      <View>
-
+      <View style={{ flex: 1 }}>
+        <Text>VerseComponent</Text>
         {verseArray.map((choice, index) => (
-            <Pressable key={index} onPress={() => handleCardPress(choice.back)}><Text>{choice.front}</Text></Pressable>
+            <Pressable key={index} onPress={() => handleCardPress(choice.front)}><Text>{choice.front}</Text></Pressable>
            ))
         } 
       </View>
@@ -82,11 +103,23 @@ export default function Verses({translation, group}) {
   }
 
   const handlePress = (studyStyle) => {
-    setStudyStyleState(studyStyle);
-    setMode(studyStyle);
+    setVerseState(prev => ({
+      ...prev,                    
+      studyStyleState: studyStyle,
+      mode: studyStyle
+    }));
   }
+  const backButton = () => {
+    setVerseState(prev => ({
+      ...prev,  
+      isSelected: false,                
+      mode: 'main'
+    }));
+  }
+
   return (
-    <View>
+    <View style={{ flex: 1 }}>
+        <Pressable onPress={backButton}><Text>&larr;</Text></Pressable>
         {pageRenderer()}
     </View>
   );

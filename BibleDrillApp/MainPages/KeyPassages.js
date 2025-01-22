@@ -18,8 +18,14 @@ export default function KeyPassages({translation, group}) {
     setCurrentCard(kpSelected.front);
     setIsMain(false);
   }
+  
+  const backButton = () => {
+    setIsMain(true);
+  }
+
   return (
-    <View>
+    <View style={{ flex: 1 }}>
+        <Pressable onPress={backButton}><Text>&larr;</Text></Pressable>
         {isMain ? 
         kpArray.map((choice, index) => (
               <Pressable key={index} onPress={() => handlePress(choice)}><Text>{choice.front}</Text></Pressable>
@@ -27,7 +33,9 @@ export default function KeyPassages({translation, group}) {
         : <SwipeCard 
         cards={kpArray}
         book={currentCard}
-       isRandom={false}/>
+       isRandom={false}
+       translation={translation} 
+        group={group}/>
         }
     </View>
   );

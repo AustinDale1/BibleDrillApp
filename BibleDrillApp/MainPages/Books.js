@@ -32,18 +32,21 @@ export default function Books({translation, group}) {
                 <Pressable onPress={() => buttonPressed('bubble')}>
                     <Text>Blank Bubbles</Text>
                 </Pressable>
-                <Text>State is {translation}</Text>
             </View>
         )
     } else if(mode == 'flash') {
-		return(<CardSelector/>)
+		return(<CardSelector translation={translation} 
+        group={group}/>)
 	} else if(mode == 'random') {
 		return(<SwipeCard
 		   	cards={bibleBooks}
        	book='Psalms'
-			  isRandom={true}/>)
+			  isRandom={true}
+        translation={translation} 
+        group={group}/>)
 	} else if(mode == 'bubble') {
-		return (<SelectGame book='Psalms'/>)
+		return (<SelectGame book='Psalms' translation={translation} 
+      group={group}/>)
 	} else {
 		return(<Text>Error</Text>)
 	}
@@ -52,6 +55,7 @@ export default function Books({translation, group}) {
   const backButton = () => {
     setMode('main');
   }
+  
   return (
     <View style={{ flex: 1 }}>
         <Pressable onPress={backButton}><Text>&larr;</Text></Pressable>
