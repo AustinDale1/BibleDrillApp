@@ -10,6 +10,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ChildrenVerses from '../StaticFiles/children';
+import YouthVerses from '../StaticFiles/youth';
 
 
 
@@ -25,7 +26,12 @@ export default function Verses({translation, group}) {
     studyStyleState: ''
   });
   const objForSummoning = new ChildrenVerses();
+  const youth = new YouthVerses();
   const verseArray = objForSummoning.getVersesByTranslation(translation);
+
+  const youthVersesArray = youth.getVersesByTranslation(translation);
+  console.log(youthVersesArray);
+
   function pageRenderer() {
     if(verseState.mode == 'main') {
       return (
@@ -87,17 +93,32 @@ export default function Verses({translation, group}) {
       isSelected: true,
       verse: verseText,
       mode: prev.studyStyleState
+
+      // isSelected: false,
+      // verse: 'ok chec',
+      // mode: 'main',
+      // studyStyleState: ''
     }));
   }
+
+// console.log(youthD);
+// console.log(youthB);
 
   const VerseComponent = (studyStyle) => {
     return (
       <View style={{ flex: 1 }}>
-        <Text>VerseComponent</Text>
-        {verseArray.map((choice, index) => (
+        {group == 'Children' ?
+        verseArray.map((choice, index) => (
             <Pressable key={index} onPress={() => handleCardPress(choice.front)}><Text>{choice.front}</Text></Pressable>
            ))
-        } 
+         :
+        <View style={{ flex: 1 }}>
+          {youthVersesArray.map((choice, index) => (
+              <Pressable key={index} onPress={() => handleCardPress(choice.front)}><Text>{choice.front}</Text></Pressable>
+            ))
+          } 
+        </View>
+      }
       </View>
     )
   }

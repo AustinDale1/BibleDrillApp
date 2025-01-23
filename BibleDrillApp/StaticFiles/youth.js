@@ -1,457 +1,554 @@
 class YouthVerses {
     constructor() {
-      this.kjvVerses = ''
 
-      this.kjvIdentifyingVerses = [
+      this.kjvVerses = [
         {
+          type: 'Identifying',
           front: 'Job 19:25',
-          back: 'For I know that my redeemer liveth, and that he shall stand at the latter day upon the earth.'
+          back: 'For I know that my redeemer liveth, and that he shall stand at the latter day upon the earth.',
+          reference: 'Job 19:25'
         },
         {
+          type: 'Identifying',
           front: 'Psalm 139:14',
-          back: 'I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well.'
+          back: 'I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well.',
+          reference: 'Psalm 139:14'
         },
         {
+          type: 'Identifying',
           front: 'Isaiah 40:31',
-          back: 'But they that wait upon the Lord shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.'
+          back: 'But they that wait upon the Lord shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.',
+          reference: 'Isaiah 40:31'
         },
         {
+          type: 'Identifying',
           front: 'Luke 9:23',
-          back: 'And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me.'
+          back: 'And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me.',
+          reference: 'Luke 9:23'
         },
         {
+          type: 'Identifying',
           front: 'Acts 20:32',
-          back: 'And now, brethren, I commend you to God, and to the word of his grace, which is able to build you up, and to give you an inheritance among all them which are sanctified.'
+          back: 'And now, brethren, I commend you to God, and to the word of his grace, which is able to build you up, and to give you an inheritance among all them which are sanctified.',
+          reference: 'Acts 20:32'
         },
         {
+          type: 'Identifying',
           front: 'Romans 6:23',
-          back: 'For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.'
+          back: 'For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.',
+          reference: 'Romans 6:23'
         },
         {
+          type: 'Identifying',
           front: 'Philippians 1:27',
-          back: 'Only let your conversation be as it becometh the gospel of Christ: that whether I come and see you, or else be absent, I may hear of your affairs, that ye stand fast in one spirit, with one mind striving together for the faith of the gospel.'
+          back: 'Only let your conversation be as it becometh the gospel of Christ: that whether I come and see you, or else be absent, I may hear of your affairs, that ye stand fast in one spirit, with one mind striving together for the faith of the gospel.',
+          reference: 'Philippians 1:27'
         },
         {
+          type: 'Identifying',
           front: 'Colossians 2:8',
-          back: 'Beware lest any man spoil you through philosophy and vain deceit, after the tradition of men, after the rudiments of the world, and not after Christ.'
+          back: 'Beware lest any man spoil you through philosophy and vain deceit, after the tradition of men, after the rudiments of the world, and not after Christ.',
+          reference: 'Colossians 2:8'
         },
         {
+          type: 'Identifying',
           front: 'Hebrews 11:6',
-          back: 'But without faith it is impossible to please him: for he that cometh to God must believe that he is, and that he is a rewarder of them that diligently seek him.'
+          back: 'But without faith it is impossible to please him: for he that cometh to God must believe that he is, and that he is a rewarder of them that diligently seek him.',
+          reference: 'Hebrews 11:6'
         },
         {
+          type: 'Identifying',
           front: 'Revelation 1:8',
-          back: 'I am Alpha and Omega, the beginning and the ending, saith the Lord, which is, and which was, and which is to come, the Almighty.'
-        }
-      ];
-      
-      this.kjvDoctrinalVerses = [
+          back: 'I am Alpha and Omega, the beginning and the ending, saith the Lord, which is, and which was, and which is to come, the Almighty.',
+          reference: 'Revelation 1:8'
+        },
         {
+          type: 'Doctrinal',
           front: 'The Christian and Social Concerns',
-          ref: 'Deuteronomy 10:12',
-          back: 'And now, Israel, what doth the Lord thy God require of thee, but to fear the Lord thy God, to walk in all his ways, and to love him, and to serve the Lord thy God with all thy heart and with all thy soul.'
+          back: 'And now, Israel, what doth the Lord thy God require of thee, but to fear the Lord thy God, to walk in all his ways, and to love him, and to serve the Lord thy God with all thy heart and with all thy soul.',
+          reference: 'Deuteronomy 10:12'
         },
         {
+          type: 'Doctrinal',
           front: 'Education',
-          ref: 'Psalm 25:4-5',
-          back: 'Shew me thy ways, O Lord; teach me thy paths. Lead me in thy truth, and teach me: for thou art the God of my salvation; on thee do I wait all the day.'
+          back: 'Shew me thy ways, O Lord; teach me thy paths. Lead me in thy truth, and teach me: for thou art the God of my salvation; on thee do I wait all the day.',
+          reference: 'Psalm 25:4-5'
         },
         {
+          type: 'Doctrinal',
           front: 'Last Things',
-          ref: 'Matthew 24:36',
-          back: 'But of that day and hour knoweth no man, no, not the angels of heaven, but my Father only.'
+          back: 'But of that day and hour knoweth no man, no, not the angels of heaven, but my Father only.',
+          reference: 'Matthew 24:36'
         },
         {
+          type: 'Doctrinal',
           front: 'The Kingdom',
-          ref: 'Mark 1:15',
-          back: 'And saying, The time is fulfilled, and the kingdom of God is at hand: repent ye, and believe the gospel.'
+          back: 'And saying, The time is fulfilled, and the kingdom of God is at hand: repent ye, and believe the gospel.',
+          reference: 'Mark 1:15'
         },
         {
+          type: 'Doctrinal',
           front: 'Cooperation',
-          ref: 'John 17:21',
-          back: 'That they all may be one; as thou, Father, art in me, and I in thee, that they also may be one in us: that the world may believe that thou hast sent me.'
+          back: 'That they all may be one; as thou, Father, art in me, and I in thee, that they also may be one in us: that the world may believe that thou hast sent me.',
+          reference: 'John 17:21'
         },
         {
+          type: 'Doctrinal',
           front: 'Stewardship',
-          ref: 'Acts 20:35',
-          back: 'I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive.'
+          back: 'I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive.',
+          reference: 'Acts 20:35'
         },
         {
+          type: 'Doctrinal',
           front: 'The Lord\'s Supper',
-          ref: '1 Corinthians 11:26',
-          back: 'For as often as ye eat this bread, and drink this cup, ye do shew the Lord\'s death till he come.'
+          back: 'For as often as ye eat this bread, and drink this cup, ye do shew the Lord\'s death till he come.',
+          reference: '1 Corinthians 11:26'
         },
         {
+          type: 'Doctrinal',
           front: 'Grace',
-          ref: 'Ephesians 1:7',
-          back: 'In whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace.'
+          back: 'In whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace.',
+          reference: 'Ephesians 1:7'
         },
         {
+          type: 'Doctrinal',
           front: 'The Lord\'s Day',
-          ref: 'Colossians 3:16',
-          back: 'Let the word of Christ dwell in you richly in all wisdom; teaching and admonishing one another in psalms and hymns and spiritual songs, singing with grace in your hearts to the Lord.'
+          back: 'Let the word of Christ dwell in you richly in all wisdom; teaching and admonishing one another in psalms and hymns and spiritual songs, singing with grace in your hearts to the Lord.',
+          reference: 'Colossians 3:16'
         },
         {
+          type: 'Doctrinal',
           front: 'God',
-          ref: '1 Timothy 2:5',
-          back: 'For there is one God, and one mediator between God and men, the man Christ Jesus.'
-        }
-      ];
-      
-      this.kjvBibleAnswerVerses = [
+          back: 'For there is one God, and one mediator between God and men, the man Christ Jesus.',
+          reference: '1 Timothy 2:5'
+        },
         {
+          type: 'BibleAnswer',
           front: 'What does God say about holiness?',
-          ref: 'Leviticus 20:26',
-          back: 'And ye shall be holy unto me: for I the Lord am holy, and have severed you from other people, that ye should be mine.'
+          back: 'And ye shall be holy unto me: for I the Lord am holy, and have severed you from other people, that ye should be mine.',
+          reference: 'Leviticus 20:26'
         },
         {
+          type: 'BibleAnswer',
           front: 'What happens when God\'s people pray?',
-          ref: '2 Chronicles 7:14',
-          back: 'If my people, which are called by my name, shall humble themselves, and pray, and seek my face, and turn from their wicked ways; then will I hear from heaven, and will forgive their sin, and will heal their land.'
+          back: 'If my people, which are called by my name, shall humble themselves, and pray, and seek my face, and turn from their wicked ways; then will I hear from heaven, and will forgive their sin, and will heal their land.',
+          reference: '2 Chronicles 7:14'
         },
         {
+          type: 'BibleAnswer',
           front: 'What does God say about alcohol?',
-          ref: 'Proverbs 20:1',
-          back: 'Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.'
+          back: 'Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.',
+          reference: 'Proverbs 20:1'
         },
         {
+          type: 'BibleAnswer',
           front: 'How should I treat others?',
-          ref: 'Matthew 25:40',
-          back: 'And the King shall answer and say unto them, Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me.'
+          back: 'And the King shall answer and say unto them, Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me.',
+          reference: 'Matthew 25:40'
         },
         {
+          type: 'BibleAnswer',
           front: 'How can I be saved?',
-          ref: 'Romans 10:13',
-          back: 'For whosoever shall call upon the name of the Lord shall be saved.'
+          back: 'For whosoever shall call upon the name of the Lord shall be saved.',
+          reference: 'Romans 10:13'
         },
         {
+          type: 'BibleAnswer',
           front: 'What can I learn from difficulties?',
-          ref: '2 Corinthians 12:9',
-          back: 'And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness. Most gladly therefore will I rather glory in my infirmities, that the power of Christ may rest upon me.'
+          back: 'And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness. Most gladly therefore will I rather glory in my infirmities, that the power of Christ may rest upon me.',
+          reference: '2 Corinthians 12:9'
         },
         {
+          type: 'BibleAnswer',
           front: 'How can I fight the devil?',
-          ref: 'Ephesians 6:10-11',
-          back: 'Finally, my brethren, be strong in the Lord, and in the power of his might. Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.'
+          back: 'Finally, my brethren, be strong in the Lord, and in the power of his might. Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.',
+          reference: 'Ephesians 6:10-11'
         },
         {
+          type: 'BibleAnswer',
           front: 'What things should I think about?',
-          ref: 'Philippians 4:8',
-          back: 'Finally, brethren, whatsoever things are true, whatsoever things are honest, whatsoever things are just, whatsoever things are pure, whatsoever things are lovely, whatsoever things are of good report; if there be any virtue, and if there be any praise, think on these things.'
+          back: 'Finally, brethren, whatsoever things are true, whatsoever things are honest, whatsoever things are just, whatsoever things are pure, whatsoever things are lovely, whatsoever things are of good report; if there be any virtue, and if there be any praise, think on these things.',
+          reference: 'Philippians 4:8'
         },
         {
+          type: 'BibleAnswer',
           front: 'What is faith?',
-          ref: 'Hebrews 11:1',
-          back: 'Now faith is the substance of things hoped for, the evidence of things not seen.'
+          back: 'Now faith is the substance of things hoped for, the evidence of things not seen.',
+          reference: 'Hebrews 11:1'
         },
         {
+          type: 'BibleAnswer',
           front: 'How long does God\'s Word last?',
-          ref: '1 Peter 1:25',
-          back: 'But the word of the Lord endureth for ever. And this is the word which by the gospel is preached unto you.'
+          back: 'But the word of the Lord endureth for ever. And this is the word which by the gospel is preached unto you.',
+          reference: '1 Peter 1:25'
         }
       ];
 
-      this.esvVerses = ''
-
-      this.esvIdentifyingVerses = [
+      this.esvVerses = [
         {
+          type: 'Identifying',
           front: 'Job 19:25',
-          back: 'For I know that my Redeemer lives, and at the last he will stand upon the earth.'
+          back: 'For I know that my Redeemer lives, and at the last he will stand upon the earth.',
+          reference: 'Job 19:25'
         },
         {
+          type: 'Identifying',
           front: 'Psalm 139:14',
-          back: 'I praise you, for I am fearfully and wonderfully made. Wonderful are your works; my soul knows it very well.'
+          back: 'I praise you, for I am fearfully and wonderfully made. Wonderful are your works; my soul knows it very well.',
+          reference: 'Psalm 139:14'
         },
         {
+          type: 'Identifying',
           front: 'Isaiah 40:31',
-          back: 'But they who wait for the LORD shall renew their strength; they shall mount up with wings like eagles; they shall run and not be weary; they shall walk and not faint.'
+          back: 'But they who wait for the LORD shall renew their strength; they shall mount up with wings like eagles; they shall run and not be weary; they shall walk and not faint.',
+          reference: 'Isaiah 40:31'
         },
         {
+          type: 'Identifying',
           front: 'Luke 9:23',
-          back: 'And he said to all, "If anyone would come after me, let him deny himself and take up his cross daily and follow me.'
+          back: 'And he said to all, "If anyone would come after me, let him deny himself and take up his cross daily and follow me.',
+          reference: 'Luke 9:23'
         },
         {
+          type: 'Identifying',
           front: 'Acts 20:32',
-          back: 'And now I commend you to God and to the word of his grace, which is able to build you up and to give you the inheritance among all those who are sanctified.'
+          back: 'And now I commend you to God and to the word of his grace, which is able to build you up and to give you the inheritance among all those who are sanctified.',
+          reference: 'Acts 20:32'
         },
         {
+          type: 'Identifying',
           front: 'Romans 6:23',
-          back: 'For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord.'
+          back: 'For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord.',
+          reference: 'Romans 6:23'
         },
         {
+          type: 'Identifying',
           front: 'Philippians 1:27',
-          back: 'Only let your manner of life be worthy of the gospel of Christ, so that whether I come and see you or am absent, I may hear of you that you are standing firm in one spirit, with one mind striving side by side for the faith of the gospel.'
+          back: 'Only let your manner of life be worthy of the gospel of Christ, so that whether I come and see you or am absent, I may hear of you that you are standing firm in one spirit, with one mind striving side by side for the faith of the gospel.',
+          reference: 'Philippians 1:27'
         },
         {
+          type: 'Identifying',
           front: 'Colossians 2:8',
-          back: 'See to it that no one takes you captive by philosophy and empty deceit, according to human tradition, according to the elemental spirits of the world, and not according to Christ.'
+          back: 'See to it that no one takes you captive by philosophy and empty deceit, according to human tradition, according to the elemental spirits of the world, and not according to Christ.',
+          reference: 'Colossians 2:8'
         },
         {
+          type: 'Identifying',
           front: 'Hebrews 11:6',
-          back: 'And without faith it is impossible to please him, for whoever would draw near to God must believe that he exists and that he rewards those who seek him.'
+          back: 'And without faith it is impossible to please him, for whoever would draw near to God must believe that he exists and that he rewards those who seek him.',
+          reference: 'Hebrews 11:6'
         },
         {
+          type: 'Identifying',
           front: 'Revelation 1:8',
-          back: 'I am the Alpha and the Omega," says the Lord God, "who is and who was and who is to come, the Almighty.'
-        }
-      ];
-      
-      this.esvDoctrinalVerses = [
+          back: 'I am the Alpha and the Omega," says the Lord God, "who is and who was and who is to come, the Almighty.',
+          reference: 'Revelation 1:8'
+        },
         {
+          type: 'Doctrinal',
           front: 'The Christian and Social Concerns',
-          ref: 'Deuteronomy 10:12',
-          back: '"And now, Israel, what does the LORD your God require of you, but to fear the LORD your God, to walk in all his ways, to love him, to serve the LORD your God with all your heart and with all your soul.'
+          back: '"And now, Israel, what does the LORD your God require of you, but to fear the LORD your God, to walk in all his ways, to love him, to serve the LORD your God with all your heart and with all your soul.',
+          reference: 'Deuteronomy 10:12'
         },
         {
+          type: 'Doctrinal',
           front: 'Education',
-          ref: 'Psalm 25:4-5',
-          back: 'Make me to know your ways, O LORD; teach me your paths. Lead me in your truth and teach me, for you are the God of my salvation; for you I wait all the day long.'
+          back: 'Make me to know your ways, O LORD; teach me your paths. Lead me in your truth and teach me, for you are the God of my salvation; for you I wait all the day long.',
+          reference: 'Psalm 25:4-5'
         },
         {
+          type: 'Doctrinal',
           front: 'Last Things',
-          ref: 'Matthew 24:36',
-          back: 'But concerning that day and hour no one knows, not even the angels of heaven, nor the Son, but the Father only.'
+          back: 'But concerning that day and hour no one knows, not even the angels of heaven, nor the Son, but the Father only.',
+          reference: 'Matthew 24:36'
         },
         {
+          type: 'Doctrinal',
           front: 'The Kingdom',
-          ref: 'Mark 1:15',
-          back: 'And saying, "The time is fulfilled, and the kingdom of God is at hand; repent and believe in the gospel."'
+          back: 'And saying, "The time is fulfilled, and the kingdom of God is at hand; repent and believe in the gospel."',
+          reference: 'Mark 1:15'
         },
         {
+          type: 'Doctrinal',
           front: 'Cooperation',
-          ref: 'John 17:21',
-          back: 'That they may all be one, just as you, Father, are in me, and I in you, that they also may be in us, so that the world may believe that you have sent me.'
+          back: 'That they may all be one, just as you, Father, are in me, and I in you, that they also may be in us, so that the world may believe that you have sent me.',
+          reference: 'John 17:21'
         },
         {
+          type: 'Doctrinal',
           front: 'Stewardship',
-          ref: 'Acts 20:35',
-          back: 'In all things I have shown you that by working hard in this way we must help the weak and remember the words of the Lord Jesus, how he himself said, \'It is more blessed to give than to receive.\'"'
+          back: 'In all things I have shown you that by working hard in this way we must help the weak and remember the words of the Lord Jesus, how he himself said, \'It is more blessed to give than to receive.\'"',
+          reference: 'Acts 20:35'
         },
         {
+          type: 'Doctrinal',
           front: 'The Lord\'s Supper',
-          ref: '1 Corinthians 11:26',
-          back: 'For as often as you eat this bread and drink the cup, you proclaim the Lord\'s death until he comes.'
+          back: 'For as often as you eat this bread and drink the cup, you proclaim the Lord\'s death until he comes.',
+          reference: '1 Corinthians 11:26'
         },
         {
+          type: 'Doctrinal',
           front: 'Grace',
-          ref: 'Ephesians 1:7',
-          back: 'In him we have redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace,'
+          back: 'In him we have redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace,',
+          reference: 'Ephesians 1:7'
         },
         {
+          type: 'Doctrinal',
           front: 'The Lord\'s Day',
-          ref: 'Colossians 3:16',
-          back: 'Let the word of Christ dwell in you richly, teaching and admonishing one another in all wisdom, singing psalms and hymns and spiritual songs, with thankfulness in your hearts to God.'
+          back: 'Let the word of Christ dwell in you richly, teaching and admonishing one another in all wisdom, singing psalms and hymns and spiritual songs, with thankfulness in your hearts to God.',
+          reference: 'Colossians 3:16'
         },
         {
+          type: 'Doctrinal',
           front: 'God',
-          ref: '1 Timothy 2:5',
-          back: 'For there is one God, and there is one mediator between God and men, the man Christ Jesus,'
-        }
-      ];
-      
-      this.esvBibleAnswerVerses = [
+          back: 'For there is one God, and there is one mediator between God and men, the man Christ Jesus,',
+          reference: '1 Timothy 2:5'
+        },
         {
+          type: 'BibleAnswer',
           front: 'What does God say about holiness?',
-          ref: 'Leviticus 20:26',
-          back: 'You shall be holy to me, for I the LORD am holy and have separated you from the peoples, that you should be mine.'
+          back: 'You shall be holy to me, for I the LORD am holy and have separated you from the peoples, that you should be mine.',
+          reference: 'Leviticus 20:26'
         },
         {
+          type: 'BibleAnswer',
           front: 'What happens when God\'s people pray?',
-          ref: '2 Chronicles 7:14',
-          back: 'If my people who are called by my name humble themselves, and pray and seek my face and turn from their wicked ways, then I will hear from heaven and will forgive their sin and heal their land.'
+          back: 'If my people who are called by my name humble themselves, and pray and seek my face and turn from their wicked ways, then I will hear from heaven and will forgive their sin and heal their land.',
+          reference: '2 Chronicles 7:14'
         },
         {
+          type: 'BibleAnswer',
           front: 'What does God say about alcohol?',
-          ref: 'Proverbs 20:1',
-          back: 'Wine is a mocker, strong drink a brawler, and whoever is led astray by it is not wise.'
+          back: 'Wine is a mocker, strong drink a brawler, and whoever is led astray by it is not wise.',
+          reference: 'Proverbs 20:1'
         },
         {
+          type: 'BibleAnswer',
           front: 'How should I treat others?',
-          ref: 'Matthew 25:40',
-          back: 'And the King will answer them, \'Truly, I say to you, as you did it to one of the least of these my brothers, you did it to me.\''
+          back: 'And the King will answer them, \'Truly, I say to you, as you did it to one of the least of these my brothers, you did it to me.\'',
+          reference: 'Matthew 25:40'
         },
         {
+          type: 'BibleAnswer',
           front: 'How can I be saved?',
-          ref: 'Romans 10:13',
-          back: 'For "everyone who calls on the name of the Lord will be saved."'
+          back: 'For "everyone who calls on the name of the Lord will be saved."',
+          reference: 'Romans 10:13'
         },
         {
+          type: 'BibleAnswer',
           front: 'What can I learn from difficulties?',
-          ref: '2 Corinthians 12:9',
-          back: 'But he said to me, "My grace is sufficient for you, for my power is made perfect in weakness." Therefore I will boast all the more gladly of my weaknesses, so that the power of Christ may rest upon me.'
+          back: 'But he said to me, "My grace is sufficient for you, for my power is made perfect in weakness." Therefore I will boast all the more gladly of my weaknesses, so that the power of Christ may rest upon me.',
+          reference: '2 Corinthians 12:9'
         },
         {
+          type: 'BibleAnswer',
           front: 'How can I fight the devil?',
-          ref: 'Ephesians 6:10-11',
-          back: 'Finally, be strong in the Lord and in the strength of his might. Put on the whole armor of God, that you may be able to stand against the schemes of the devil.'
+          back: 'Finally, be strong in the Lord and in the strength of his might. Put on the whole armor of God, that you may be able to stand against the schemes of the devil.',
+          reference: 'Ephesians 6:10-11'
         },
         {
+          type: 'BibleAnswer',
           front: 'What things should I think about?',
-          ref: 'Philippians 4:8',
-          back: 'Finally, brothers, whatever is true, whatever is honorable, whatever is just, whatever is pure, whatever is lovely, whatever is commendable, if there is any excellence, if there is anything worthy of praise, think about these things.'
+          back: 'Finally, brothers, whatever is true, whatever is honorable, whatever is just, whatever is pure, whatever is lovely, whatever is commendable, if there is any excellence, if there is anything worthy of praise, think about these things.',
+          reference: 'Philippians 4:8'
         },
         {
+          type: 'BibleAnswer',
           front: 'What is faith?',
-          ref: 'Hebrews 11:1',
-          back: 'Now faith is the assurance of things hoped for, the conviction of things not seen.'
+          back: 'Now faith is the assurance of things hoped for, the conviction of things not seen.',
+          reference: 'Hebrews 11:1'
         },
         {
+          type: 'BibleAnswer',
           front: 'How long does God\'s Word last?',
-          ref: '1 Peter 1:25',
-          back: '"But the word of the Lord remains forever." And this word is the good news that was preached to you.'
+          back: '"But the word of the Lord remains forever." And this word is the good news that was preached to you.',
+          reference: '1 Peter 1:25'
         }
-      ];
+       ];
 
-      this.csbVerses = '';
-
-      this.csbIdentifyingVerses = [
+       this.csbVerses = [
         {
+          type: 'Identifying',
           front: 'Job 19:25',
-          back: 'But I know that my Redeemer lives, and at the end he will stand on the dust.'
+          back: 'But I know that my Redeemer lives, and at the end he will stand on the dust.',
+          reference: 'Job 19:25'
         },
         {
+          type: 'Identifying',
           front: 'Psalm 139:14',
-          back: 'I will praise you, because I have been remarkably and wondrously made. Your works are wondrous, and I know this very well.'
+          back: 'I will praise you, because I have been remarkably and wondrously made. Your works are wondrous, and I know this very well.',
+          reference: 'Psalm 139:14'
         },
         {
+          type: 'Identifying',
           front: 'Isaiah 40:31',
-          back: 'But those who trust in the LORD will renew their strength; they will soar on wings like eagles; they will run and not become weary, they will walk and not faint.'
+          back: 'But those who trust in the LORD will renew their strength; they will soar on wings like eagles; they will run and not become weary, they will walk and not faint.',
+          reference: 'Isaiah 40:31'
         },
         {
+          type: 'Identifying',
           front: 'Luke 9:23',
-          back: 'Then he said to them all, "If anyone wants to follow after me, let him deny himself, take up his cross daily, and follow me.'
+          back: 'Then he said to them all, "If anyone wants to follow after me, let him deny himself, take up his cross daily, and follow me.',
+          reference: 'Luke 9:23'
         },
         {
+          type: 'Identifying',
           front: 'Acts 20:32',
-          back: 'And now I commit you to God and to the word of his grace, which is able to build you up and to give you an inheritance among all who are sanctified.'
+          back: 'And now I commit you to God and to the word of his grace, which is able to build you up and to give you an inheritance among all who are sanctified.',
+          reference: 'Acts 20:32'
         },
         {
+          type: 'Identifying',
           front: 'Romans 6:23',
-          back: 'For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord.'
+          back: 'For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord.',
+          reference: 'Romans 6:23'
         },
         {
+          type: 'Identifying',
           front: 'Philippians 1:27',
-          back: 'Just one thing: As citizens of heaven, live your life worthy of the gospel of Christ. Then, whether I come and see you or am absent, I will hear about you that you are standing firm in one spirit, in one accord, contending together for the faith of the gospel,'
+          back: 'Just one thing: As citizens of heaven, live your life worthy of the gospel of Christ. Then, whether I come and see you or am absent, I will hear about you that you are standing firm in one spirit, in one accord, contending together for the faith of the gospel,',
+          reference: 'Philippians 1:27'
         },
         {
+          type: 'Identifying',
           front: 'Colossians 2:8',
-          back: 'Be careful that no one takes you captive through philosophy and empty deceit based on human tradition, based on the elements of the world, rather than Christ.'
+          back: 'Be careful that no one takes you captive through philosophy and empty deceit based on human tradition, based on the elements of the world, rather than Christ.',
+          reference: 'Colossians 2:8'
         },
         {
+          type: 'Identifying',
           front: 'Hebrews 11:6',
-          back: 'Now without faith it is impossible to please God, since the one who draws near to him must believe that he exists and that he rewards those who seek him.'
+          back: 'Now without faith it is impossible to please God, since the one who draws near to him must believe that he exists and that he rewards those who seek him.',
+          reference: 'Hebrews 11:6'
         },
         {
+          type: 'Identifying',
           front: 'Revelation 1:8',
-          back: '"I am the Alpha and the Omega," says the Lord God, "the one who is, who was, and who is to come, the Almighty."'
-        }
-      ];
-      
-      this.csbDoctrinalVerses = [
+          back: '"I am the Alpha and the Omega," says the Lord God, "the one who is, who was, and who is to come, the Almighty."',
+          reference: 'Revelation 1:8'
+        },
         {
+          type: 'Doctrinal',
           front: 'The Christian and Social Concerns',
-          ref: 'Deuteronomy 10:12',
-          back: '"And now, Israel, what does the LORD your God ask of you except to fear the LORD your God by walking in all his ways, to love him, and to worship the LORD your God with all your heart and with all your soul?'
+          back: '"And now, Israel, what does the LORD your God ask of you except to fear the LORD your God by walking in all his ways, to love him, and to worship the LORD your God with all your heart and with all your soul?',
+          reference: 'Deuteronomy 10:12'
         },
         {
+          type: 'Doctrinal',
           front: 'Education',
-          ref: 'Psalm 25:4-5',
-          back: 'Make your ways known to me, LORD; teach me your paths. Guide me in your truth and teach me, for you are the God of my salvation; I wait for you all day long.'
+          back: 'Make your ways known to me, LORD; teach me your paths. Guide me in your truth and teach me, for you are the God of my salvation; I wait for you all day long.',
+          reference: 'Psalm 25:4-5'
         },
         {
+          type: 'Doctrinal',
           front: 'Last Things',
-          ref: 'Matthew 24:36',
-          back: '"Now concerning that day and hour no one knows - neither the angels of heaven nor the Son —except the Father alone.'
+          back: '"Now concerning that day and hour no one knows - neither the angels of heaven nor the Son —except the Father alone.',
+          reference: 'Matthew 24:36'
         },
         {
+          type: 'Doctrinal',
           front: 'The Kingdom',
-          ref: 'Mark 1:15',
-          back: '"The time is fulfilled, and the kingdom of God has come near. Repent and believe the good news!"'
+          back: '"The time is fulfilled, and the kingdom of God has come near. Repent and believe the good news!"',
+          reference: 'Mark 1:15'
         },
         {
+          type: 'Doctrinal',
           front: 'Cooperation',
-          ref: 'John 17:21',
-          back: 'May they all be one, as you, Father, are in me, and I am in you. May they also may be in us, so that the world may believe you sent me.'
+          back: 'May they all be one, as you, Father, are in me, and I am in you. May they also may be in us, so that the world may believe you sent me.',
+          reference: 'John 17:21'
         },
         {
+          type: 'Doctrinal',
           front: 'Stewardship',
-          ref: 'Acts 20:35',
-          back: 'In every way I\'ve shown you that it is necessary to help the weak by laboring like this and to remember the words of the Lord Jesus, because he said, \'It is more blessed to give than to receive.\'"'
+          back: 'In every way I\'ve shown you that it is necessary to help the weak by laboring like this and to remember the words of the Lord Jesus, because he said, \'It is more blessed to give than to receive.\'"',
+          reference: 'Acts 20:35'
         },
         {
+          type: 'Doctrinal',
           front: 'The Lord\'s Supper',
-          ref: '1 Corinthians 11:26',
-          back: 'For as often as you eat this bread and drink the cup, you proclaim the Lord\'s death until he comes.'
+          back: 'For as often as you eat this bread and drink the cup, you proclaim the Lord\'s death until he comes.',
+          reference: '1 Corinthians 11:26'
         },
         {
+          type: 'Doctrinal',
           front: 'Grace',
-          ref: 'Ephesians 1:7',
-          back: 'In him we have redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace,'
+          back: 'In him we have redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace,',
+          reference: 'Ephesians 1:7'
         },
         {
+          type: 'Doctrinal',
           front: 'The Lord\'s Day',
-          ref: 'Colossians 3:16',
-          back: 'Let the word of Christ dwell richly among you, in all wisdom teaching and admonishing one another through psalms, hymns, and spiritual songs, singing to God with gratitude in your hearts.'
+          back: 'Let the word of Christ dwell richly among you, in all wisdom teaching and admonishing one another through psalms, hymns, and spiritual songs, singing to God with gratitude in your hearts.',
+          reference: 'Colossians 3:16'
         },
         {
+          type: 'Doctrinal',
           front: 'God',
-          ref: '1 Timothy 2:5',
-          back: 'For there is one God and one mediator between God and humanity, the man Christ Jesus,'
-        }
-      ];
-      
-      this.csbBibleAnswerVerses = [
+          back: 'For there is one God and one mediator between God and humanity, the man Christ Jesus,',
+          reference: '1 Timothy 2:5'
+        },
         {
+          type: 'BibleAnswer',
           front: 'What does God say about holiness?',
-          ref: 'Leviticus 20:26',
-          back: 'You are to be holy to me because I, the Lord, am holy, and I have set you apart from the nations to be mine.'
+          back: 'You are to be holy to me because I, the Lord, am holy, and I have set you apart from the nations to be mine.',
+          reference: 'Leviticus 20:26'
         },
         {
+          type: 'BibleAnswer',
           front: 'What happens when God\'s people pray?',
-          ref: '2 Chronicles 7:14',
-          back: 'and my people, who bear my name, humble themselves, pray and seek my face, and turn from their evil ways, then I will hear from heaven, forgive their sin, and heal their land.'
+          back: 'and my people, who bear my name, humble themselves, pray and seek my face, and turn from their evil ways, then I will hear from heaven, forgive their sin, and heal their land.',
+          reference: '2 Chronicles 7:14'
         },
         {
+          type: 'BibleAnswer',
           front: 'What does God say about alcohol?',
-          ref: 'Proverbs 20:1',
-          back: 'Wine is a mocker, beer is a brawler; whoever goes astray because of them is not wise.'
+          back: 'Wine is a mocker, beer is a brawler; whoever goes astray because of them is not wise.',
+          reference: 'Proverbs 20:1'
         },
         {
+          type: 'BibleAnswer',
           front: 'How should I treat others?',
-          ref: 'Matthew 25:40',
-          back: '"And the King will answer them, \'Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me.\''
+          back: '"And the King will answer them, \'Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me.\'"',
+          reference: 'Matthew 25:40'
         },
         {
+          type: 'BibleAnswer',
           front: 'How can I be saved?',
-          ref: 'Romans 10:13',
-          back: 'For everyone who calls on the name of the Lord will be saved.'
+          back: 'For everyone who calls on the name of the Lord will be saved.',
+          reference: 'Romans 10:13'
         },
         {
+          type: 'BibleAnswer',
           front: 'What can I learn from difficulties?',
-          ref: '2 Corinthians 12:9',
-          back: 'But he said to me, "My grace is sufficient for you, for my power is perfected in weakness." Therefore, I will most gladly boast all the more about my weaknesses, so that Christ\'s power may reside in me.'
+          back: 'But he said to me, "My grace is sufficient for you, for my power is perfected in weakness." Therefore, I will most gladly boast all the more about my weaknesses, so that Christ\'s power may reside in me.',
+          reference: '2 Corinthians 12:9'
         },
         {
+          type: 'BibleAnswer',
           front: 'How can I fight the devil?',
-          ref: 'Ephesians 6:10-11',
-          back: 'Finally, be strengthened by the Lord and by his vast strength. Put on the full armor of God so that you can stand against the schemes of the devil.'
+          back: 'Finally, be strengthened by the Lord and by his vast strength. Put on the full armor of God so that you can stand against the schemes of the devil.',
+          reference: 'Ephesians 6:10-11'
         },
         {
+          type: 'BibleAnswer',
           front: 'What things should I think about?',
-          ref: 'Philippians 4:8',
-          back: 'Finally brothers and sisters, whatever is true, whatever is honorable, whatever is just, whatever is pure, whatever is lovely, whatever is commendable—if there is any moral excellence and if there is anything praiseworthy—dwell on these things.'
+          back: 'Finally brothers and sisters, whatever is true, whatever is honorable, whatever is just, whatever is pure, whatever is lovely, whatever is commendable—if there is any moral excellence and if there is anything praiseworthy—dwell on these things.',
+          reference: 'Philippians 4:8'
         },
         {
+          type: 'BibleAnswer',
           front: 'What is faith?',
-          ref: 'Hebrews 11:1',
-          back: 'Now faith is the reality of what is hoped for, the proof of what is not seen.'
+          back: 'Now faith is the reality of what is hoped for, the proof of what is not seen.',
+          reference: 'Hebrews 11:1'
         },
         {
+          type: 'BibleAnswer',
           front: 'How long does God\'s Word last?',
-          ref: '1 Peter 1:25',
-          back: 'but the word of the Lord endures forever. And this word is the gospel that was proclaimed'
+          back: 'but the word of the Lord endures forever. And this word is the gospel that was proclaimed',
+          reference: '1 Peter 1:25'
         }
-      ];
+       ];
   
 
       this.kjvWordBank = [
