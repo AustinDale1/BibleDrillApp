@@ -11,7 +11,8 @@ import {Card} from 'react-native-paper';
     const [isFlipped, setIsFlipped] = useState(true);
     const [index, setIndex] = useState(0);
     const [currentVerse, setCurrentVerse] = useState('');
-  
+        console.log(verse);
+        
     const removePunctuation = (index) => {
         let tempVerse = versesArray[index].back.replaceAll(',', '');
         tempVerse = tempVerse.replaceAll('.', '');

@@ -14,11 +14,23 @@ C++ neural network ego art generator
 
 theme is dark+ default dark+
 
-
+Should add in streaks, could potentially do leaderboard;
 
 todos
 Add in swipe to next for verse select game
-Add in red flash if they pick the wrong one for both select games, green flash if they get it correct, start over button (same code as reset when swiping to next)
-text input, congrat, play again, next verse
+ALl components should take in verse object instead of just front or back
+Swipe card is done, verse selectgame should be next bc that code sucks to look at
+I think verse is only used in the use effects lol ,what am i doing
 
-do pressable instead of text for select v and b
+
+
+Done
+
+1/23/25
+Swipe Card, Text input, Verse Select all converted to full card object
+VerseSelect Game will now make them add in the verse ref aka fully implemented for youth
+Improved stying of verse tab
+1/22/25
+    do pressable instead of text for select v and b
+    Add in red flash if they pick the wrong one for both select games, green flash if they get it correct, start over button (same code as reset when swiping to next)
+    text input, congrat, play again, next verse

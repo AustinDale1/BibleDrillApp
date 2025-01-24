@@ -115,14 +115,6 @@ export default function App() {
     </NavigationContainer>
 
 
-    // <PaperProvider>
-
-    // <View style={styles.container}>  
-    // {/* <SwipeCard
-    //   onSwipeLeft={() => console.log('Rejected')}
-    //   onSwipeRight={() => console.log('Accepted')}
-    //   cards={cards2}
-    // /> */}
     
     // {/* <TextInputGame verse='ok here we go' /> */}
 

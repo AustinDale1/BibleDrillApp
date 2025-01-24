@@ -40,7 +40,7 @@ export default function Books({translation, group}) {
 	} else if(mode == 'random') {
 		return(<SwipeCard
 		   	cards={bibleBooks}
-       	book='Psalms'
+       	book={bibleBooks[0]}
 			  isRandom={true}
         translation={translation} 
         group={group}/>)

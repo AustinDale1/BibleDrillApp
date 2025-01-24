@@ -29,8 +29,8 @@ export default function CardSelector({translation, group}) {
 	//let bookSelected = 'Genesis';
 
 	const cardSelected = (book) => {
-		setBookSelected(book);
-		bookSelected = book;
+		setBookSelected(bibleBooks[bibleBooks.findIndex(booky => 
+            booky.front.toLowerCase() === book.toLowerCase())]);
 		setIsSelected(true);
 	}
 

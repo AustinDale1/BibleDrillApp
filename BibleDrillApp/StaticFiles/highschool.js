@@ -312,16 +312,16 @@ class HighschoolVerses {
       
   
       this.keyPassages = [
-        { front: 'God\'s Covenant with Abraham', back: 'Genesis 12:1-3'},
-        { front: 'A Shepherd\'s Song', back: 'Psalm 23'},
-        { front: 'The Suffering Servant', back: 'Isaiah 53'},
-        { front: 'The Twelve Apostles', back: 'Matthew 10:2-4'},
-        { front: 'The Resurrection of Jesus',  back: 'Matthew 28'},
-        { front: 'The Parable of the Good Samaritan', back: 'Luke 10:25-37'},
-        { front: 'Jesus\' First Miracle', back: 'John 2:1-11'},
-        { front: 'The Work of the Holy Spirit', back: 'John 16:5-15'},
-        { front: 'The Conversion of Saul', back: 'Acts 9:1-30'},
-        { front: 'The Love Chapter', back: '1 Corinthians 13'},
+        { front: 'God\'s Covenant with Abraham', ref: 'Genesis 12:1-3'},
+        { front: 'A Shepherd\'s Song', ref: 'Psalm 23'},
+        { front: 'The Suffering Servant', ref: 'Isaiah 53'},
+        { front: 'The Twelve Apostles', ref: 'Matthew 10:2-4'},
+        { front: 'The Resurrection of Jesus',  ref: 'Matthew 28'},
+        { front: 'The Parable of the Good Samaritan', ref: 'Luke 10:25-37'},
+        { front: 'Jesus\' First Miracle', ref: 'John 2:1-11'},
+        { front: 'The Work of the Holy Spirit', ref: 'John 16:5-15'},
+        { front: 'The Conversion of Saul', ref: 'Acts 9:1-30'},
+        { front: 'The Love Chapter', ref: '1 Corinthians 13'},
 
       ];
 
