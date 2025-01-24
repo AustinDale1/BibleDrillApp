@@ -9,6 +9,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import ChildrenVerses from "../StaticFiles/children";
 import YouthVerses from "../StaticFiles/youth";
+import HighschoolVerses from "../StaticFiles/highschool";
 
 export default function Verses({ translation, group }) {
     // const [mode, setMode] = useState('main');
@@ -23,17 +24,29 @@ export default function Verses({ translation, group }) {
     });
     const objForSummoning = new ChildrenVerses();
     const youth = new YouthVerses();
+    const hs = new HighschoolVerses();
     const [verseArray, setVerseArray] = useState(objForSummoning.getVersesByTranslation(translation));
 
     // const youthVersesArray = youth.getVersesByTranslation(translation);
 
     useEffect(() => {
-        if(group == "Children") {
+        setVerseState((prev) => ({
+            ...prev,
+            isSelected: false,
+            mode: "main",
+        }));
+        getVerseArray();
+    }, [group, translation]);
+
+    const getVerseArray = () => {
+        if(group == 'Children') {
 			setVerseArray(objForSummoning.getVersesByTranslation(translation));
-		} else if(group == "Youth") {
+		} else if(group == 'Youth') {
 			setVerseArray(youth.getVersesByTranslation(translation));
-		}
-    }, [group]);
+		} else if(group == 'Highschool') {
+            setVerseArray(hs.getVersesByTranslation(translation));
+        }
+    }
 
     function pageRenderer() {
         if (verseState.mode == "main") {
@@ -127,7 +140,7 @@ export default function Verses({ translation, group }) {
         return (
             <View style={styles.container}>
 
-                {group == "Children" ? (
+                {/* {group == "Children" ? ( */}
                     <ScrollView
                     ref={scrollViewRef}
                     contentContainerStyle={styles.scrollContent}
@@ -142,7 +155,7 @@ export default function Verses({ translation, group }) {
                         </Pressable>
                     ))}
                 </ScrollView>
-                ) : (
+                {/* ) : (
                     <ScrollView
                     ref={scrollViewRef}
                     contentContainerStyle={styles.scrollContent}
@@ -159,7 +172,7 @@ export default function Verses({ translation, group }) {
                         ))}
                     </View>
                     </ScrollView>
-                )}
+                )} */}
             </View>
         );
     };
@@ -181,9 +194,11 @@ export default function Verses({ translation, group }) {
 
     return (
         <View style={styles.wrapper}>
+            {verseState.mode != 'main' ?
             <Pressable onPress={backButton} style={styles.backButton}>
                 <Text style={styles.backButtonText}>←</Text>
             </Pressable>
+            : <></>}
             {pageRenderer()}
         </View>
     );

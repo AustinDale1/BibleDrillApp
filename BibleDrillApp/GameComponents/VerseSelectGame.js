@@ -12,6 +12,7 @@ import {
 import { Button } from "react-native-paper";
 import ChildrenVerses from "../StaticFiles/children";
 import YouthVerses from "../StaticFiles/youth";
+import HighschoolVerses from "../StaticFiles/highschool";
 
 const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
     const [text, onChangeText] = React.useState("");
@@ -26,6 +27,7 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
     let [isFinished, setIsFinished] = useState(false);
     var kp = new ChildrenVerses();
     var youth = new YouthVerses();
+    var hs = new HighschoolVerses();
 
     let [buttonColor, setButtonColor] = useState([
         "#f0f0f0",
@@ -38,12 +40,18 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
     let [wordBank, setWordBank] = useState(kp.getWordBank(translation));
 
     useEffect(() => {
+        getWords();
+    }, [group, translation]);
+
+    const getWords = () => {
         if(group == "Children") {
             setWordBank(kp.getWordBank(translation));
         } else if(group == "Youth") {
             setWordBank(youth.getWordBank(translation));
+        } else if(group == "Highschool") {
+            setWordBank(youth.getWordBank(translation));
         }
-    }, [group]);
+    }
 
     const setColor = (isCorrect, wordSelected) => {
         let wordIndex = -1;
@@ -204,7 +212,7 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
                     </Text>
 
                     <Text style={styles.choiceText}>{correctString}</Text>
-                    {isFinished && group != 'Identifying' ? <Text>{verse.ref}</Text> : <></>}
+                    {isFinished ? <Text>{verse.ref}</Text> : <></>}
                 </ScrollView>
             </View>
             {isFinished ? (

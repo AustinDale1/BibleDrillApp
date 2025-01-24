@@ -2,397 +2,400 @@ class HighschoolVerses {
     constructor() {
       this.kjvVerses = [
         {
-          front: 'Genesis 1:31',
-          back: 'And God saw everything that he had made, and, behold, it was very good. And the evening and the morning were the sixth day.'
+          type: 'StepsToSalvation',
+          front: 'John 10:10',
+          back: 'The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly.',
+          reference: 'John 10:10'
         },
         {
-          front: 'Deuteronomy 16:17',
-          back: 'Every man shall give as he is able, according to the blessings of the Lord thy God which he hath given thee.'
+          type: 'StepsToSalvation',
+          front: 'Ecclesiastes 7:20',
+          back: 'For there is not a just man upon earth, that doeth good and sinneth not.',
+          reference: 'Ecclesiastes 7:20'
         },
         {
-          front: 'Joshua 24:24',
-          back: 'And the people said unto Joshua, the Lord our God will we serve, and his voice will we obey.'
+          type: 'StepsToSalvation',
+          front: 'John 14:6',
+          back: 'Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.',
+          reference: 'John 14:6'
         },
         {
-          front: '1 Chronicles 16:9',
-          back: 'Sing unto him, sing psalms unto him, talk ye of all his wondrous works.'
+          type: 'StepsToSalvation',
+          front: 'John 1:12',
+          back: 'But as many as received him, to them gave he power to become the sons of God, even to them that believe on his name.',
+          reference: 'John 1:12'
         },
         {
-          front: 'Psalm 56:3',
-          back: 'What time I am afraid, I will trust in thee.'
+          type: 'StepsToSalvation',
+          front: 'Ephesians 2:8-9',
+          back: 'For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.',
+          reference: 'Ephesians 2:8-9'
         },
         {
-          front: 'Psalm 119:11',
-          back: 'Thy word have I hid in mine heart, that I might not sin against thee.'
+          type: 'StepsToSalvation',
+          front: 'Revelation 3:20',
+          back: 'Behold, I stand at the door, and knock: if any man hear my voice, and open the door, I will come in to him, and will sup with him, and he with me.',
+          reference: 'Revelation 3:20'
         },
         {
-          front: 'Proverbs 22:1',
-          back: 'A good name is rather to be chosen than great riches, and loving favour rather than silver and gold.'
+          type: 'WhatWeBelieve',
+          front: 'Authority of the Scripture',
+          back: 'The law of the Lord is perfect, converting the soul: the testimony of the Lord is sure, making wise the simple. The statutes of the Lord are right, rejoicing the heart: the commandment of the Lord is pure, enlightening the eyes.',
+          reference: 'Psalm 19:7-8'
         },
         {
-          front: 'Isaiah 6:8',
-          back: 'Also I heard the voice of the Lord, saying, Whom shall I send, and who will go for us? Then said I, Here am I; send me.'
+          type: 'WhatWeBelieve',
+          front: 'Who Jesus Is',
+          back: 'He saith unto them, But whom say ye that I am? And Simon Peter answered and said, Thou art the Christ, the Son of the living God.',
+          reference: 'Matthew 16:15-16'
         },
         {
-          front: 'Isaiah 45:5',
-          back: 'I am the Lord, and there is none else, there is no God beside me: I girded thee, though that hast not known me.'
+          type: 'WhatWeBelieve',
+          front: 'Mission on Earth',
+          back: 'Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost: Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world. Amen.',
+          reference: 'Matthew 28:19-20'
         },
         {
-          front: 'Malachi 3:10',
-          back: 'Bring ye all the tithes into the storehouse, that there may be meat in mine house, and prove me now herewith, saith the Lord of Hosts, if I will not open you the windows of heaven, and pour you out a blessing, that there shall not be room enough to receive it.'
+          type: 'WhatWeBelieve',
+          front: 'Sharing Your Faith Story',
+          back: 'But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth.',
+          reference: 'Acts 1:8'
         },
         {
-          front: 'Matthew 28:19-20',
-          back: 'Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost: teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world.'
+          type: 'WhatWeBelieve',
+          front: "Believer's Baptism",
+          back: 'Therefore we are buried with him by baptism into death: that like as Christ was raised up from the dead by the glory of the Father, even so we also should walk in newness of life.',
+          reference: 'Romans 6:4'
         },
         {
-          front: 'Luke 2:52',
-          back: 'And Jesus increased in wisdom and stature, and in favor with God and man.'
+          type: 'WhatWeBelieve',
+          front: 'Obeying Authority',
+          back: 'Let every soul be subject unto the higher powers. For there is no power but of God: the powers that be are ordained of God. Whosoever therefore resisteth the power, resisteth the ordinance of God: and they that resist shall receive to themselves damnation.',
+          reference: 'Romans 13:1-2'
         },
         {
-          front: 'Luke 19:10',
-          back: 'For the Son of man is come to seek and to save that which was lost.'
+          type: 'WhatWeBelieve',
+          front: 'Giving Money',
+          back: 'Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver.',
+          reference: 'II Corinthians 9:7'
         },
         {
-          front: 'John 4:24',
-          back: 'God is a Spirit: and they that worship him must worship him in spirit and in truth.'
+          type: 'WhatWeBelieve',
+          front: 'Security of the Believer',
+          back: 'For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come, Nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.',
+          reference: 'Romans 8:38-39'
         },
         {
-          front: 'John 13:35',
-          back: 'By this shall all men know that ye are my disciples, if ye have love one to another.'
+          type: 'WhatWeBelieve',
+          front: 'Holiness',
+          back: 'Because it is written, Be ye holy; for I am holy.',
+          reference: 'I Peter 1:16'
         },
         {
-          front: 'Acts 4:12',
-          back: 'Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved.'
-        },
-        {
-          front: 'Romans 10:9',
-          back: 'That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved.'
-        },
-        {
-          front: '1 Corinthians 3:16',
-          back: 'Know ye not that ye are the temple of God, and that the Spirit of God dwelleth in you?'
-        },
-        {
-          front: 'Ephesians 2:8',
-          back: 'For by grace are ye saved through faith; and that not of yourselves: it is the gift of God.'
-        },
-        {
-          front: '1 Thessalonians 5:18',
-          back: 'In every thing give thanks: for this is the will of God in Christ Jesus concerning you.'
-        },
-        {
-          front: '1 Timothy 4:12',
-          back: 'Let no man despise thy youth; but be thou an example of the believers, in word, in conversation, in charity, in spirit, in faith, in purity.'
-        },
-        {
-          front: '2 Timothy 2:15',
-          back: 'Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth.'
-        },
-        {
-          front: 'James 1:22',
-          back: 'But be ye doers of the word, and not hearers only, deceiving your own selves.'
-        },
-        {
-          front: '1 Peter 4:9',
-          back: 'Use hospitality one to another without grudging.'
-        },
-        {
-          front: '1 John 4:21',
-          back: 'And this commandment have we from him, that he who loveth God love his brother also.'
+          type: 'WhatWeBelieve',
+          front: 'Relationship to God',
+          back: 'But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvelous light.',
+          reference: 'I Peter 2:9'
         }
       ];
 
       this.esvVerses = [
         {
-          front: 'Genesis 1:31',
-          back: 'And God saw everything that he had made, and behold, it was very good. And there was evening and there was morning, the sixth day.'
+          type: 'StepsToSalvation',
+          front: 'John 10:10',
+          back: 'The thief comes only to steal and kill and destroy. I came that they may have life and have it abundantly.',
+          reference: 'John 10:10'
         },
         {
-          front: 'Deuteronomy 16:17',
-          back: 'Every man shall give as he is able, according to the blessing of the LORD your God that he has given you.'
+          type: 'StepsToSalvation',
+          front: 'Ecclesiastes 7:20',
+          back: 'Surely there is not a righteous man on earth who does good and never sins.',
+          reference: 'Ecclesiastes 7:20'
         },
         {
-          front: 'Joshua 24:24',
-          back: 'And the people said to Joshua, "The LORD our God we will serve, and his voice we will obey."'
+          type: 'StepsToSalvation',
+          front: 'John 14:6',
+          back: 'Jesus said to him, "I am the way, and the truth, and the life. No one comes to the Father except through me."',
+          reference: 'John 14:6'
         },
         {
-          front: '1 Chronicles 16:9',
-          back: 'Sing to him, sing praises to him; tell of all his wondrous works!'
+          type: 'StepsToSalvation',
+          front: 'John 1:12',
+          back: 'But to all who did receive him, who believed in his name, he gave the right to become children of God,',
+          reference: 'John 1:12'
         },
         {
-          front: 'Psalm 56:3',
-          back: 'When I am afraid, I put my trust in you.'
+          type: 'StepsToSalvation',
+          front: 'Ephesians 2:8-9',
+          back: 'For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast.',
+          reference: 'Ephesians 2:8-9'
         },
         {
-          front: 'Psalm 119:11',
-          back: 'I have stored up your word in my heart, that I might not sin against you.'
+          type: 'StepsToSalvation',
+          front: 'Revelation 3:20',
+          back: 'Behold, I stand at the door and knock. If anyone hears my voice and opens the door, I will come in to him and eat with him, and he with me.',
+          reference: 'Revelation 3:20'
         },
         {
-          front: 'Proverbs 22:1',
-          back: 'A good name is to be chosen rather than great riches, and favor is better than silver or gold.'
+          type: 'WhatWeBelieve',
+          front: 'Authority of the Scripture',
+          back: 'The law of the LORD is perfect, reviving the soul; the testimony of the LORD is sure, making wise the simple; the precepts of the LORD are right, rejoicing the heart; the commandment of the LORD is pure, enlightening the eyes;',
+          reference: 'Psalm 19:7-8'
         },
         {
-          front: 'Isaiah 6:8',
-          back: 'And I heard the voice of the Lord saying, "Whom shall I send, and who will go for us?" Then I said, "Here I am! Send me."'
+          type: 'WhatWeBelieve',
+          front: 'Who Jesus Is',
+          back: 'He said to them, "But who do you say that I am?" Simon Peter replied, "You are the Christ, the Son of the living God."',
+          reference: 'Matthew 16:15-16'
         },
         {
-          front: 'Isaiah 45:5',
-          back: 'I am the LORD, and there is no other, besides me there is no God; I equip you, though you do not know me.'
+          type: 'WhatWeBelieve',
+          front: 'Mission on Earth',
+          back: 'Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age."',
+          reference: 'Matthew 28:19-20'
         },
         {
-          front: 'Malachi 3:10',
-          back: 'Bring the full tithe into the storehouse, that there may be food in my house. And thereby put me to the test, says the LORD of hosts, if I will not open the windows of heaven for you and pour down for you a blessing until there is no more need.'
+          type: 'WhatWeBelieve',
+          front: 'Sharing Your Faith Story',
+          back: 'But you will receive power when the Holy Spirit has come upon you, and you will be my witnesses in Jerusalem and in all Judea and Samaria, and to the end of the earth."',
+          reference: 'Acts 1:8'
         },
         {
-          front: 'Matthew 28:19-20',
-          back: 'Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age.'
+          type: 'WhatWeBelieve',
+          front: "Believer's Baptism",
+          back: 'We were buried therefore with him by baptism into death, in order that, just as Christ was raised from the dead by the glory of the Father, we too might walk in newness of life.',
+          reference: 'Romans 6:4'
         },
         {
-          front: 'Luke 2:52',
-          back: 'And Jesus increased in wisdom and in stature and in favor with God and man.'
+          type: 'WhatWeBelieve',
+          front: 'Obeying Authority',
+          back: 'Let every person be subject to the governing authorities. For there is no authority except from God, and those that exist have been instituted by God. Therefore whoever resists the authorities resists what God has appointed, and those who resist will incur judgment.',
+          reference: 'Romans 13:1-2'
         },
         {
-          front: 'Luke 19:10',
-          back: 'For the Son of Man came to seek and to save the lost.'
+          type: 'WhatWeBelieve',
+          front: 'Giving Money',
+          back: 'Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver.',
+          reference: '2 Corinthians 9:7'
         },
         {
-          front: 'John 4:24',
-          back: 'God is spirit, and those who worship him must worship in spirit and truth.'
+          type: 'WhatWeBelieve',
+          front: 'Security of the Believer',
+          back: 'For I am sure that neither death nor life, nor angels nor rulers, nor things present nor things to come, nor powers, nor height nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord.',
+          reference: 'Romans 8:38-39'
         },
         {
-          front: 'John 13:35',
-          back: 'By this all people will know that you are my disciples, if you have love for one another.'
+          type: 'WhatWeBelieve',
+          front: 'Holiness',
+          back: 'Since it is written, "You shall be holy, for I am holy."',
+          reference: '1 Peter 1:16'
         },
         {
-          front: 'Acts 4:12',
-          back: 'And there is salvation in no one else, for there is no other name under heaven given among men by which we must be saved.'
-        },
-        {
-          front: 'Romans 10:9',
-          back: 'Because, if you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved.'
-        },
-        {
-          front: '1 Corinthians 3:16',
-          back: 'Do you not know that you are God\'s temple and that God\'s Spirit dwells in you?'
-        },
-        {
-          front: 'Ephesians 2:8',
-          back: 'For by grace you have been saved through faith. And this is not your own doing; it is the gift of God.'
-        },
-        {
-          front: '1 Thessalonians 5:18',
-          back: 'Give thanks in all circumstances; for this is the will of God in Christ Jesus for you.'
-        },
-        {
-          front: '1 Timothy 4:12',
-          back: 'Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity.'
-        },
-        {
-          front: '2 Timothy 2:15',
-          back: 'Do your best to present yourself to God as one approved, a worker who has no need to be ashamed, rightly handling the word of truth.'
-        },
-        {
-          front: 'James 1:22',
-          back: 'But be doers of the word, and not hearers only, deceiving yourselves.'
-        },
-        {
-          front: '1 Peter 4:9',
-          back: 'Show hospitality to one another without grumbling.'
-        },
-        {
-          front: '1 John 4:21',
-          back: 'And this commandment we have from him: whoever loves God must also love his brother.'
+          type: 'WhatWeBelieve',
+          front: 'Relationship to God',
+          back: 'But you are a chosen race, a royal priesthood, a holy nation, a people for his own possession, that you may proclaim the excellencies of him who called you out of darkness into his marvelous light.',
+          reference: '1 Peter 2:9'
         }
       ];
 
       this.csbVerses = [
         {
-          front: 'Genesis 1:31',
-          back: 'God saw all that He had made, and it was very good indeed. Evening came and then morning: the sixth day.'
+          type: 'StepsToSalvation',
+          front: 'John 10:10',
+          back: 'A thief comes only to steal and kill and destroy. I have come so that they may have life and have it in abundance.',
+          reference: 'John 10:10'
         },
         {
-          front: 'Deuteronomy 16:17',
-          back: 'Everyone must appear with a gift suited to his means, according to the blessing the LORD your God has given you.'
+          type: 'StepsToSalvation',
+          front: 'Ecclesiastes 7:20',
+          back: 'There is certainly no one righteous on the earth who does good and never sins.',
+          reference: 'Ecclesiastes 7:20'
         },
         {
-          front: 'Joshua 24:24',
-          back: 'So the people said to Joshua, "We will worship the LORD our God and obey Him."'
+          type: 'StepsToSalvation',
+          front: 'John 14:6',
+          back: 'Jesus told him, "I am the way, the truth, and the life. No one comes to the Father except through me.',
+          reference: 'John 14:6'
         },
         {
-          front: '1 Chronicles 16:9',
-          back: 'Sing to him; sing praise to him; tell about all his wondrous works!'
+          type: 'StepsToSalvation',
+          front: 'John 1:12',
+          back: 'But to all who did receive him, he gave them the right to be children of God, to those who believe in his name,',
+          reference: 'John 1:12'
         },
         {
-          front: 'Psalm 56:3',
-          back: 'When I am afraid, I will trust in you.'
+          type: 'StepsToSalvation',
+          front: 'Ephesians 2:8-9',
+          back: 'For you are saved by grace through faith, and this is not from yourselves; it is God\'s gift— not from works, so that no one can boast.',
+          reference: 'Ephesians 2:8-9'
         },
         {
-          front: 'Psalm 119:11',
-          back: 'I have treasured your word in my heart so that I may not sin against you.'
+          type: 'StepsToSalvation',
+          front: 'Revelation 3:20',
+          back: 'See! I stand at the door and knock. If anyone hears my voice and opens the door, I will come in to him and eat with him, and he with me.',
+          reference: 'Revelation 3:20'
         },
         {
-          front: 'Proverbs 22:1',
-          back: 'A good name is to be chosen over great wealth; favor is better than silver and gold.'
+          type: 'WhatWeBelieve',
+          front: 'Authority of the Scripture',
+          back: 'The instruction of the Lord is perfect, renewing one\'s life; the testimony of the Lord is trustworthy, making the inexperienced wise. The precepts of the Lord are right, making the heart glad; the command of the Lord is radiant, making the eyes light up.',
+          reference: 'Psalm 19:7-8'
         },
         {
-          front: 'Isaiah 6:8',
-          back: 'Then I heard the voice of the Lord asking: Who should I send? Who will go for us? I said: Here I am. Send me.'
+          type: 'WhatWeBelieve',
+          front: 'Who Jesus Is',
+          back: '"But you," he asked them, "who do you say that I am?" Simon Peter answered, "You are the Messiah, the Son of the living God."',
+          reference: 'Matthew 16:15-16'
         },
         {
-          front: 'Isaiah 45:5',
-          back: 'I am the LORD, and there is no other; there is no God but me. I will strengthen you, though you do not know me.'
+          type: 'WhatWeBelieve',
+          front: 'Mission on Earth',
+          back: 'Go, therefore, and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe everything I have commanded you. And remember,I am with you always, to the end of the age."',
+          reference: 'Matthew 28:19-20'
         },
         {
-          front: 'Malachi 3:10',
-          back: 'Bring the full tenth into the storehouse so that there may be food in my house. Test me in this way," says the LORD of armies. "See if I will not open the floodgates of heaven and pour out a blessing for you without measure.'
+          type: 'WhatWeBelieve',
+          front: 'Sharing Your Faith Story',
+          back: 'But you will receive power when the Holy Spirit has come on you, and you will be my witnesses in Jerusalem, in all Judea and Samaria, and to the end of the earth."',
+          reference: 'Acts 1:8'
         },
         {
-          front: 'Matthew 28:19-20',
-          back: 'Go, therefore, and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe everything I have commanded you. And remember, I am with you always, to the end of the age.'
+          type: 'WhatWeBelieve',
+          front: "Believer's Baptism",
+          back: 'Therefore we were buried with him by baptism into death, in order that, just as Christ was raised from the dead by the glory of the Father, so we too may walk in newness of life.',
+          reference: 'Romans 6:4'
         },
         {
-          front: 'Luke 2:52',
-          back: 'And Jesus increased in wisdom and stature, and in favor with God and with people.'
+          type: 'WhatWeBelieve',
+          front: 'Obeying Authority',
+          back: 'Let everyone submit to the governing authorities, since there is no authority except from God, and the authorities that exist are instituted by God. So then, the one who resists the authority is opposing God\'s command, and those who oppose it will bring judgment on themselves.',
+          reference: 'Romans 13:1-2'
         },
         {
-          front: 'Luke 19:10',
-          back: 'For the Son of Man has come to seek and to save the lost.'
+          type: 'WhatWeBelieve',
+          front: 'Giving Money',
+          back: 'Each person should do as he has decided in his heart — not reluctantly or out of compulsion, since God loves a cheerful giver.',
+          reference: '2 Corinthians 9:7'
         },
         {
-          front: 'John 4:24',
-          back: 'God is spirit, and those who worship him must worship in spirit and truth.'
+          type: 'WhatWeBelieve',
+          front: 'Security of the Believer',
+          back: 'For I am persuaded that neither death nor life, nor angels nor rulers, nor things present nor things to come, nor powers, nor height nor depth, nor any other created thing will be able to separate us from the love of God that is in Christ Jesus our Lord.',
+          reference: 'Romans 8:38-39'
         },
         {
-          front: 'John 13:35',
-          back: 'By this everyone will know that you are my disciples, if you love one another.'
+          type: 'WhatWeBelieve',
+          front: 'Holiness',
+          back: 'for it is written, "Be holy, because I am holy."',
+          reference: '1 Peter 1:16'
         },
         {
-          front: 'Acts 4:12',
-          back: 'There is salvation in no one else, for there is no other name under heaven given to people by which we must be saved.'
-        },
-        {
-          front: 'Romans 10:9',
-          back: 'If you confess with your mouth, "Jesus is Lord," and believe in your heart that God raised him from the dead, you will be saved.'
-        },
-        {
-          front: '1 Corinthians 3:16',
-          back: 'Don\'t you yourselves know that you are God\'s temple and that the Spirit of God lives in you?'
-        },
-        {
-          front: 'Ephesians 2:8',
-          back: 'For you are saved by grace through faith, and this is not from yourselves; it is God\'s gift'
-        },
-        {
-          front: '1 Thessalonians 5:18',
-          back: 'Give thanks in everything; for this is God\'s will for you in Christ Jesus.'
-        },
-        {
-          front: '1 Timothy 4:12',
-          back: 'Don\'t let anyone despise your youth, but set an example for the believers in speech, in conduct, in love, in faith, and in purity.'
-        },
-        {
-          front: '2 Timothy 2:15',
-          back: 'Be diligent to present yourself to God as one approved, a worker who doesn\'t need to be ashamed, correctly teaching the word of truth.'
-        },
-        {
-          front: 'James 1:22',
-          back: 'But be doers of the word and not hearers only, deceiving yourselves.'
-        },
-        {
-          front: '1 Peter 4:9',
-          back: 'Be hospitable to one another without complaining.'
-        },
-        {
-          front: '1 John 4:21',
-          back: 'And we have this command from him: The one who loves God must also love his brother and sister.'
+          type: 'WhatWeBelieve',
+          front: 'Relationship to God',
+          back: 'But you are a chosen race, a royal priesthood, a holy nation, a people for his possession, so that you may proclaim the praises of the one who called you out of darkness into his marvelous light.',
+          reference: '1 Peter 2:9'
         }
-      ]
+      ];
   
       
   
-      this.keyPassages = [
-        { front: 'God\'s Covenant with Abraham', ref: 'Genesis 12:1-3'},
-        { front: 'A Shepherd\'s Song', ref: 'Psalm 23'},
-        { front: 'The Suffering Servant', ref: 'Isaiah 53'},
-        { front: 'The Twelve Apostles', ref: 'Matthew 10:2-4'},
-        { front: 'The Resurrection of Jesus',  ref: 'Matthew 28'},
-        { front: 'The Parable of the Good Samaritan', ref: 'Luke 10:25-37'},
-        { front: 'Jesus\' First Miracle', ref: 'John 2:1-11'},
-        { front: 'The Work of the Holy Spirit', ref: 'John 16:5-15'},
-        { front: 'The Conversion of Saul', ref: 'Acts 9:1-30'},
-        { front: 'The Love Chapter', ref: '1 Corinthians 13'},
-
+      this.kjvKeyPassages = [
+        { front: 'A Psalm of Praise', back: `Make a joyful noise unto the Lord, all ye lands!
+          Serve the Lord with gladness; come before His presence with singing!
+          Know ye that the Lord, He is God; it is He that hath made us, and not we ourselves. We are His people, and the sheep of His pasture.
+          Enter into His gates with thanksgiving, and into His courts with praise! Be thankful unto Him, and bless His name!
+          For the Lord is good, His mercy is everlasting; and His truth endureth to all generations.`, ref: 'Psalm 100'},
+        { front: 'God Knows Me', back: `The Lord is my shepherd; I shall not want.
+          He maketh me to lie down in green pastures; He leadeth me beside the still waters.
+          He restoreth my soul; He leadeth me in the paths of righteousness for His name’s sake.
+          Yea, though I walk through the valley of the shadow of death, I will fear no evil; for Thou art with me; Thy rod and Thy staff, they comfort me.
+          Thou preparest a table before me in the presence of mine enemies; Thou anointest my head with oil; my cup runneth over.
+          Surely goodness and mercy shall follow me all the days of my life; and I will dwell in the house of the Lord for ever.`, ref: 'Psalm 139:1-8'},
+        { front: 'The Beatitudes', back: '', ref: 'Matthew 5:3-12'},
+        { front: 'The First Lord\'s Supper', back: '', ref: 'Luke 22:17-20'},
+        { front: 'A Christian\'s Armor',  back: '', ref: 'Ephesians 6:13-18'},
+        { front: 'Listening and Doing', back: '', ref: 'James 1:19-22'},
       ];
 
-      this.kjvWordBank = [
-          'a', 'able', 'afraid', 'all', 'also', 'alway', 'am', 'among', 'and', 'another', 
-          'approved', 'are', 'ashamed', 'be', 'before', 'behold', 'believe', 'believers', 
-          'beside', 'blessing', 'blessings', 'brother', 'but', 'by', 'charity', 'chosen', 
-          'Christ', 'come', 'commanded', 'commandment', 'concerning', 'confess', 'conversation', 
-          'dead', 'deceiving', 'disciples', 'dividing', 'doers', 'dwelleth', 'else', 'evening', 
-          'every', 'everything', 'example', 'faith', 'father', 'favor', 'for', 'from', 'ghost', 
-          'give', 'given', 'go', 'God', 'good', 'grace', 'grudging', 'had', 'hast', 'have', 
-          'he', 'hearers', 'heart', 'heaven', 'here', 'hid', 'him', 'his', 'hospitality', 
-          'hosts', 'house', 'i', 'if', 'in', 'increased', 'is', 'it', 'Jesus', 'Joshua', 
-          'know', 'known', 'let', 'lo', 'Lord', 'lost', 'love', 'loveth', 'loving', 'made', 
-          'man', 'may', 'me', 'meat', 'men', 'might', 'mine', 'morning', 'mouth', 'must', 
-          'name', 'nations', 'needeth', 'neither', 'no', 'none', 'not', 'now', 'obey', 'observe', 
-          'of', 'one', 'only', 'open', 'other', 'our', 'out', 'own', 'pour', 'prove', 'psalms', 
-          'purity', 'raised', 'rather', 'receive', 'riches', 'rightly', 'room', 'said', 'saith', 
-          'salvation', 'saved', 'saw', 'seek', 'send', 'serve', 'shall', 'shalt', 'shew', 'silver', 
-          'sin', 'sing', 'son', 'spirit', 'stature', 'storehouse', 'study', 'such', 'talk', 'teach', 
-          'teaching', 'than', 'that', 'the', 'thee', 'thereby', 'therefore', 'they', 'things', 'tithes', 
-          'thou', 'through', 'thy', 'time', 'to', 'trust', 'truth', 'unto', 'up', 'use', 'very', 
-          'voice', 'was', 'we', 'were', 'what', 'whatsoever', 'when', 'whereby', 'wherewith', 'which', 
-          'who', 'whom', 'will', 'windows', 'wisdom', 'with', 'without', 'word', 'workman', 'works', 
-          'wondrous', 'ye', 'you', 'young', 'your', 'yourselves', 'youth'
+      this.esvKeyPassages = [
+        { front: 'God\'s Covenant with Abraham', back: `Make a joyful noise to the Lord, all the earth! Serve the Lord with gladness!
+          Come into his presence with singing! Know that the Lord, he is God! It is he who made us, and we are his;
+          we are his people, and the sheep of his pasture. Enter his gates with thanksgiving, and his courts with praise!
+          Give thanks to him; bless his name! For the Lord is good; his steadfast love endures forever,
+          and his faithfulness to all generations.`, ref: 'Genesis 12:1-3'},
+        { front: 'A Shepherd\'s Song', back: `The Lord is my shepherd; I shall not want.
+          He makes me lie down in green pastures. He leads me beside still waters.
+          He restores my soul. He leads me in paths of righteousness for his name's sake.
+          Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me; your rod and your staff, they comfort me.
+          You prepare a table before me in the presence of my enemies; you anoint my head with oil; my cup overflows.
+          Surely goodness and mercy shall follow me all the days of my life, and I shall dwell in the house of the Lord forever.`, ref: 'Psalm 23'},
+        { front: 'The Suffering Servant', back: '', ref: 'Isaiah 53'},
+        { front: 'The Twelve Apostles', back: '', ref: 'Matthew 10:2-4'},
+        { front: 'The Resurrection of Jesus',  back: '', ref: 'Matthew 28'},
+        { front: 'The Parable of the Good Samaritan', back: '', ref: 'Luke 10:25-37'},
+        { front: 'Jesus\' First Miracle', back: '', ref: 'John 2:1-11'},
+        { front: 'The Work of the Holy Spirit', back: '', ref: 'John 16:5-15'},
+        { front: 'The Conversion of Saul', back: '', ref: 'Acts 9:1-30'},
+        { front: 'The Love Chapter', back: '', ref: '1 Corinthians 13'},
       ];
+
+      this.csbKeyPassages = [
+        { front: 'God\'s Covenant with Abraham', back: `Let the whole earth shout triumphantly to the Lord!
+          Serve the Lord with gladness; come before him with joyful songs. Acknowledge that the Lord is God.
+          He made us, and we are his-his people, the sheep of his pasture.
+          Enter his gates with thanksgiving
+          and his courts with praise.
+          Give thanks to him and bless his name.
+          For the Lord is good, and his faithful love endures forever;
+          his faithfulness, through all generations.`, ref: 'Genesis 12:1-3'},
+        { front: 'A Shepherd\'s Song', back: `The Lord is my shepherd; I have what I need.
+          He lets me lie down in green pastures; he leads me beside quiet waters.
+          He renews my life; he leads me along the right paths for his name’s sake.
+          Even when I go through the darkest valley, I fear no danger, for you are with me; your rod and your staff—they comfort me.
+          You prepare a table before me in the presence of my enemies; you anoint my head with oil; my cup overflows.
+          Only goodness and faithful love will pursue me all the days of my life, and I will dwell in the house of the Lord as long as I live.`, ref: 'Psalm 23'},
+        { front: 'The Suffering Servant', back: '', ref: 'Isaiah 53'},
+        { front: 'The Twelve Apostles', back: '', ref: 'Matthew 10:2-4'},
+        { front: 'The Resurrection of Jesus',  back: '', ref: 'Matthew 28'},
+        { front: 'The Parable of the Good Samaritan', back: '', ref: 'Luke 10:25-37'},
+        { front: 'Jesus\' First Miracle', back: '', ref: 'John 2:1-11'},
+        { front: 'The Work of the Holy Spirit', back: '', ref: 'John 16:5-15'},
+        { front: 'The Conversion of Saul', back: '', ref: 'Acts 9:1-30'},
+        { front: 'The Love Chapter', back: '', ref: '1 Corinthians 13'},
+      ];
+
+      //combine these with key passages and verses
+      this.kjvWordBank = [];
 
       this.esvWordBank = [
-        'a', 'able', 'according', 'age', 'afraid', 'all', 'always', 'am', 'among', 'an', 'and',
-        'another', 'approved', 'are', 'ashamed', 'baptizing', 'be', 'because', 'behold', 'believe',
-        'believers', 'best', 'better', 'besides', 'blessing', 'bring', 'brother', 'but', 'by', 'came',
-        'Christ', 'circumstances', 'commandment', 'commanded', 'conduct', 'confess', 'dead', 'deceiving',
-        'despise', 'disciples', 'do', 'doers', 'doing', 'down', 'dwells', 'else', 'end', 'equip',
-        'evening', 'every', 'everything', 'example', 'faith', 'father', 'favor', 'food', 'for', 'from',
-        'full', 'gift', 'give', 'given', 'go', 'God', 'gods', 'good', 'grace', 'great', 'grumbling',
-        'handling', 'has', 'have', 'he', 'heard', 'hearers', 'heart', 'heaven', 'here', 'him', 'his',
-        'holy', 'hospitality', 'hosts', 'house', 'i', 'if', 'in', 'increased', 'into', 'is', 'it',
-        'Jesus', 'Joshua', 'know', 'let', 'Lord', 'lost', 'love', 'loves', 'made', 'make', 'man',
-        'may', 'me', 'men', 'might', 'more', 'morning', 'mouth', 'must', 'name', 'nations', 'need',
-        'no', 'not', 'now', 'obey', 'observe', 'of', 'one', 'only', 'open', 'or', 'other', 'our',
-        'own', 'people', 'pour', 'praises', 'present', 'put', 'purity', 'raised', 'rather', 'riches',
-        'rightly', 'said', 'salvation', 'save', 'saved', 'saw', 'says', 'seek', 'send', 'serve', 'set',
-        'show', 'silver', 'sin', 'sing', 'son', 'spirit', 'stature', 'stored', 'storehouse', 'teach',
-        'teaching', 'tell', 'temple', 'test', 'than', 'thanks', 'that', 'the', 'thereby', 'therefore',
-        'there', 'this', 'though', 'through', 'tithe', 'to', 'truth', 'trust', 'under', 'until', 'up',
-        'us', 'voice', 'was', 'we', 'when', 'which', 'who', 'whoever', 'whom', 'will', 'windows',
-        'wisdom', 'with', 'without', 'word', 'worker', 'works', 'worship', 'wondrous', 'you', 'young',
-        'your', 'yourself', 'yourselves', 'youth'
+        'a', 'able', 'about', 'above', 'according', 'all', 'am', 'and', 'angels', 
+        'anyone', 'anything', 'appointed', 'are', 'as', 'at', 'authority', 
+        'authorities', 'baptism', 'baptizing', 'behold', 'believer', 'believers', 
+        'buried', 'but', 'by', 'called', 'children', 'christ', 'christ', 'church', 
+        'come', 'commanded', 'commandment', 'compulsion', 'come', 'comes', 
+        'creation', 'christ', 'cheerful', 'darkness', 'dead', 'death', 'decided', 
+        'disciples', 'door', 'does', 'doing', 'eat', 'earth', 'end', 'enlightening', 
+        'except', 'exist', 'eyes', 'faith', 'father', 'for', 'from', 'gift', 'give', 
+        'glory', 'god', 'governing', 'good', 'grace', 'have', 'heart', 'height', 
+        'him', 'holy', 'holy', 'i', 'if', 'in', 'incur', 'instituted', 'into', 'is', 
+        'it', 'jesus', 'jerusalem', 'john', 'judgment', 'kill', 'law', 'let', 'life', 
+        'light', 'living', 'lord', 'loves', 'make', 'making', 'man', 'marvelous', 
+        'may', 'me', 'might', 'money', 'my', 'name', 'nation', 'nations', 'neither', 
+        'newness', 'no', 'not', 'now', 'observe', 'of', 'on', 'one', 'only', 'open', 
+        'order', 'our', 'own', 'paul', 'people', 'perfect', 'peter', 'person', 
+        'possess', 'possession', 'power', 'powers', 'precepts', 'present', 
+        'priest', 'priesthood', 'pure', 'race', 'raised', 'receive', 'resists', 
+        'reviving', 'right', 'righteous', 'royal', 'rulers', 'said', 'salvation', 
+        'samaria', 'save', 'saved', 'say', 'scripture', 'separate', 'shall', 
+        'simple', 'sin', 'sins', 'so', 'soul', 'spirit', 'stand', 'steal', 'subject', 
+        'sure', 'teach', 'teaching', 'testimony', 'that', 'the', 'their', 'them', 
+        'therefore', 'they', 'thief', 'things', 'this', 'through', 'to', 'too', 
+        'truth', 'under', 'us', 'voice', 'walk', 'way', 'were', 'what', 'when', 
+        'who', 'whoever', 'with', 'wisdom', 'wise', 'will', 'witnesses', 'works', 
+        'you', 'your'
       ];
 
-      this.csbWordBank = [
-        'a', 'about', 'according', 'afraid', 'age', 'all', 'also', 'always', 'am', 'and',
-        'another', 'anyone', 'appear', 'approved', 'are', 'armies', 'ashamed', 'asking', 'baptizing',
-        'be', 'believers', 'believe', 'better', 'blessing', 'bring', 'brother', 'but', 'by', 'came',
-        'Christ', 'chosen', 'command', 'commanded', 'complaining', 'conduct', 'confess', 'correctly',
-        'dead', 'deceiving', 'despise', 'diligent', 'disciples', 'doers', 'don\'t', 'end', 'evening',
-        'every', 'everyone', 'everything', 'example', 'faith', 'father', 'favor', 'floodgates', 'food',
-        'for', 'from', 'full', 'gift', 'give', 'given', 'go', 'God', 'gold', 'good', 'grace', 'great',
-        'has', 'have', 'he', 'heard', 'hearers', 'heart', 'heaven', 'here', 'him', 'his', 'holy',
-        'hospitable', 'house', 'i', 'if', 'in', 'increased', 'indeed', 'into', 'is', 'it', 'Jesus',
-        'Joshua', 'know', 'let', 'lives', 'Lord', 'lost', 'love', 'loves', 'made', 'make', 'may',
-        'me', 'means', 'measure', 'morning', 'mouth', 'must', 'name', 'nations', 'need', 'no', 'not',
-        'nothing', 'now', 'obey', 'observe', 'of', 'one', 'only', 'open', 'other', 'our', 'out',
-        'over', 'people', 'pour', 'praise', 'present', 'raised', 'remember', 'said', 'salvation',
-        'save', 'saved', 'saw', 'says', 'seek', 'send', 'set', 'should', 'silver', 'sin', 'sing',
-        'sister', 'so', 'son', 'spirit', 'stature', 'strengthen', 'suited', 'teaching', 'tell',
-        'temple', 'tenth', 'test', 'than', 'thanks', 'that', 'the', 'their', 'them', 'then', 'there',
-        'this', 'though', 'through', 'to', 'treasured', 'trust', 'truth', 'under', 'voice', 'way',
-        'we', 'wealth', 'when', 'who', 'will', 'wisdom', 'with', 'without', 'word', 'worker',
-        'works', 'worship', 'wondrous', 'you', 'your', 'yourself', 'yourselves', 'youth'
-      ];
+      this.csbWordBank = [];
 
     }
   
@@ -409,8 +412,17 @@ class HighschoolVerses {
       }
     }
   
-    getKeyPassages() {
-      return this.keyPassages;
+    getKeyPassages(translation) {
+      switch (translation.toLowerCase()) {
+        case 'kjv':
+          return this.kjvKeyPassages;
+        case 'esv':
+          return this.esvKeyPassages;
+        case 'csb':
+          return this.csbKeyPassages;
+        default:
+          return ['fml'];
+      }
     }
 
     getWordBank(translation) {
