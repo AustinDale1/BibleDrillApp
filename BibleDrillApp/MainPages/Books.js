@@ -58,13 +58,23 @@ export default function Books({translation, group}) {
   
   return (
     <View style={{ flex: 1 }}>
-        <Pressable onPress={backButton}><Text>&larr;</Text></Pressable>
+        {mode != 'main' ?
+          <Pressable onPress={backButton} style={styles.backButton}>
+              <Text style={styles.backButtonText}>←</Text>
+          </Pressable>
+          : <></>}
         {pageRenderer()}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  backButton: {
+    marginBottom: 10,
+    alignSelf: 'flex-start',
+  },
+  backButtonText: {
+      fontSize: 24,
+      fontWeight: 'bold',
   },
 });

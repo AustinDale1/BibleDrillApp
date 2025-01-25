@@ -318,29 +318,25 @@ class HighschoolVerses {
       ];
 
       this.esvKeyPassages = [
-        { front: 'God\'s Covenant with Abraham', back: `Make a joyful noise to the Lord, all the earth! Serve the Lord with gladness!
+        { front: 'A Psalm of Praise', back: `Make a joyful noise to the Lord, all the earth! Serve the Lord with gladness!
           Come into his presence with singing! Know that the Lord, he is God! It is he who made us, and we are his;
           we are his people, and the sheep of his pasture. Enter his gates with thanksgiving, and his courts with praise!
           Give thanks to him; bless his name! For the Lord is good; his steadfast love endures forever,
           and his faithfulness to all generations.`, ref: 'Genesis 12:1-3'},
-        { front: 'A Shepherd\'s Song', back: `The Lord is my shepherd; I shall not want.
+        { front: 'God Knows Me', back: `The Lord is my shepherd; I shall not want.
           He makes me lie down in green pastures. He leads me beside still waters.
           He restores my soul. He leads me in paths of righteousness for his name's sake.
           Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me; your rod and your staff, they comfort me.
           You prepare a table before me in the presence of my enemies; you anoint my head with oil; my cup overflows.
           Surely goodness and mercy shall follow me all the days of my life, and I shall dwell in the house of the Lord forever.`, ref: 'Psalm 23'},
-        { front: 'The Suffering Servant', back: '', ref: 'Isaiah 53'},
-        { front: 'The Twelve Apostles', back: '', ref: 'Matthew 10:2-4'},
-        { front: 'The Resurrection of Jesus',  back: '', ref: 'Matthew 28'},
-        { front: 'The Parable of the Good Samaritan', back: '', ref: 'Luke 10:25-37'},
-        { front: 'Jesus\' First Miracle', back: '', ref: 'John 2:1-11'},
-        { front: 'The Work of the Holy Spirit', back: '', ref: 'John 16:5-15'},
-        { front: 'The Conversion of Saul', back: '', ref: 'Acts 9:1-30'},
-        { front: 'The Love Chapter', back: '', ref: '1 Corinthians 13'},
+          { front: 'The Beatitudes', back: '', ref: 'Matthew 5:3-12'},
+          { front: 'The First Lord\'s Supper', back: '', ref: 'Luke 22:17-20'},
+          { front: 'A Christian\'s Armor',  back: '', ref: 'Ephesians 6:13-18'},
+          { front: 'Listening and Doing', back: '', ref: 'James 1:19-22'},
       ];
 
       this.csbKeyPassages = [
-        { front: 'God\'s Covenant with Abraham', back: `Let the whole earth shout triumphantly to the Lord!
+        { front: 'A Psalm of Praise', back: `Let the whole earth shout triumphantly to the Lord!
           Serve the Lord with gladness; come before him with joyful songs. Acknowledge that the Lord is God.
           He made us, and we are his-his people, the sheep of his pasture.
           Enter his gates with thanksgiving
@@ -348,20 +344,16 @@ class HighschoolVerses {
           Give thanks to him and bless his name.
           For the Lord is good, and his faithful love endures forever;
           his faithfulness, through all generations.`, ref: 'Genesis 12:1-3'},
-        { front: 'A Shepherd\'s Song', back: `The Lord is my shepherd; I have what I need.
+        { front: 'God Knows Me', back: `The Lord is my shepherd; I have what I need.
           He lets me lie down in green pastures; he leads me beside quiet waters.
           He renews my life; he leads me along the right paths for his name’s sake.
           Even when I go through the darkest valley, I fear no danger, for you are with me; your rod and your staff—they comfort me.
           You prepare a table before me in the presence of my enemies; you anoint my head with oil; my cup overflows.
           Only goodness and faithful love will pursue me all the days of my life, and I will dwell in the house of the Lord as long as I live.`, ref: 'Psalm 23'},
-        { front: 'The Suffering Servant', back: '', ref: 'Isaiah 53'},
-        { front: 'The Twelve Apostles', back: '', ref: 'Matthew 10:2-4'},
-        { front: 'The Resurrection of Jesus',  back: '', ref: 'Matthew 28'},
-        { front: 'The Parable of the Good Samaritan', back: '', ref: 'Luke 10:25-37'},
-        { front: 'Jesus\' First Miracle', back: '', ref: 'John 2:1-11'},
-        { front: 'The Work of the Holy Spirit', back: '', ref: 'John 16:5-15'},
-        { front: 'The Conversion of Saul', back: '', ref: 'Acts 9:1-30'},
-        { front: 'The Love Chapter', back: '', ref: '1 Corinthians 13'},
+          { front: 'The Beatitudes', back: '', ref: 'Matthew 5:3-12'},
+          { front: 'The First Lord\'s Supper', back: '', ref: 'Luke 22:17-20'},
+          { front: 'A Christian\'s Armor',  back: '', ref: 'Ephesians 6:13-18'},
+          { front: 'Listening and Doing', back: '', ref: 'James 1:19-22'},
       ];
 
       //combine these with key passages and verses

@@ -25,11 +25,15 @@ Done
 
 
 
-
+1/25/25
+Get text input working for everything, try two text inputs
+and deleting whitespace
 1/24/25
 Get VerseSelectGame working for all groups and translations
 Get SwipeCard working for all groups and translations
+Get key passages working for highschool, minus text input
 Highschool verses and key passages in X
+
 1/23/25
 Swipe Card, Text input, Verse Select all converted to full card object
 VerseSelect Game will now make them add in the verse ref aka fully implemented for youth

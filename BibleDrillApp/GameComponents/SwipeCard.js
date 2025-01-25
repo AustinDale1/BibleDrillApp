@@ -14,7 +14,6 @@ const SwipeExample = ( {cards, book, isRandom, translation, group} ) => {
     let i = 0
 
     const handleFlip = () => {
-        console.log('we flipping');
         setIsFlipped(!isFlipped);
     }
 
