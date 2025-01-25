@@ -311,10 +311,30 @@ class HighschoolVerses {
           Yea, though I walk through the valley of the shadow of death, I will fear no evil; for Thou art with me; Thy rod and Thy staff, they comfort me.
           Thou preparest a table before me in the presence of mine enemies; Thou anointest my head with oil; my cup runneth over.
           Surely goodness and mercy shall follow me all the days of my life; and I will dwell in the house of the Lord for ever.`, ref: 'Psalm 139:1-8'},
-        { front: 'The Beatitudes', back: '', ref: 'Matthew 5:3-12'},
-        { front: 'The First Lord\'s Supper', back: '', ref: 'Luke 22:17-20'},
-        { front: 'A Christian\'s Armor',  back: '', ref: 'Ephesians 6:13-18'},
-        { front: 'Listening and Doing', back: '', ref: 'James 1:19-22'},
+        { front: 'The Beatitudes', back: `Blessed are the poor in spirit: for theirs is the kingdom of heaven.
+          Blessed are they that mourn: for they shall be comforted.
+          Blessed are the meek: for they shall inherit the earth.
+          Blessed are they which do hunger and thirst after righteousness: for they shall be filled.
+          Blessed are the merciful: for they shall obtain mercy.
+          Blessed are the pure in heart: for they shall see God.
+          Blessed are the peacemakers: for they shall be called the children of God.
+          Blessed are they which are persecuted for righteousness' sake: for theirs is the kingdom of heaven.
+          Blessed are ye, when men shall revile you, and persecute you, and shall say all manner of evil against you falsely, for my sake.
+          Rejoice, and be exceeding glad: for great is your reward in heaven: for so persecuted they the prophets which were before you.`, ref: 'Matthew 5:3-12'},
+        { front: 'The First Lord\'s Supper', back: `And he took the cup, and gave thanks, and said, Take this, and divide it among yourselves:
+          For I say unto you, I will not drink of the fruit of the vine, until the kingdom of God shall come.
+          And he took bread, and gave thanks, and brake it, and gave unto them, saying, This is my body which is given for you: this do in remembrance of me.
+          Likewise also the cup after supper, saying, This cup is the new testament in my blood, which is shed for you.`, ref: 'Luke 22:17-20'},
+        { front: 'A Christian\'s Armor',  back: `Wherefore take unto you the whole armour of God, that ye may be able to withstand in the evil day, and having done all, to stand.
+          Stand therefore, having your loins girt about with truth, and having on the breastplate of righteousness;
+          And your feet shod with the preparation of the gospel of peace;
+          Above all, taking the shield of faith, wherewith ye shall be able to quench all the fiery darts of the wicked.
+          And take the helmet of salvation, and the sword of the Spirit, which is the word of God:
+          Praying always with all prayer and supplication in the Spirit, and watching thereunto with all perseverance and supplication for all saints;`, ref: 'Ephesians 6:13-18'},
+        { front: 'Listening and Doing', back: `Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:
+          For the wrath of man worketh not the righteousness of God.
+          Wherefore lay apart all filthiness and superfluity of naughtiness, and receive with meekness the engrafted word, which is able to save your souls.
+          But be ye doers of the word, and not hearers only, deceiving your own selves.`, ref: 'James 1:19-22'},
       ];
 
       this.esvKeyPassages = [
@@ -322,17 +342,36 @@ class HighschoolVerses {
           Come into his presence with singing! Know that the Lord, he is God! It is he who made us, and we are his;
           we are his people, and the sheep of his pasture. Enter his gates with thanksgiving, and his courts with praise!
           Give thanks to him; bless his name! For the Lord is good; his steadfast love endures forever,
-          and his faithfulness to all generations.`, ref: 'Genesis 12:1-3'},
+          and his faithfulness to all generations.`, ref: 'Psalm 100'},
         { front: 'God Knows Me', back: `The Lord is my shepherd; I shall not want.
           He makes me lie down in green pastures. He leads me beside still waters.
           He restores my soul. He leads me in paths of righteousness for his name's sake.
           Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me; your rod and your staff, they comfort me.
           You prepare a table before me in the presence of my enemies; you anoint my head with oil; my cup overflows.
-          Surely goodness and mercy shall follow me all the days of my life, and I shall dwell in the house of the Lord forever.`, ref: 'Psalm 23'},
-          { front: 'The Beatitudes', back: '', ref: 'Matthew 5:3-12'},
-          { front: 'The First Lord\'s Supper', back: '', ref: 'Luke 22:17-20'},
-          { front: 'A Christian\'s Armor',  back: '', ref: 'Ephesians 6:13-18'},
-          { front: 'Listening and Doing', back: '', ref: 'James 1:19-22'},
+          Surely goodness and mercy shall follow me all the days of my life, and I shall dwell in the house of the Lord forever.`, ref: 'Psalm 139:1-8'},
+          { front: 'The Beatitudes', back: `Blessed are the poor in spirit, for theirs is the kingdom of heaven.
+            "Blessed are those who mourn, for they shall be comforted.
+            "Blessed are the meek, for they shall inherit the earth.
+            "Blessed are those who hunger and thirst for righteousness, for they shall be satisfied.
+            "Blessed are the merciful, for they shall receive mercy.
+            "Blessed are the pure in heart, for they shall see God.
+            "Blessed are the peacemakers, for they shall be called sons of God.
+            "Blessed are those who are persecuted for righteousness' sake, for theirs is the kingdom of heaven.
+            "Blessed are you when others revile you and persecute you and utter all kinds of evil against you falsely on my account.
+            Rejoice and be glad, for your reward is great in heaven, for so they persecuted the prophets who were before you.`, ref: 'Matthew 5:3-12'},
+          { front: 'The First Lord\'s Supper', back: `And he took a cup, and when he had given thanks he said, "Take this, and divide it among yourselves.
+            For I tell you that from now on I will not drink of the fruit of the vine until the kingdom of God comes."
+            And he took bread, and when he had given thanks, he broke it and gave it to them, saying, "This is my body, which is given for you. Do this in remembrance of me."
+            And likewise the cup after they had eaten, saying, "This cup that is poured out for you is the new covenant in my blood.`, ref: 'Luke 22:17-20'},
+          { front: 'A Christian\'s Armor',  back: `Therefore take up the whole armor of God, that you may be able to withstand in the evil day, and having done all, to stand firm.
+            Stand therefore, having fastened on the belt of truth, and having put on the breastplate of righteousness, 
+            and, as shoes for your feet, having put on the readiness given by the gospel of peace.
+            In all circumstances take up the shield of faith, with which you can extinguish all the flaming darts of the evil one; 
+            and take the helmet of salvation, and the sword of the Spirit, which is the word of God, 
+            praying at all times in the Spirit, with all prayer and supplication. To that end, keep alert with all perseverance, making supplication for all the saints,`, ref: 'Ephesians 6:13-18'},
+          { front: 'Listening and Doing', back: `Know this, my beloved brothers: let every person be quick to hear, slow to speak, slow to anger; 
+            for the anger of man does not produce the righteousness of God.
+            Therefore put away all filthiness and rampant wickedness and receive with meekness the implanted word, which is able to save your souls.`, ref: 'James 1:19-22'},
       ];
 
       this.csbKeyPassages = [
@@ -343,51 +382,117 @@ class HighschoolVerses {
           and his courts with praise.
           Give thanks to him and bless his name.
           For the Lord is good, and his faithful love endures forever;
-          his faithfulness, through all generations.`, ref: 'Genesis 12:1-3'},
+          his faithfulness, through all generations.`, ref: 'Psalm 100'},
         { front: 'God Knows Me', back: `The Lord is my shepherd; I have what I need.
           He lets me lie down in green pastures; he leads me beside quiet waters.
           He renews my life; he leads me along the right paths for his name’s sake.
           Even when I go through the darkest valley, I fear no danger, for you are with me; your rod and your staff—they comfort me.
           You prepare a table before me in the presence of my enemies; you anoint my head with oil; my cup overflows.
-          Only goodness and faithful love will pursue me all the days of my life, and I will dwell in the house of the Lord as long as I live.`, ref: 'Psalm 23'},
-          { front: 'The Beatitudes', back: '', ref: 'Matthew 5:3-12'},
-          { front: 'The First Lord\'s Supper', back: '', ref: 'Luke 22:17-20'},
-          { front: 'A Christian\'s Armor',  back: '', ref: 'Ephesians 6:13-18'},
-          { front: 'Listening and Doing', back: '', ref: 'James 1:19-22'},
+          Only goodness and faithful love will pursue me all the days of my life, and I will dwell in the house of the Lord as long as I live.`, ref: 'Psalm 139:1-8'},
+          { front: 'The Beatitudes', back: `"Blessed are the poor in spirit, for the kingdom of heaven is theirs.
+            Blessed are those who mourn, for they will be comforted.
+            Blessed are the humble, for they will inherit the earth.
+            Blessed are those who hunger and thirst for righteousness, for they will be filled.
+            Blessed are the merciful, for they will be shown mercy.
+            Blessed are the pure in heart, for they will see God.
+            Blessed are the peacemakers, for they will be called sons of God.
+            Blessed are those who are persecuted because of righteousness, for the kingdom of heaven is theirs.
+            "You are blessed when they insult you and persecute you and falsely say every kind of evil against you because of me.
+            Be glad and rejoice, because your reward is great in heaven. For that is how they persecuted the prophets who were before you.`, ref: 'Matthew 5:3-12'},
+          { front: 'The First Lord\'s Supper', back: `Then he took a cup, and after giving thanks, he said, "Take this and share it among yourselves.
+            For I tell you, from now on I will not drink of the fruit of the vine until the kingdom of God comes."
+            And he took bread, gave thanks, broke it, gave it to them, and said, "This is my body, which is given for you. Do this in remembrance of me."
+            In the same way he also took the cup after supper and said, "This cup is the new covenant in my blood, which is poured out for you.`, ref: 'Luke 22:17-20'},
+          { front: 'A Christian\'s Armor',  back: `For this reason take up the full armor of God, so that you may be able to resist in the evil day, and having prepared everything, to take your stand.
+            Stand, therefore, with truth like a belt around your waist, righteousness like armor on your chest, 
+            and your feet sandaled with readiness for the gospel of peace.
+            In every situation take up the shield of faith with which you can extinguish all the flaming arrows of the evil one.
+            Take the helmet of salvation and the sword of the Spirit—which is the word of God.
+            Pray at all times in the Spirit with every prayer and request, and stay alert with all perseverance and intercession for all the saints.`, ref: 'Ephesians 6:13-18'},
+          { front: 'Listening and Doing', back: `My dear brothers and sisters, understand this: Everyone should be quick to listen, slow to speak, and slow to anger, 
+            for human anger does not accomplish God’s righteousness.
+            Therefore, ridding yourselves of all moral filth and the evil that is so prevalent, humbly receive the implanted word, which is able to save your souls.`, ref: 'James 1:19-22'},
       ];
 
       //combine these with key passages and verses
-      this.kjvWordBank = [];
-
-      this.esvWordBank = [
-        'a', 'able', 'about', 'above', 'according', 'all', 'am', 'and', 'angels', 
-        'anyone', 'anything', 'appointed', 'are', 'as', 'at', 'authority', 
-        'authorities', 'baptism', 'baptizing', 'behold', 'believer', 'believers', 
-        'buried', 'but', 'by', 'called', 'children', 'christ', 'christ', 'church', 
-        'come', 'commanded', 'commandment', 'compulsion', 'come', 'comes', 
-        'creation', 'christ', 'cheerful', 'darkness', 'dead', 'death', 'decided', 
-        'disciples', 'door', 'does', 'doing', 'eat', 'earth', 'end', 'enlightening', 
-        'except', 'exist', 'eyes', 'faith', 'father', 'for', 'from', 'gift', 'give', 
-        'glory', 'god', 'governing', 'good', 'grace', 'have', 'heart', 'height', 
-        'him', 'holy', 'holy', 'i', 'if', 'in', 'incur', 'instituted', 'into', 'is', 
-        'it', 'jesus', 'jerusalem', 'john', 'judgment', 'kill', 'law', 'let', 'life', 
-        'light', 'living', 'lord', 'loves', 'make', 'making', 'man', 'marvelous', 
-        'may', 'me', 'might', 'money', 'my', 'name', 'nation', 'nations', 'neither', 
-        'newness', 'no', 'not', 'now', 'observe', 'of', 'on', 'one', 'only', 'open', 
-        'order', 'our', 'own', 'paul', 'people', 'perfect', 'peter', 'person', 
-        'possess', 'possession', 'power', 'powers', 'precepts', 'present', 
-        'priest', 'priesthood', 'pure', 'race', 'raised', 'receive', 'resists', 
-        'reviving', 'right', 'righteous', 'royal', 'rulers', 'said', 'salvation', 
-        'samaria', 'save', 'saved', 'say', 'scripture', 'separate', 'shall', 
-        'simple', 'sin', 'sins', 'so', 'soul', 'spirit', 'stand', 'steal', 'subject', 
-        'sure', 'teach', 'teaching', 'testimony', 'that', 'the', 'their', 'them', 
-        'therefore', 'they', 'thief', 'things', 'this', 'through', 'to', 'too', 
-        'truth', 'under', 'us', 'voice', 'walk', 'way', 'were', 'what', 'when', 
-        'who', 'whoever', 'with', 'wisdom', 'wise', 'will', 'witnesses', 'works', 
-        'you', 'your'
+      this.kjvWordBank = [
+        'a', 'able', 'above', 'abundantly', 'according', 'acts', 'after', 'all', 'alway', 'am', 'among',
+        'an', 'and', 'angels', 'another', 'any', 'apostle', 'are', 'armour', 'as', 'ask', 'authority', 
+        'baptism', 'baptizing', 'be', 'beasts', 'because', 'become', 'before', 'begin', 'behalf', 
+        'behold', 'believer', 'believers', 'blessed', 'blood', 'body', 'boast', 'braken', 
+        'brethren', 'bring', 'but', 'by', 
+        'called', 'christ', 'commandment', 'come', 'cometh', 'comfort', 'commandment', 'converting', 'courts', 'create', 'cup', 
+        'darkness', 'death', 'deceiving', 'deliver', 'did', 'die', 'divided', 'do', 'doers', 'door', 'doth', 'drink', 
+        'earth', 'ecclesiastes', 'enlightening', 'even', 'evil', 'exceeding', 'except', 
+        'faith', 'father', 'fiery', 'for', 'forgive', 'fruit', 'full', 
+        'gates', 'get', 'give', 'gladness', 'glory', 'go', 'god', 'gospel', 'grace', 'great', 'grudgingly', 
+        'have', 'heart', 'heaven', 'height', 'him', 'holy', 'hope', 'i', 'if', 'in', 'inherit', 'into', 'is', 
+        'james', 'jerusalem', 'jesus', 'john', 'judge', 
+        'kingdom', 'knock', 'law', 'lay', 'leadeth', 'life', 'like', 'lo', 'loins', 'lord', 'love', 'loves', 
+        'made', 'make', 'man', 'marvelous', 'me', 'meekness', 'mercy', 'midst', 'might', 'mind', 'more', 'moses', 'mourn', 'my', 
+        'name', 'nations', 'newness', 'not', 
+        'observe', 'of', 'oil', 'old', 'on', 'only', 'open', 'ordinance', 'our', 'out', 
+        'part', 'pasture', 'path', 'peace', 'peacemakers', 'people', 'persecuted', 'peter',
+        'power', 'powers', 'praise', 'prepare', 'present', 'pure', 'purposeth', 
+        'receive', 'rejoice', 'resisteth', 'revelation', 'righteousness', 'right', 'rod', 
+        'salvation', 'save', 'saved', 'say', 'seed', 'seek', 'shall', 'shalt', 'shed', 'shew',
+        'shield', 'simple', 'sin', 'sins', 'slow', 'so', 'soul', 'spirit', 'stand', 'statutes', 'steal', 'still', 'supper', 
+        'table', 'teach', 'teaching', 'testament', 'testimony', 'that', 'the', 'thee', 'their', 'them', 'themselves',
+        'they', 'thief', 'things', 'this', 'thou', 'thought', 'thy', 'truth', 'unto', 'us', 'voice', 
+        'walk', 'waters', 'way', 'we', 'wherefore', 'which', 'whosoever', 'wicked', 'with', 'witnesses', 'withstand', 'word', 'works', 'world', 'wrath', 
+        'ye', 'yea', 'you', 'your', 'youselves'
       ];
 
-      this.csbWordBank = [];
+      this.esvWordBank = [
+        'a', 'able', 'above', 'abundantly', 'according', 'account', 'aged', 'all', 'am', 'an', 'and', 'angels', 'anger', 'another', 'anything', 'appointed', 'are', 'armour', 'as', 'authorities', 'authority', 
+        'baptism', 'baptizing', 'be', 'been', 'before', 'behold', 'believers', 'belt', 'blessed', 'blood', 'boast', 'body', 'bread', 'breastplate', 'brothers', 
+        'called', 'can', 'children', 'christ', 'commandment', 'commandments', 'come', 'comes', 'comfort', 'compulsion', 'create', 'creation', 'cup', 
+        'darkness', 'dart', 'death', 'decide', 'disciples', 'do', 'does', 'door', 'drink', 
+        'earth', 'eat', 'elevate', 'enlightening', 'even', 'every', 'excellencies', 'except', 
+        'faith', 'father', 'feet', 'filthiness', 'flaming', 'for', 'forever', 'fromGod', 
+        'gift', 'give', 'gladness', 'glory', 'go', 'god', 'gods', 'gospel', 'grace', 'great', 
+        'have', 'he', 'heart', 'heaven', 'height', 'him', 'holy', 'hope', 'i', 'if', 'in', 'inherit', 'instituted', 'into', 'is', 
+        'jesus', 'jerusalem', 'john', 'judgment', 
+        'kill', 'kingdom', 'knock', 
+        'law', 'leads', 'life', 'lie', 'light', 'lord', 'love', 'loves', 
+        'made', 'make', 'man', 'marvelous', 'may', 'meekness', 'might', 'mourn', 'my', 
+        'name', 'nations', 'newness', 'no', 'not', 
+        'of', 'on', 'one', 'only', 'open', 'or', 'our', 'out', 'over', 'own', 
+        'pasture', 'path', 'peace', 'peacemakers', 'people', 'perfect', 'person', 'persecuted', 'possess', 'possess', 'power', 'powers', 'praise', 'precepts', 'prepare', 'pure', 
+        'race', 'raised', 'receive', 'reluctantly', 'reviving', 'righteousness', 'right', 'rod', 
+        'save', 'saved', 'says', 'shall', 'shoe', 'simple', 'sins', 'slow', 'soul', 'son', 'spirit', 'stand', 'steal', 'subject', 
+        'take', 'teaching', 'testimony', 'that', 'the', 'their', 'them', 'they', 'thief', 'things', 'this', 'thou', 'to', 'too', 'truth', 
+        'unto', 'us', 
+        'voice', 
+        'walk', 'was', 'water', 'way', 'we', 'were', 'when', 'which', 'who', 'whoever', 'will', 'wine', 'wisdom', 'wise', 'with', 'witnesses', 'withstand', 'word', 'works', 'world', 
+        'you', 'your', 'yourself'
+      ];
+
+      this.csbWordBank = [
+        'a', 'able', 'accomplish', 'according', 'age', 'all', 'am', 'an', 'and', 'angeles', 'anger', 'another', 'are', 'around', 'arrows', 'as', 'at', 'authority', 
+        'baptism', 'be', 'because', 'been', 'before', 'belt', 'blessed', 'blood', 'boast', 'body', 'brothers', 
+        'called', 'can', 'causing', 'children', 'christ', 'command', 'commanded', 'come', 'comes', 'comfort', 'compulsion', 'create', 'cup', 
+        'darkness', 'day', 'death', 'decide', 'disciples', 'do', 'does', 'door', 'drink', 
+        'each', 'earth', 'eat', 'evil', 'everything', 'except', 
+        'faith', 'father', 'feet', 'filth', 'flaming', 'for', 'forever', 'from', 
+        'gave', 'gift', 'gladness', 'glory', 'go', 'god', 'gods', 'gospel', 'grace', 
+        'have', 'he', 'heart', 'heaven', 'him', 'holy', 'how', 'human', 'humble', 
+        'i', 'if', 'in', 'inexperienced', 'instituted', 'instruction', 'into', 'is', 
+        'jerusalem', 'jesus', 'john', 
+        'kill', 'kingdom', 'knock', 
+        'life', 'light', 'listen', 'love', 'loves', 
+        'made', 'make', 'making', 'marvelous', 'may', 'messiah', 'moral', 
+        'name', 'nations', 'newness', 'no', 'not', 
+        'of', 'oil', 'on', 'one', 'only', 'open', 'or', 'our', 'out', 'overcome', 'own', 
+        'path', 'peace', 'people', 'persecuted', 'power', 'praise', 'precepts', 'prepare', 'present', 'proclaim', 
+        'receive', 'renewing', 'resists', 'righteousness', 'right', 'rod', 'royal', 
+        'save', 'saved', 'say', 'see', 'shall', 'sheep', 'shield', 'sins', 'slow', 'so', 'son', 'spirit', 'stand', 'steal', 'submit', 
+        'teaching', 'testimony', 'that', 'the', 'their', 'them', 'they', 'thief', 'things', 'this', 'to', 'too', 'trustworthy', 'truth', 
+        'up', 'unto', 'us', 
+        'voice', 
+        'walk', 'waist', 'was', 'water', 'way', 'we', 'what', 'when', 'which', 'will', 'with', 'witnesses', 'works', 'world', 
+        'you', 'your', 'yourself'
+      ];
 
     }
   
