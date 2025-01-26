@@ -1,5 +1,5 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
-import React, {useState} from 'react';
+import { Pressable, StyleSheet, Text, View, ScrollView } from 'react-native';
+import React, {useState, useRef} from 'react';
 import SwipeCard from '../GameComponents/SwipeCard';
 import {
   PaperProvider, BottomNavigation
@@ -37,7 +37,8 @@ export default function CardSelector({translation, group}) {
 	const backButton = () => {
 		setMode('main');
 	  }
-	  
+		const scrollViewRef = useRef();
+	 
 	return (
 		<View style={{ flex: 1 }}>
 			{isSelected ? 
@@ -48,18 +49,51 @@ export default function CardSelector({translation, group}) {
 				translation={translation} 
 				group={group}/>
 			:
-			<View style={{ flex: 1 }}>
-			{bookArray.map((choice, index) => (
-					  <Pressable key={index} onPress={() => cardSelected(choice)}><Text>{choice}</Text></Pressable>
-				  ))
-			}
-			</View>
+			// <View style={{ flex: 1 }}>
+			// {bookArray.map((choice, index) => (
+			// 		  <Pressable key={index} onPress={() => cardSelected(choice)}><Text>{choice}</Text></Pressable>
+			// 	  ))
+			// }
+			// </View>
+			<View style={styles.container}>
+			<ScrollView
+			ref={scrollViewRef}
+			>
+				{/* {verseArray.map((choice, index) => (
+					<Pressable
+						key={index}
+						onPress={() => handleCardPress(choice)}
+						style={styles.verseItem}
+					>
+						<Text style={styles.verseText}>{choice.front}</Text>
+					</Pressable>
+				))} */}
+				
+				{bookArray.map((choice, index) => (
+			 		<Pressable key={index} onPress={() => cardSelected(choice)} style={styles.verseItem}><Text style={styles.verseText}>{choice}</Text></Pressable>
+			 	))
+				}
+			</ScrollView>
+		</View>
 		}
 		</View>
+		
 	);
 }
 
 const styles = StyleSheet.create({
   container: {
+	flex: 1,
+	justifyContent: 'center',
   },
+  verseItem: {
+	backgroundColor: '#e9ecef',
+	padding: 12,
+	borderRadius: 8,
+	marginVertical: 6,
+	},
+	verseText: {
+		textAlign: 'center',
+		fontSize: 16,
+	},
 });

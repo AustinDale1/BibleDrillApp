@@ -22,16 +22,19 @@ export default function Books({translation, group}) {
   function pageRenderer() {
     if(mode == 'main') {
         return (
-            <View style={{ flex: 1 }}>
-                <Pressable onPress={() => buttonPressed('flash')}>
-                    <Text>Flash Cards</Text>
-                </Pressable>
-                <Pressable onPress={() => buttonPressed('random')}>
-                    <Text>Random Flash Cards</Text>
-                </Pressable>
-                <Pressable onPress={() => buttonPressed('bubble')}>
-                    <Text>Blank Bubbles</Text>
-                </Pressable>
+            <View style={styles.container}>
+                <Text style={styles.promptText}>How would you like to study?</Text>
+                <View style={styles.buttonContainer}>
+                  <Pressable onPress={() => buttonPressed('flash')} style={styles.studyButton}>
+                      <Text style={styles.studyButtonText}>Flash Cards</Text>
+                  </Pressable>
+                  <Pressable onPress={() => buttonPressed('random')} style={styles.studyButton}>
+                      <Text style={styles.studyButtonText}>Random Flash Cards</Text>
+                  </Pressable>
+                  <Pressable onPress={() => buttonPressed('bubble')} style={styles.studyButton}>
+                      <Text style={styles.studyButtonText}>Blank Bubbles</Text>
+                  </Pressable>
+                </View>
             </View>
         )
     } else if(mode == 'flash') {
@@ -57,7 +60,7 @@ export default function Books({translation, group}) {
   }
   
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.wrapper}>
         {mode != 'main' ?
           <Pressable onPress={backButton} style={styles.backButton}>
               <Text style={styles.backButtonText}>←</Text>
@@ -69,6 +72,11 @@ export default function Books({translation, group}) {
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    padding: 15,
+    backgroundColor: '#f5f5f5',
+},
   backButton: {
     marginBottom: 10,
     alignSelf: 'flex-start',
@@ -77,4 +85,29 @@ const styles = StyleSheet.create({
       fontSize: 24,
       fontWeight: 'bold',
   },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  promptText: {
+    fontSize: 18,
+    textAlign: 'center',
+    marginBottom: 20,
+    fontWeight: 'bold',
+  },
+  studyButton: {
+    backgroundColor: '#007bff',
+    padding: 12,
+    borderRadius: 8,
+    marginVertical: 8,
+    width: '70%',
+    alignItems: 'center',
+  },
+  studyButtonText: {
+    color: 'white',
+    fontSize: 16,
+  },
+  buttonContainer: {
+    alignItems: 'center',
+},
 });

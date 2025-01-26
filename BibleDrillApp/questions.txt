@@ -23,8 +23,9 @@ eventually get key passages working for highschool
 
 Done
 
-
-
+reverse the logic for key passages
+1/26/26
+Styled, flashcard selector for Books tab, styled SwipeCard
 1/25/25
 Get text input working for everything, try two text inputs
 and deleting whitespace
