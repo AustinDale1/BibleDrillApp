@@ -79,9 +79,9 @@ export default function KeyPassages({ translation, group }) {
                         <Pressable onPress={() => handleStudyStylePress("bubble")} style={styles.studyButton}>
                             <Text style={styles.studyButtonText}>Blank Bubble</Text>
                         </Pressable>
-                        {/* <Pressable onPress={() => handleStudyStylePress("type")} style={styles.studyButton}>
+                        <Pressable onPress={() => handleStudyStylePress("type")} style={styles.studyButton}>
                             <Text style={styles.studyButtonText}>Type it out</Text>
-                        </Pressable> */}
+                        </Pressable>
                     </View>
                 </View>
             );
@@ -140,16 +140,20 @@ export default function KeyPassages({ translation, group }) {
                     />
                 );
             }
-            // if (verseState.studyStyleState == "type" && verseState.isSelected) {
-            //     return (
-            //         <TextInputGame
-            //             versesArray={verseArray}
-            //             verse={currentCard}
-            //             translation={translation}
-            //             group={group}
-            //         />
-            //     );
-            // }
+            if (keyPass.studyStyleState == "type" && keyPass.isSelected) {
+                console.log('fweak');
+                console.log(keyPass);
+                console.log(currentCard);
+                console.log('fweak');
+                return (
+                    <TextInputGame
+                        versesArray={keyPass.keyP}
+                        verse={currentCard}
+                        translation={translation}
+                        group={group}
+                    />
+                );
+            }
         } else if(group == 'Children') {
             return(
             <SwipeCard

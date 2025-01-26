@@ -6,11 +6,13 @@ import {Card} from 'react-native-paper';
 
     let textColor = 'red';
     const TextInputGame = ({versesArray, verse, translation, group}) => {
+    const [refText, onChangeRefText] = React.useState('');
     const [text, onChangeText] = React.useState('');
     const [number, onChangeNumber] = React.useState('');
     const [isFlipped, setIsFlipped] = useState(true);
     const [index, setIndex] = useState(0);
     const [currentVerse, setCurrentVerse] = useState('');
+    const [refNotComplete, setRefNotComplete] = useState(true);
         console.log(verse);
         
     const removePunctuation = (index) => {
@@ -24,11 +26,29 @@ import {Card} from 'react-native-paper';
     }
 
   //let textColor = 'red';
+  const getRefColor = () => {
+    let tempVerse = versesArray[index];
+    console.log('method');
+    let text2 = refText.toLowerCase().replaceAll(' ', '');
+    console.log(text2);
+    console.log(tempVerse.reference);
+    if(tempVerse.reference.toLowerCase().replaceAll(' ', '') == text2) {
+        setRefNotComplete(true);
+        return 'green';
+    }
+    console.log(tempVerse.reference.substring(0, refText.length).toLowerCase().replaceAll(' ', '') + ' == ' + text2.toLowerCase())
+    if(tempVerse.reference.substring(0, refText.length).toLowerCase().replaceAll(' ', '') == text2 || text2 == '') {
+        return 'black';
+    } else {
+        return 'red';
+    }
+}
+
     const getColor = () => {
         if(currentVerse == text.toLowerCase()) {
             return 'green';
         }
-        console.log('current verse is ' + currentVerse)
+        // console.log('current verse is ' + currentVerse)
         // if((versesArray[index].back.toLowerCase()).substring(0, text.length) == text.toLowerCase() || text == '') {
         if(currentVerse.substring(0, text.length) == text.toLowerCase() || text == '') {
             return 'black';
@@ -36,16 +56,16 @@ import {Card} from 'react-native-paper';
             return 'red';
         }
     }
-      const handleNext = () => {
-        console.log('handle next');
-        removePunctuation(index+1);
-          if(versesArray.length > index + 1){
-            setIndex(index + 1);
-          } else {
-              setIndex(0);
-          }
-      }
-  
+    const handleNext = () => {
+    console.log('handle next');
+    removePunctuation(index+1);
+        if(versesArray.length > index + 1){
+        setIndex(index + 1);
+        } else {
+            setIndex(0);
+        }
+    }
+
       const handleReturn = () => {
         console.log('handle return');
         removePunctuation(index-1);
@@ -97,6 +117,17 @@ import {Card} from 'react-native-paper';
             <View style={styles.wrapper}>
                 <Card style={styles.container} {...panResponder.panHandlers}>
                 <Text style={styles.referenceText}>{versesArray[index]?.front || 'Loading...'} </Text>
+                {group != 'Children' ? 
+                    verse.type != 'StepsToSalvation' || verse.type != 'Identifying' ? 
+                <TextInput
+                //style={{ color: getColor() , width: '300px', heigh: '600px'}}
+                style = {[styles.textInput, {color: getRefColor()}]}
+                onChangeText={onChangeRefText}
+                value={refText}
+                multiline={true}
+                placeholder="Type reference like this Ecclesiastes 1:12-14"
+                editable={refNotComplete}
+                />: <></> : <></>}
                 <TextInput
                 //style={{ color: getColor() , width: '300px', heigh: '600px'}}
                 style = {[styles.textInput, {color: getColor()}]}
