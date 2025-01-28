@@ -95,29 +95,11 @@ const SwipeExample = ( {cards, book, isRandom, translation, group} ) => {
 
       return (
         <View style={{ flex: 1 }}>
-            {/* <Pressable onPress={handleFlip} style={{flex: 1}}> */}
             <Card style={styles.container} onPress={handleFlip} {...panResponder.panHandlers}>
-
-                {/* <Card.Content > */}
-                {/* <Pressable onPress={handleFlip} > */}
-                {/* <View style={styles.box}> */}
-                <Text>2</Text>
-
-                {!isFlipped?(
-                    <View style={styles.textContainer}>
-                        <Text style={styles.cardText}>{cards[index].front}</Text>
-                    </View>
-                ) : (
-                    <View style={styles.textContainer}>
-                        <Text style={styles.cardText}>{cards[index].back}</Text>
-                    </View>
-                )}
-                {/* <Text>{isFlipped ? 'should be back updated2' : 'front/notflip'}</Text> */}
-                    {/* </View> */}
-                {/* </Card.Content> */}
-
-                </Card>
-                {/* </Pressable> */}
+                <View style={styles.textContainer}>
+                    <Text style={styles.cardText}>{ !isFlipped ? cards[index].front : cards[index].back}</Text>
+                </View>
+            </Card>
         </View>
       );
 };
@@ -130,15 +112,6 @@ const styles = StyleSheet.create({
         color: 'black',
         height: 634,
     },
-    box: {
-        flex: 1,
-        backgroundColor: 'green',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: 'black',
-        minHeight: 634,
-        // borderRadius: 25,
-    },
     cardContent: {
         flex: 1,
         justifyContent: 'center',
@@ -146,6 +119,8 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         // flex: 1,
+        height: '100%',
+        paddingHorizontal: 20,
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',

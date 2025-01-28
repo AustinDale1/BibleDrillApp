@@ -226,7 +226,7 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
                 </View>
             ) : (
                 <View style={styles.selectionContainer}>
-                    <Text style={[styles.buttonText, { paddingBottom: 20 }]}>
+                    <Text style={[{fontSize: 16}, { paddingBottom: 20 }]}>
                         Choose next word
                     </Text>
 
@@ -300,6 +300,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         width: "100%",
+        paddingBottom: 20,
     },
     scrollContainer: {
         height: 400,
@@ -351,7 +352,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     buttonText: {
-        fontSize: 16,
+        fontSize: 12,
     },
 });
 

@@ -171,6 +171,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
+    paddingBottom: 20,
   },
   scrollContainer: {
     height: 400,
@@ -222,7 +223,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: 12,
   },
 });
 
