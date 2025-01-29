@@ -1,28 +1,32 @@
-For books of the Bible flashcard im adding in a random books of the Bible
-test
 
 
-should we do key passages typei t out too?  Old app doesn't have it
 
-dark mode?
 
+
+
+unrelated
+C++ neural network ego art generator
+theme is dark+ default dark+
+
+
+Should add in streaks, could potentially do leaderboard;
 should we add in queue/whatever so they can go backwards when doing random cards?
 fml
 Add in flashcards for kids where it shows the underline version
-
-C++ neural network ego art generator
-
-theme is dark+ default dark+
-
-Should add in streaks, could potentially do leaderboard;
-
 todos
-Add in swipe to next for verse select game
-Figure out reference for text input for youth and highschool
-eventually get key passages working for highschool
+Add in swipe to next for verse select game, and text input
+dark mode?
+
+
 
 Done
 
+
+1/28/25
+Verse slect game now goes to the next verse and also added in swipe handling, and do same in text input
+apparently I already did this, but expanded card area
+
+1/27/25 maybe
 reverse the logic for key passages
 1/26/26
 Styled flashcard selector for Books tab

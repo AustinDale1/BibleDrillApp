@@ -32,6 +32,7 @@ export default function KeyPassages({ translation, group }) {
         } else if(group == 'Highschool') {
             setKeyPass((prev) => ({
                 ...prev,
+                mode: 'main',
                 keyP: highschool.getKeyPassages(translation)
             }));
         }

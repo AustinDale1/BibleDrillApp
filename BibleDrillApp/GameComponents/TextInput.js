@@ -114,8 +114,8 @@ import {Card} from 'react-native-paper';
   return (
     // <SafeAreaProvider>
         <SafeAreaView style={styles.safeArea}>
-            <View style={styles.wrapper}>
-                <Card style={styles.container} {...panResponder.panHandlers}>
+            <View style={styles.wrapper} {...panResponder.panHandlers}>
+                <Card style={styles.container} >
                 <Text style={styles.referenceText}>{versesArray[index]?.front || 'Loading...'} </Text>
                 {group != 'Children' ? 
                     verse.type != 'StepsToSalvation' || verse.type != 'Identifying' ? 
@@ -147,17 +147,18 @@ import {Card} from 'react-native-paper';
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
-        backgroundColor: '#f5f5f5',
+        // backgroundColor: '#f5f5f5',
     },
     wrapper: {
-        padding: 16,
+        // padding: 16,
         alignItems: 'center',
     },
     container: {
+        flex: 1,
         width: '100%',
-        minHeight: 400,
-        marginVertical: 16,
-        padding: 16,
+        margin: 10,
+        backgroundColor: 'white',
+        height: 634,
     },
     referenceText: {
         fontSize: 16,

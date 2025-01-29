@@ -8,6 +8,7 @@ import {
     SafeAreaView,
     SafeAreaProvider,
     ScrollView,
+    PanResponder,
 } from "react-native";
 import { Button } from "react-native-paper";
 import ChildrenVerses from "../StaticFiles/children";
@@ -25,6 +26,7 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
     let [verseSplit, setVerseSplit] = useState([]);
     let [verseIndex, setVerseIndex] = useState(0);
     let [isFinished, setIsFinished] = useState(false);
+    let [index, setIndex] = useState(0);
     var kp = new ChildrenVerses();
     var youth = new YouthVerses();
     var hs = new HighschoolVerses();
@@ -81,6 +83,7 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
 
     const handleSubmit = (wordSelected) => {
         let correctVerse = verseSplit[verseIndex];
+        // console.log('in handle submit, correct is: ' + correctVerse + ' verse indewx ' + verseIndex);
         if(verseIndex == verseSplit.length) {
             if(wordSelected == verse.reference) {
                 setColor(true, wordSelected);
@@ -108,8 +111,6 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
 
             // setTheVerse(wordSelected);
             let newChoices = generateChoices(wordSelected);
-            // console.log("BIIGBIB ");
-            // console.log(newChoices);
             // setChoiceArray(newChoices);
             setVerseIndex((prevIndex) => prevIndex + 1);
         } else {
@@ -140,6 +141,10 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
     }
 
     const generateChoices = (currentWord) => {
+        //Pass in an empty string if you want to get the first word
+        //index of returns -1 if it isn't in the verse
+        // console.log(currentWord);
+        // console.log('generated the choices');
         //basically, its going to the first 'the'
         const nextWord =
             verseSplit[verseSplit.indexOf(currentWord, verseIndex) + 1];
@@ -160,12 +165,15 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
 
             newChoices[i] = randomWord;
         }
-
+        // console.log('correct: ' + nextWord);
+        // console.log(newChoices);
         setChoiceArray(newChoices);
     };
 
     useEffect(() => {
         //setCorrectArray([book.book]);
+        setIndex(verseArray.findIndex(versey => 
+            versey.front.toLowerCase() === verse.front.toLowerCase()));
         let tempVerse = verse.back;
 
         //figure out if i wanna keep punctuaction, i dont, dont break it when i remove it
@@ -181,24 +189,82 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
 
     useEffect(() => {
         if (verseSplit.length > 0) {
-            let tempVerse = verse.back;
-            generateChoices(tempVerse);
+            let tempVerse = verseArray[index].back;
+            generateChoices('');
         }
     }, [verseSplit]);
 
     const scrollViewRef = useRef();
 
     const reset = () => {
-        const initChoices = generateChoices(correctString);
-        setChoiceArray(initChoices);
+        // console.log('correct string is ' + correctString);
+        generateChoices('');
         setCorrectArray([]);
         setCorrectString("");
         setVerseIndex(0);
         setIsFinished(false);
     };
 
+    const handleNext = () => {
+        // console.log('in handle next');
+        // console.log(verseArray[index+1]);
+        let currentVerse = verseArray[index+1].back;
+        setIndex(index+1);
+        // console.log(currentVerse);
+        currentVerse = currentVerse.replaceAll(",", "");
+        currentVerse = currentVerse.replaceAll(".", "");
+        currentVerse = currentVerse.replaceAll(":", "");
+        currentVerse = currentVerse.replaceAll(";", "");
+        currentVerse = currentVerse.replaceAll("-", "");
+        currentVerse = currentVerse.replaceAll('"', "");
+        setCorrectArray([]);
+        setCorrectString("");
+        setVerseIndex(0);
+        setIsFinished(false);
+        setVerseSplit(currentVerse.split(' '));
+    }
+
+    const handleReturn = () => {
+        // console.log('in handle next');
+        // console.log(verseArray[index-1]);
+        let currentVerse = verseArray[index-1].back;
+        setIndex(index-1);
+        currentVerse = currentVerse.replaceAll(",", "");
+        currentVerse = currentVerse.replaceAll(".", "");
+        currentVerse = currentVerse.replaceAll(":", "");
+        currentVerse = currentVerse.replaceAll(";", "");
+        currentVerse = currentVerse.replaceAll("-", "");
+        currentVerse = currentVerse.replaceAll('"', "");
+        setCorrectArray([]);
+        setCorrectString("");
+        setVerseIndex(0);
+        setIsFinished(false);
+        setVerseSplit(currentVerse.split(' '));
+    }
+
+        const panResponder = PanResponder.create({
+            onStartShouldSetPanResponder: () => true,
+            onStartShouldSetPanResponderCapture: () => true,
+            onMoveShouldSetPanResponder: (evt, gestureState) => {
+                return true;
+            },
+            onPanResponderRelease: (evt, gestureState) => {
+                if(Math.abs(gestureState.dx) <= 50) {
+                    return;
+                } else { 
+                    if (gestureState.dx > 0) {
+                        console.log('left');
+                        handleReturn();
+                    } else if (gestureState.dx < 0) {
+                        console.log('right');
+                        handleNext();
+                    }
+                }   
+            },
+        })  
+
     return (
-        <View style={styles.container}>
+        <View style={styles.container}  {...panResponder.panHandlers}>
             <View style={styles.scrollContainer}>
                 <ScrollView
                     ref={scrollViewRef}
@@ -208,7 +274,7 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
                     contentContainerStyle={styles.scrollContent}
                 >
                     <Text style={styles.promptText}>
-                        Reference {verse.front}
+                        Reference {verseArray[index].front}
                     </Text>
 
                     <Text style={styles.choiceText}>{correctString}</Text>
@@ -220,11 +286,12 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
                     <Pressable onPress={reset}>
                         <Text>Reset</Text>
                     </Pressable>
-                    <Pressable>
+                    <Pressable onPress={handleNext}>
                         <Text>Next</Text>
                     </Pressable>
                 </View>
             ) : (
+                
                 <View style={styles.selectionContainer}>
                     <Text style={[{fontSize: 16}, { paddingBottom: 20 }]}>
                         Choose next word
