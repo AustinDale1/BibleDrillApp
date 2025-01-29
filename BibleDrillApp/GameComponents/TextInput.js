@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, TextInput, SafeAreaView, PanResponder, SafeAreaProvider, Text, View} from 'react-native';
+import {StyleSheet, TextInput, SafeAreaView, PanResponder, SafeAreaProvider, Text, View, Keyboard, Pressable} from 'react-native';
 import {Card} from 'react-native-paper';
 // import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -57,22 +57,27 @@ import {Card} from 'react-native-paper';
         }
     }
     const handleNext = () => {
-    console.log('handle next');
-    removePunctuation(index+1);
+        console.log('handle next');
         if(versesArray.length > index + 1){
-        setIndex(index + 1);
+            removePunctuation(index+1);
+            setIndex(index + 1);
         } else {
+            removePunctuation(0);
             setIndex(0);
         }
     }
 
       const handleReturn = () => {
-        console.log('handle return');
-        removePunctuation(index-1);
+            console.log('handle return');
           if(index > 0) {
+            console.log('frick' + index);
+            removePunctuation(index-1);
             setIndex(index - 1);
           } else{
+            console.log('here');
+            removePunctuation(versesArray.length-1);
               setIndex(versesArray.length-1);
+              console.log(versesArray[versesArray.length-1]);
           }
       }
   
@@ -113,8 +118,9 @@ import {Card} from 'react-native-paper';
 
   return (
     // <SafeAreaProvider>
-        <SafeAreaView style={styles.safeArea}>
-            <View style={styles.wrapper} {...panResponder.panHandlers}>
+        <SafeAreaView style={styles.safeArea} {...panResponder.panHandlers}>
+            <Pressable onPress={Keyboard.dismiss} style={styles.presser}>
+            {/* <View > */}
                 <Card style={styles.container} >
                 <Text style={styles.referenceText}>{versesArray[index]?.front || 'Loading...'} </Text>
                 {group != 'Children' ? 
@@ -138,7 +144,8 @@ import {Card} from 'react-native-paper';
 
                 />
                 </Card>
-            </View>
+            {/* </View> */}
+            </Pressable>
         </SafeAreaView>
     //</SafeAreaProvider>
   );
@@ -147,16 +154,25 @@ import {Card} from 'react-native-paper';
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
-        // backgroundColor: '#f5f5f5',
     },
     wrapper: {
-        // padding: 16,
+        padding: 16,
         alignItems: 'center',
+        // width: 
+    },
+    presser: {
+        flex: 1,
+        // width: '100%',
+        // margin: 10,
+        // padding: 16,
+        // backgroundColor: 'white',
+        // height: 634,
     },
     container: {
         flex: 1,
-        width: '100%',
+        // width: '100%',
         margin: 10,
+        padding: 16,
         backgroundColor: 'white',
         height: 634,
     },

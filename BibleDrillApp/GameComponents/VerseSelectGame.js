@@ -206,11 +206,14 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
     };
 
     const handleNext = () => {
-        // console.log('in handle next');
-        // console.log(verseArray[index+1]);
-        let currentVerse = verseArray[index+1].back;
-        setIndex(index+1);
-        // console.log(currentVerse);
+        let currentVerse = '';
+        if(index + 1 < verseArray.length) {
+            currentVerse = verseArray[index+1].back;
+            setIndex(index+1);
+        } else {
+            currentVerse = verseArray[0].back;
+            setIndex(0);
+        }
         currentVerse = currentVerse.replaceAll(",", "");
         currentVerse = currentVerse.replaceAll(".", "");
         currentVerse = currentVerse.replaceAll(":", "");
@@ -227,8 +230,14 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
     const handleReturn = () => {
         // console.log('in handle next');
         // console.log(verseArray[index-1]);
-        let currentVerse = verseArray[index-1].back;
-        setIndex(index-1);
+        let currentVerse = '';
+        if(index > 0) {
+            currentVerse = verseArray[index-1].back;
+            setIndex(index-1);
+        } else {
+            currentVerse = verseArray[verseArray.length-1].back;
+            setIndex(verseArray.length-1);
+        }
         currentVerse = currentVerse.replaceAll(",", "");
         currentVerse = currentVerse.replaceAll(".", "");
         currentVerse = currentVerse.replaceAll(":", "");
