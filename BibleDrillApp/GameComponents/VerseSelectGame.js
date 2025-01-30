@@ -252,10 +252,15 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
     }
 
         const panResponder = PanResponder.create({
-            onStartShouldSetPanResponder: () => true,
-            onStartShouldSetPanResponderCapture: () => true,
-            onMoveShouldSetPanResponder: (evt, gestureState) => {
+            onStartShouldSetPanResponder: (evt, gestureState) => {
+                // console.log('dx' + gestureState.dx + 'dy' + gestureState.dy)
                 return true;
+            },
+            onStartShouldSetPanResponderCapture: (evt, gestureState) => {
+                return gestureState.dx >= 20 || gestureState.dy >= 20;
+            },
+            onMoveShouldSetPanResponder: (evt, gestureState) => {
+                return gestureState.dx >= 20 || gestureState.dy >= 20;
             },
             onPanResponderRelease: (evt, gestureState) => {
                 if(Math.abs(gestureState.dx) <= 50) {
@@ -273,7 +278,7 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
         })  
 
     return (
-        <View style={styles.container}  {...panResponder.panHandlers}>
+        <View style={styles.container} {...panResponder.panHandlers}>
             <View style={styles.scrollContainer}>
                 <ScrollView
                     ref={scrollViewRef}
@@ -283,7 +288,7 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
                     contentContainerStyle={styles.scrollContent}
                 >
                     <Text style={styles.promptText}>
-                        Reference {verseArray[index].front}
+                        {verseArray[index].front}
                     </Text>
 
                     <Text style={styles.choiceText}>{correctString}</Text>

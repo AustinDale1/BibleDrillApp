@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import SwipeCard from "../GameComponents/SwipeCard";
 import TextInputGame from "../GameComponents/TextInput";
 import VerseSelectGame from "../GameComponents/VerseSelectGame";
+import CompletionGame from "../GameComponents/CompletionGame";
 import { PaperProvider, BottomNavigation } from "react-native-paper";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -20,7 +21,6 @@ export default function Verses({ translation, group }) {
         isSelected: false,
         verse: "ok chec",
         mode: "main",
-        studyStyleState: "",
     });
     const objForSummoning = new ChildrenVerses();
     const youth = new YouthVerses();
@@ -50,9 +50,10 @@ export default function Verses({ translation, group }) {
 
     function pageRenderer() {
         if (verseState.mode == "main") {
+            console.log("is it here somehow?");
             return (
                 <View style={styles.container}>
-                    <Text style={styles.promptText}>How would you like to study?</Text>
+                    <Text style={styles.promptText}>How would you like to study? 2</Text>
                     <View style={styles.buttonContainer}>
                         <Pressable onPress={() => handlePress("flash")} style={styles.studyButton}>
                             <Text style={styles.studyButtonText}>Flashcards</Text>
@@ -63,84 +64,60 @@ export default function Verses({ translation, group }) {
                         <Pressable onPress={() => handlePress("type")} style={styles.studyButton}>
                             <Text style={styles.studyButtonText}>Type it out</Text>
                         </Pressable>
+                        {group == 'Children' ? 
+                        <Pressable onPress={() => handlePress("completion")} style={styles.studyButton}>
+                            <Text style={styles.studyButtonText}>Completion</Text>
+                        </Pressable>
+                        : <></>}
                     </View>
                 </View>
             );
-        } else {
-            console.log(
-                verseState.studyStyleState +
-                    " " +
-                    verseState.isSelected +
-                    " " +
-                    verseState.verse
+        } else if (
+                verseState.mode == "flash" &&
+                verseState.isSelected
+        ) {
+            return (
+                <SwipeCard
+                    cards={verseArray}
+                    isRandom={false}
+                    book={verseState.verse}
+                    translation={translation}
+                    group={group}
+                />
             );
-            if (
-                verseState.studyStyleState == "flash" &&
+        } else if (
+                verseState.mode == "bubble" &&
                 verseState.isSelected
-            ) {
-                return (
-                    <SwipeCard
-                        cards={verseArray}
-                        isRandom={false}
-                        book={verseState.verse}
-                        translation={translation}
-                        group={group}
-                    />
-                );
-            }
-            if (
-                verseState.studyStyleState == "bubble" &&
-                verseState.isSelected
-            ) {
-                return (
-                    <VerseSelectGame
-                        verse={verseState.verse}
-                        verseArray={verseArray}
-                        translation={translation}
-                        group={group}
-                    />
-                );
-            }
-            if (verseState.studyStyleState == "type" && verseState.isSelected) {
-                return (
-                    <TextInputGame
-                        versesArray={verseArray}
-                        verse={verseState.verse}
-                        translation={translation}
-                        group={group}
-                    />
-                );
-            } else {
-                return <VerseComponent />;
-            }
-        }
-    }
-
-    const handleCardPress = (verseText) => {
-        // setIsSelected(true);
-        // setVerse(verseText);
-        setVerseState((prev) => ({
-            ...prev,
-            isSelected: true,
-            verse: verseText,
-            mode: prev.studyStyleState,
-
-            // isSelected: false,
-            // verse: 'ok chec',
-            // mode: 'main',
-            // studyStyleState: ''
-        }));
-    };
-
-    // console.log(youthD);
-    // console.log(youthB);
-    const scrollViewRef = useRef();
-
-    const VerseComponent = (studyStyle) => {
-        return (
-            <View style={styles.container}>
-
-                {/* {group == "Children" ? ( */}
+        ) {
+            return (
+                <VerseSelectGame
+                    verse={verseState.verse}
+                    verseArray={verseArray}
+                    translation={translation}
+                    group={group}
+                />
+            );
+        } else if (verseState.mode == "type" && verseState.isSelected) {
+            return (
+                <TextInputGame
+                    verseArray={verseArray}
+                    verse={verseState.verse}
+                    translation={translation}
+                    group={group}
+                />
+            );
+        } else if (verseState.mode == "completion" && verseState.isSelected) {
+            console.log(verseState);
+            return (
+                <CompletionGame
+                    verseArray={verseArray}
+                    translation={translation}
+                    group={group}
+                />
+            );
+        }else {
+            return (
+                <View style={styles.container}>
                     <ScrollView
                     ref={scrollViewRef}
                     contentContainerStyle={styles.scrollContent}
@@ -153,37 +130,70 @@ export default function Verses({ translation, group }) {
                         >
                             <Text style={styles.verseText}>{choice.front}</Text>
                         </Pressable>
-                    ))}
-                </ScrollView>
-                {/* ) : (
-                    <ScrollView
-                    ref={scrollViewRef}
-                    contentContainerStyle={styles.scrollContent}
-                    >
-                    <View style={styles.container}>
-                        {verseArray.map((choice, index) => (
-                            <Pressable
-                                key={index}
-                                onPress={() => handleCardPress(choice)}
-                                style={styles.verseItem}
-                            >
-                                <Text style={styles.verseText}>{choice.front}</Text>
-                            </Pressable>
                         ))}
-                    </View>
                     </ScrollView>
-                )} */}
-            </View>
-        );
-    };
+                </View>
+            );
+        }
+    }
 
-    const handlePress = (studyStyle) => {
+    const handleCardPress = (verseText) => {
+        // setIsSelected(true);
+        // setVerse(verseText);
         setVerseState((prev) => ({
             ...prev,
-            studyStyleState: studyStyle,
+            isSelected: true,
+            verse: verseText,
+
+            // isSelected: false,
+            // verse: 'ok chec',
+            // mode: 'main',
+            // studyStyleState: ''
+        }));
+    };
+
+    // console.log(youthD);
+    // console.log(youthB);
+    const scrollViewRef = useRef();
+
+    // const VerseComponent = () => {
+    //     return (
+    //         <View style={styles.container}>
+
+    //             {/* {group == "Children" ? ( */}
+    //                 <ScrollView
+    //                 ref={scrollViewRef}
+    //                 contentContainerStyle={styles.scrollContent}
+    //                 >
+    //                 {verseArray.map((choice, index) => (
+    //                     <Pressable
+    //                         key={index}
+    //                         onPress={() => handleCardPress(choice)}
+    //                         style={styles.verseItem}
+    //                     >
+    //                         <Text style={styles.verseText}>{choice.front}</Text>
+    //                     </Pressable>
+    //                 ))}
+    //             </ScrollView>
+    //         </View>
+    //     );
+    // };
+
+    const handlePress = (studyStyle) => {
+        if(studyStyle == 'completion') {
+            setVerseState((prev) => ({
+                ...prev,
+                isSelected: true,
+                mode: 'completion',
+            }));
+            return;
+        }
+        setVerseState((prev) => ({
+            ...prev,
             mode: studyStyle,
         }));
     };
+
     const backButton = () => {
         setVerseState((prev) => ({
             ...prev,
