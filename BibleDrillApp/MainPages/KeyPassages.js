@@ -142,10 +142,6 @@ export default function KeyPassages({ translation, group }) {
                 );
             }
             if (keyPass.studyStyleState == "type" && keyPass.isSelected) {
-                console.log('fweak');
-                console.log(keyPass);
-                console.log(currentCard);
-                console.log('fweak');
                 return (
                     <TextInputGame
                         versesArray={keyPass.keyP}

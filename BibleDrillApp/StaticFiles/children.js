@@ -415,206 +415,206 @@ class ChildrenVerses {
       this.completionEsvVerses = [
         {
           front: 'Genesis 1:31',
-          back: 'And God saw everything that he had made, and behold, it was very good. And there was evening and there was morning, the sixth day.'
+          back: 'And God saw everything'
         },
         {
           front: 'Deuteronomy 16:17',
-          back: 'Every man shall give as he is able, according to the blessing of the LORD your God that he has given you.'
+          back: 'Every man shall give as he is able'
         },
         {
           front: 'Joshua 24:24',
-          back: 'And the people said to Joshua, "The LORD our God we will serve, and his voice we will obey."'
+          back: 'And the people said to Joshua'
         },
         {
           front: '1 Chronicles 16:9',
-          back: 'Sing to him, sing praises to him; tell of all his wondrous works!'
+          back: 'Sing to him, sing praises'
         },
         {
           front: 'Psalm 56:3',
-          back: 'When I am afraid, I put my trust in you.'
+          back: 'When I am afraid'
         },
         {
           front: 'Psalm 119:11',
-          back: 'I have stored up your word in my heart, that I might not sin against you.'
+          back: 'I have stored up your word'
         },
         {
           front: 'Proverbs 22:1',
-          back: 'A good name is to be chosen rather than great riches, and favor is better than silver or gold.'
+          back: 'A good name'
         },
         {
           front: 'Isaiah 6:8',
-          back: 'And I heard the voice of the Lord saying, "Whom shall I send, and who will go for us?" Then I said, "Here I am! Send me."'
+          back: 'And I heard the voice'
         },
         {
           front: 'Isaiah 45:5',
-          back: 'I am the LORD, and there is no other, besides me there is no God; I equip you, though you do not know me.'
+          back: 'I am the LORD'
         },
         {
           front: 'Malachi 3:10',
-          back: 'Bring the full tithe into the storehouse, that there may be food in my house. And thereby put me to the test, says the LORD of hosts, if I will not open the windows of heaven for you and pour down for you a blessing until there is no more need.'
+          back: 'Bring the full tithe'
         },
         {
           front: 'Matthew 28:19-20',
-          back: 'Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age.'
+          back: 'Go therefore and make disciples of all nations'
         },
         {
           front: 'Luke 2:52',
-          back: 'And Jesus increased in wisdom and in stature and in favor with God and man.'
+          back: 'And Jesus increased'
         },
         {
           front: 'Luke 19:10',
-          back: 'For the Son of Man came to seek and to save the lost.'
+          back: 'For the Son of Man'
         },
         {
           front: 'John 4:24',
-          back: 'God is spirit, and those who worship him must worship in spirit and truth.'
+          back: 'God is spirit'
         },
         {
           front: 'John 13:35',
-          back: 'By this all people will know that you are my disciples, if you have love for one another.'
+          back: 'By this all people will know'
         },
         {
           front: 'Acts 4:12',
-          back: 'And there is salvation in no one else, for there is no other name under heaven given among men by which we must be saved.'
+          back: 'And there is salvation in no one else'
         },
         {
           front: 'Romans 10:9',
-          back: 'Because, if you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved.'
+          back: 'Because, if you confess with your mouth'
         },
         {
           front: '1 Corinthians 3:16',
-          back: 'Do you not know that you are God\'s temple and that God\'s Spirit dwells in you?'
+          back: 'Do you not know'
         },
         {
           front: 'Ephesians 2:8',
-          back: 'For by grace you have been saved through faith. And this is not your own doing; it is the gift of God.'
+          back: 'For by grace you have been saved'
         },
         {
           front: '1 Thessalonians 5:18',
-          back: 'Give thanks in all circumstances; for this is the will of God in Christ Jesus for you.'
+          back: 'Give thanks in all circumstances'
         },
         {
           front: '1 Timothy 4:12',
-          back: 'Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity.'
+          back: 'Let no one despise'
         },
         {
           front: '2 Timothy 2:15',
-          back: 'Do your best to present yourself to God as one approved, a worker who has no need to be ashamed, rightly handling the word of truth.'
+          back: 'Do your best to present yourself'
         },
         {
           front: 'James 1:22',
-          back: 'But be doers of the word, and not hearers only, deceiving yourselves.'
+          back: 'But be doers'
         },
         {
           front: '1 Peter 4:9',
-          back: 'Show hospitality to one another without grumbling.'
+          back: 'Show hospitality'
         },
         {
           front: '1 John 4:21',
-          back: 'And this commandment we have from him: whoever loves God must also love his brother.'
+          back: 'And this commandment we have from him'
         }
       ];
 
       this.completionCsbVerses = [
         {
           front: 'Genesis 1:31',
-          back: 'God saw all that He had made, and it was very good indeed. Evening came and then morning: the sixth day.'
+          back: 'God saw all'
         },
         {
           front: 'Deuteronomy 16:17',
-          back: 'Everyone must appear with a gift suited to his means, according to the blessing the LORD your God has given you.'
+          back: 'Everyone must appear with a gift suited to his means'
         },
         {
           front: 'Joshua 24:24',
-          back: 'So the people said to Joshua, "We will worship the LORD our God and obey Him."'
+          back: 'So the people said to Joshua'
         },
         {
           front: '1 Chronicles 16:9',
-          back: 'Sing to him; sing praise to him; tell about all his wondrous works!'
+          back: 'Sing to him; sing praise'
         },
         {
           front: 'Psalm 56:3',
-          back: 'When I am afraid, I will trust in you.'
+          back: 'When I am afraid'
         },
         {
           front: 'Psalm 119:11',
-          back: 'I have treasured your word in my heart so that I may not sin against you.'
+          back: 'I have treasured your word'
         },
         {
           front: 'Proverbs 22:1',
-          back: 'A good name is to be chosen over great wealth; favor is better than silver and gold.'
+          back: 'A good name'
         },
         {
           front: 'Isaiah 6:8',
-          back: 'Then I heard the voice of the Lord asking: Who should I send? Who will go for us? I said: Here I am. Send me.'
+          back: 'Then I heard the voice'
         },
         {
           front: 'Isaiah 45:5',
-          back: 'I am the LORD, and there is no other; there is no God but me. I will strengthen you, though you do not know me.'
+          back: 'I am the LORD'
         },
         {
           front: 'Malachi 3:10',
-          back: 'Bring the full tenth into the storehouse so that there may be food in my house. Test me in this way," says the LORD of armies. "See if I will not open the floodgates of heaven and pour out a blessing for you without measure.'
+          back: 'Bring the full tenth'
         },
         {
           front: 'Matthew 28:19-20',
-          back: 'Go, therefore, and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe everything I have commanded you. And remember, I am with you always, to the end of the age.'
+          back: 'Go, therefore, and make disciples of all nations'
         },
         {
           front: 'Luke 2:52',
-          back: 'And Jesus increased in wisdom and stature, and in favor with God and with people.'
+          back: 'And Jesus increased'
         },
         {
           front: 'Luke 19:10',
-          back: 'For the Son of Man has come to seek and to save the lost.'
+          back: 'For the Son of Man'
         },
         {
           front: 'John 4:24',
-          back: 'God is spirit, and those who worship him must worship in spirit and truth.'
+          back: 'God is spirit'
         },
         {
           front: 'John 13:35',
-          back: 'By this everyone will know that you are my disciples, if you love one another.'
+          back: 'By this everyone will know'
         },
         {
           front: 'Acts 4:12',
-          back: 'There is salvation in no one else, for there is no other name under heaven given to people by which we must be saved.'
+          back: 'There is salvation in no one else'
         },
         {
           front: 'Romans 10:9',
-          back: 'If you confess with your mouth, "Jesus is Lord," and believe in your heart that God raised him from the dead, you will be saved.'
+          back: 'If you confess with your mouth'
         },
         {
           front: '1 Corinthians 3:16',
-          back: 'Don\'t you yourselves know that you are God\'s temple and that the Spirit of God lives in you?'
+          back: 'Don\'t you yourselves know'
         },
         {
           front: 'Ephesians 2:8',
-          back: 'For you are saved by grace through faith, and this is not from yourselves; it is God\'s gift'
+          back: 'For you are saved by grace'
         },
         {
           front: '1 Thessalonians 5:18',
-          back: 'Give thanks in everything; for this is God\'s will for you in Christ Jesus.'
+          back: 'Give thanks in everything'
         },
         {
           front: '1 Timothy 4:12',
-          back: 'Don\'t let anyone despise your youth, but set an example for the believers in speech, in conduct, in love, in faith, and in purity.'
+          back: 'Don\'t let anyone despise'
         },
         {
           front: '2 Timothy 2:15',
-          back: 'Be diligent to present yourself to God as one approved, a worker who doesn\'t need to be ashamed, correctly teaching the word of truth.'
+          back: 'Be diligent to present'
         },
         {
           front: 'James 1:22',
-          back: 'But be doers of the word and not hearers only, deceiving yourselves.'
+          back: 'But be doers'
         },
         {
           front: '1 Peter 4:9',
-          back: 'Be hospitable to one another without complaining.'
+          back: 'Be hospitable'
         },
         {
           front: '1 John 4:21',
-          back: 'And we have this command from him: The one who loves God must also love his brother and sister.'
+          back: 'And we have this command from him'
         }
       ]
   

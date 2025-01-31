@@ -166,7 +166,7 @@ const CompletionGame = ({ verseArray, translation, group }) => {
                     {isFinished ? <Text>{verseArray[index].back}{verseArray[index].front}</Text> 
                     :                    
                     <Text style={styles.promptText}>
-                        {completionArray.length > 0 ? completionArray[index].back : <Text>Loading...</Text>}
+                        {completionArray.length > 0 ? <Text style={styles.promptText}>{completionArray[index].back}</Text> : <Text style={styles.promptText}>Loading...</Text>}
                     </Text>}
             </View>
             {isFinished ? (
