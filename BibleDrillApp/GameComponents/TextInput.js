@@ -6,6 +6,10 @@ import {Card} from 'react-native-paper';
 
     let textColor = 'red';
     const TextInputGame = ({verseArray, verse, translation, group}) => {
+        console.log('OH God, give me one more day.  Today has been a blessing but I havent utilzed it');
+        console.log('God Im running out of time, let me use it well please');
+        console.log(verseArray);
+
     const [refText, onChangeRefText] = React.useState('');
     const [text, onChangeText] = React.useState('');
     const [number, onChangeNumber] = React.useState('');
@@ -13,7 +17,6 @@ import {Card} from 'react-native-paper';
     const [index, setIndex] = useState(0);
     const [currentVerse, setCurrentVerse] = useState('');
     const [refNotComplete, setRefNotComplete] = useState(true);
-        console.log(verse);
         
     const removePunctuation = (index) => {
         let tempVerse = verseArray[index].back.replaceAll(',', '');
@@ -28,15 +31,11 @@ import {Card} from 'react-native-paper';
   //let textColor = 'red';
   const getRefColor = () => {
     let tempVerse = verseArray[index];
-    console.log('method');
     let text2 = refText.toLowerCase().replaceAll(' ', '');
-    console.log(text2);
-    console.log(tempVerse.reference);
     if(tempVerse.reference.toLowerCase().replaceAll(' ', '') == text2) {
         setRefNotComplete(true);
         return 'green';
     }
-    console.log(tempVerse.reference.substring(0, refText.length).toLowerCase().replaceAll(' ', '') + ' == ' + text2.toLowerCase())
     if(tempVerse.reference.substring(0, refText.length).toLowerCase().replaceAll(' ', '') == text2 || text2 == '') {
         return 'black';
     } else {
@@ -70,14 +69,11 @@ import {Card} from 'react-native-paper';
       const handleReturn = () => {
             console.log('handle return');
           if(index > 0) {
-            console.log('frick' + index);
             removePunctuation(index-1);
             setIndex(index - 1);
           } else{
-            console.log('here');
             removePunctuation(verseArray.length-1);
-              setIndex(verseArray.length-1);
-              console.log(verseArray[verseArray.length-1]);
+            setIndex(verseArray.length-1);
           }
       }
   
@@ -94,13 +90,19 @@ import {Card} from 'react-native-paper';
           },
       })
 
+      console.log('do we get here? 1 ');
+      console.log(verseArray);
+      console.log(verse);
+      console.log('plsplpslplsppsl');
+
        useEffect(() => {
         console.log('do we get here? 1 ');
-            removePunctuation(verseArray.findIndex(verseWords => 
-                verseWords.back.toLowerCase() === verse.back.toLowerCase()));
-              myMethod();
-              console.log('do we get here? ');
-
+        console.log(verseArray);
+        console.log(verse);
+        console.log('plsplpslplsppsl');
+        removePunctuation(verseArray.findIndex(verseWords => 
+            verseWords.back.toLowerCase() === verse.back.toLowerCase()));
+        myMethod();
           }, []);
       
         const myMethod = () => {

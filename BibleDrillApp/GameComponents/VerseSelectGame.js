@@ -146,8 +146,11 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
         // console.log(currentWord);
         // console.log('generated the choices');
         //basically, its going to the first 'the'
+        console.log('next word is ' + currentWord + ' okok ' + verseIndex);
+        console.log('verseindex 0 is ' + verseSplit[0] + ' ' + verseSplit.indexOf(currentWord, verseIndex));
         const nextWord =
             verseSplit[verseSplit.indexOf(currentWord, verseIndex) + 1];
+            console.log('herheher ' + nextWord);
         const correctPos = Math.floor(Math.random() * 5);
         let newChoices = new Array(5).fill("");
         newChoices[correctPos] = nextWord;
@@ -175,6 +178,9 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
         setIndex(verseArray.findIndex(versey => 
             versey.front.toLowerCase() === verse.front.toLowerCase()));
         let tempVerse = verse.back;
+        console.log(tempVerse);
+        console.log('aAHHHHHHHHHHH');
+        console.log(verse);
 
         //figure out if i wanna keep punctuaction, i dont, dont break it when i remove it
         let currentVerse = tempVerse.replaceAll(",", "");
@@ -190,7 +196,7 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
     useEffect(() => {
         if (verseSplit.length > 0) {
             let tempVerse = verseArray[index].back;
-            generateChoices('');
+            generateChoices('austinDale');
         }
     }, [verseSplit]);
 

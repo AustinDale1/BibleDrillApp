@@ -68,7 +68,6 @@ export default function KeyPassages({ translation, group }) {
     };
 
     const pageRenderer = () => {
-        console.log(keyPass);
         if(keyPass.mode == 'main' && group == 'Highschool') {
             return (
                 <View style={styles.container}>
@@ -111,7 +110,6 @@ export default function KeyPassages({ translation, group }) {
                 </View>
             )
         } else if(group == 'Highschool') {
-            console.log('here');
             if (
                 keyPass.studyStyleState == "flash" &&
                 keyPass.isSelected
@@ -142,9 +140,11 @@ export default function KeyPassages({ translation, group }) {
                 );
             }
             if (keyPass.studyStyleState == "type" && keyPass.isSelected) {
+                console.log('checl');
+                console.log(keyPass.keyP);
                 return (
                     <TextInputGame
-                        versesArray={keyPass.keyP}
+                        verseArray={keyPass.keyP}
                         verse={currentCard}
                         translation={translation}
                         group={group}

@@ -85,7 +85,6 @@ const SwipeExample = ( {cards, book, isRandom, translation, group} ) => {
             setIndex(Math.floor(Math.random() * 66));
         } else
         {
-            console.log('bookpassedin is ' + book);
             setIndex(cards.findIndex(bookName => 
             bookName.front.toLowerCase() === book.front.toLowerCase()));
         }
