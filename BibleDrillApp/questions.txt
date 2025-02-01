@@ -17,7 +17,6 @@ dark mode?
 haptics?
 
 BUGS
-Key passages doesn't work for highschool, blank bubble
 in the blank bubble games, try and stop swipe from happening anynear where
 buttons are, feels fragile to me
 

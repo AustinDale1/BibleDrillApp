@@ -14,6 +14,7 @@ import CardSelector from './CardSelector';
 import bibleBooks from '../StaticFiles/BooksOfBible';
 import { Dropdown } from 'react-native-element-dropdown';  // Changed this import
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import VerseCreator from './VerseCreator';
 
 
 
@@ -44,73 +45,74 @@ export default function Settings({translation, setTranslation, group, setGroup})
   const containerStyle = {backgroundColor: 'white', padding: 20};
 
   return (
-    <SafeAreaProvider>
-    <View style={{ flex: 1 }}>
-        <Dropdown
-          style={styles.dropdown}
-          placeholderStyle={styles.placeholderStyle}
-          selectedTextStyle={styles.selectedTextStyle}
-          data={translations}
-          maxHeight={300}
-          labelField="label"
-          valueField="label"
-          placeholder="Select item"
-          value={translation}
-          onChange={item => {
-            setTranslation(item.label);
-          }}
-        />
-          <Dropdown
-          style={styles.dropdown}
-          placeholderStyle={styles.placeholderStyle}
-          selectedTextStyle={styles.selectedTextStyle}
-          data={groups}
-          maxHeight={300}
-          labelField="label"
-          valueField="label"
-          placeholder="Select item"
-          value={group}
-          onChange={item => {
-            setGroup(item.label);
-          }}
-        />
+    <VerseCreator />
+    // <SafeAreaProvider>
+    // <View style={{ flex: 1 }}>
+    //     <Dropdown
+    //       style={styles.dropdown}
+    //       placeholderStyle={styles.placeholderStyle}
+    //       selectedTextStyle={styles.selectedTextStyle}
+    //       data={translations}
+    //       maxHeight={300}
+    //       labelField="label"
+    //       valueField="label"
+    //       placeholder="Select item"
+    //       value={translation}
+    //       onChange={item => {
+    //         setTranslation(item.label);
+    //       }}
+    //     />
+    //       <Dropdown
+    //       style={styles.dropdown}
+    //       placeholderStyle={styles.placeholderStyle}
+    //       selectedTextStyle={styles.selectedTextStyle}
+    //       data={groups}
+    //       maxHeight={300}
+    //       labelField="label"
+    //       valueField="label"
+    //       placeholder="Select item"
+    //       value={group}
+    //       onChange={item => {
+    //         setGroup(item.label);
+    //       }}
+    //     />
 
-        <Text>Copyrights...</Text>
-        <PaperProvider>
-          <Portal>
-            <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}>
-              <Text>Scripture quotations marked CSB®, are taken from the
-                Christian Standard Bible®, Copyright © 2017 by Holman Bible
-                Punlishers.  Used by permission.  CSB® is a federally registered
-                trademark of Holman Bible Publishers.  
-              </Text>
-            </Modal>
-          </Portal>
-          <Button style={{marginTop: 30}} onPress={showModal}>
-            Show
-          </Button>
-        </PaperProvider>
-        <PaperProvider>
-          <Portal>
-            <Modal visible={ESVVisible} onDismiss={hideESVModal} contentContainerStyle={containerStyle}>
-              <Text>This publication contains the ESV® Bible (The Holy Bible, English Standard Version®),
-                copyright © 2001 by Crossway Bibles, a publishing ministry of Good News Publishers.
-                ESV Text Edition: 2007. The ESV® text has been reproduced in cooperation with and
-                by permission of Good News Publishers.  Unauthorized reproduction of this publicationis prohibited.
+    //     <Text>Copyrights...</Text>
+    //     <PaperProvider>
+    //       <Portal>
+    //         <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}>
+    //           <Text>Scripture quotations marked CSB®, are taken from the
+    //             Christian Standard Bible®, Copyright © 2017 by Holman Bible
+    //             Punlishers.  Used by permission.  CSB® is a federally registered
+    //             trademark of Holman Bible Publishers.  
+    //           </Text>
+    //         </Modal>
+    //       </Portal>
+    //       <Button style={{marginTop: 30}} onPress={showModal}>
+    //         Show
+    //       </Button>
+    //     </PaperProvider>
+    //     <PaperProvider>
+    //       <Portal>
+    //         <Modal visible={ESVVisible} onDismiss={hideESVModal} contentContainerStyle={containerStyle}>
+    //           <Text>This publication contains the ESV® Bible (The Holy Bible, English Standard Version®),
+    //             copyright © 2001 by Crossway Bibles, a publishing ministry of Good News Publishers.
+    //             ESV Text Edition: 2007. The ESV® text has been reproduced in cooperation with and
+    //             by permission of Good News Publishers.  Unauthorized reproduction of this publicationis prohibited.
 
-                The ESV® Bible (The Holy Bible, English Standard Version®) (ESV) is adapted from the Revised Standard
-                Version of the Bible, copyright Division of Christian Education of the National Council of the Churches
-                of Christ in the U.S.A. All rights reserved
-              </Text>
-            </Modal>
-          </Portal>
-          <Button style={{marginTop: 30}} onPress={showESVModal}>
-            Show
-          </Button>
-        </PaperProvider>
+    //             The ESV® Bible (The Holy Bible, English Standard Version®) (ESV) is adapted from the Revised Standard
+    //             Version of the Bible, copyright Division of Christian Education of the National Council of the Churches
+    //             of Christ in the U.S.A. All rights reserved
+    //           </Text>
+    //         </Modal>
+    //       </Portal>
+    //       <Button style={{marginTop: 30}} onPress={showESVModal}>
+    //         Show
+    //       </Button>
+    //     </PaperProvider>
 
-    </View>
-    </SafeAreaProvider>
+    // </View>
+    // </SafeAreaProvider>
 
   );
 }

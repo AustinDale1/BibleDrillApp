@@ -25,7 +25,7 @@ const SelectGame = ({book, translation, group}) => {
   let [choiceArray, setChoiceArray] = useState(['', '', '', '', '']);
   let [correctArray, setCorrectArray] = useState([]);
   let [theBook, setTheBook] = useState(book.book);
-  let [buttonColor, setButtonColor] = useState(['#f0f0f0', '#f0f0f0', '#f0f0f0', '#f0f0f0', '#f0f0f0']);
+  let [buttonColor, setButtonColor] = useState(['#d1d1d1', '#d1d1d1', '#d1d1d1', '#d1d1d1', '#d1d1d1']);
   let [isFinished, setIsFinished] = useState(false);
   
 
@@ -41,7 +41,7 @@ const SelectGame = ({book, translation, group}) => {
     else
       setButtonColor(prevColors => [...prevColors.slice(0, wordIndex), 'red', ...prevColors.slice(wordIndex+1)]);
     setTimeout(() => {
-      setButtonColor(prevColors => [...prevColors.slice(0, wordIndex), '#f0f0f0', ...prevColors.slice(wordIndex+1)]);
+      setButtonColor(prevColors => [...prevColors.slice(0, wordIndex), '#d1d1d1', ...prevColors.slice(wordIndex+1)]);
     }, 200); // Adjust the duration of the flash
     console.log('set2');
   }

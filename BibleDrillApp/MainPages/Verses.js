@@ -5,18 +5,22 @@ import SwipeCard from "../GameComponents/SwipeCard";
 import TextInputGame from "../GameComponents/TextInput";
 import VerseSelectGame from "../GameComponents/VerseSelectGame";
 import CompletionGame from "../GameComponents/CompletionGame";
-import { PaperProvider, BottomNavigation } from "react-native-paper";
+import { PaperProvider, BottomNavigation, Button } from "react-native-paper";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import ChildrenVerses from "../StaticFiles/children";
 import YouthVerses from "../StaticFiles/youth";
 import HighschoolVerses from "../StaticFiles/highschool";
+// import ShareComponent from "./ShareComponent";
+import { shareContent } from './ShareComponent';
+
+
 
 export default function Verses({ translation, group }) {
     // const [mode, setMode] = useState('main');
     // const [studyStyleState, setStudyStyleState] = useState('');
     // const [isSelected, setIsSelected] = useState(false);
-    // const [verse, setVerse] = useState('ok chec');
+    // const [verse, setVerse] = useState('ok chec');\
     const [verseState, setVerseState] = useState({
         isSelected: false,
         verse: "ok chec",
@@ -53,7 +57,7 @@ export default function Verses({ translation, group }) {
             console.log("is it here somehow?");
             return (
                 <View style={styles.container}>
-                    <Text style={styles.promptText}>How would you like to study? 2</Text>
+                    <Text style={styles.promptText}>How would you like to study?</Text>
                     <View style={styles.buttonContainer}>
                         <Pressable onPress={() => handlePress("flash")} style={styles.studyButton}>
                             <Text style={styles.studyButtonText}>Flashcards</Text>
@@ -205,9 +209,15 @@ export default function Verses({ translation, group }) {
     return (
         <View style={styles.wrapper}>
             {verseState.mode != 'main' ?
-            <Pressable onPress={backButton} style={styles.backButton}>
-                <Text style={styles.backButtonText}>←</Text>
-            </Pressable>
+            <View style={{flexDirection: "row", justifyContent: 'space-between'}}>
+                <Pressable onPress={backButton} style={styles.backButton}>
+                    <Text style={styles.backButtonText}>←</Text>
+                </Pressable>
+                {verseState.isSelected ? 
+                    <Pressable onPress={() => shareContent(verseState.verse, translation, false)}  style={{marginBottom: 10}}>
+                        <Text style={styles.backButtonText}>^</Text></Pressable>
+                    : <></>}
+            </View>
             : <></>}
             {pageRenderer()}
         </View>

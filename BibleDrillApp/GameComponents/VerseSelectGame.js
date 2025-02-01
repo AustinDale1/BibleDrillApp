@@ -32,11 +32,11 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
     var hs = new HighschoolVerses();
 
     let [buttonColor, setButtonColor] = useState([
-        "#f0f0f0",
-        "#f0f0f0",
-        "#f0f0f0",
-        "#f0f0f0",
-        "#f0f0f0",
+        "#d1d1d1",
+        "#d1d1d1",
+        "#d1d1d1",
+        "#d1d1d1",
+        "#d1d1d1",
     ]);
 
     let [wordBank, setWordBank] = useState(kp.getWordBank(translation));
@@ -75,7 +75,7 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
         setTimeout(() => {
             setButtonColor((prevColors) => [
                 ...prevColors.slice(0, wordIndex),
-                "#f0f0f0",
+                "#d1d1d1",
                 ...prevColors.slice(wordIndex + 1),
             ]);
         }, 200); // Adjust the duration of the flash
@@ -284,7 +284,7 @@ const VerseSelectGame = ({ verse, verseArray, translation, group }) => {
         })  
 
     return (
-        <View style={styles.container} {...panResponder.panHandlers}>
+        <View style={styles.container} {...panResponder.panHandlers}>       
             <View style={styles.scrollContainer}>
                 <ScrollView
                     ref={scrollViewRef}
@@ -392,6 +392,8 @@ const styles = StyleSheet.create({
     scrollContainer: {
         height: 400,
         width: "100%",
+        paddingLeft: 20,
+        paddingRight: 20,
     },
     scrollContent: {
         flexGrow: 1,
@@ -432,7 +434,7 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     button: {
-        backgroundColor: "#f0f0f0",
+        backgroundColor: "rgb(18, 18, 18)",
         padding: 15,
         borderRadius: 8,
         minWidth: 100,
