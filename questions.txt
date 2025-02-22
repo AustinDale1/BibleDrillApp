@@ -11,7 +11,6 @@ theme is dark+ default dark+
 
 Should add in streaks, could potentially do leaderboard;
 should we add in queue/whatever so they can go backwards when doing random cards?
-Add in flashcards for kids where it shows the underline version
 todos
 dark mode?
 haptics?

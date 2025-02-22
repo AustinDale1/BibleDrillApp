@@ -6,9 +6,6 @@ import {Card} from 'react-native-paper';
 
     let textColor = 'red';
     const TextInputGame = ({verseArray, verse, translation, group}) => {
-        console.log('OH God, give me one more day.  Today has been a blessing but I havent utilzed it');
-        console.log('God Im running out of time, let me use it well please');
-        console.log(verseArray);
 
     const [refText, onChangeRefText] = React.useState('');
     const [text, onChangeText] = React.useState('');

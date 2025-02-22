@@ -41,44 +41,6 @@ export default function App() {
           translation={translation} 
           group={group}/>
         )}
-        // options={{
-        //   headerRight: () => (
-        //     <Menu
-        //       visible={menuVisible}
-        //       onDismiss={() => setMenuVisible(false)}
-        //       anchor={
-        //         <Button 
-        //           icon="cog" 
-        //           mode="contained"
-        //           contentStyle={{ 
-        //             width: 32,
-        //             height: 32,
-        //             padding: 0,
-        //           }}
-        //           style={{
-        //             marginRight: 16,
-        //             width: 32,
-        //             height: 32,
-        //             padding: 0,
-        //             borderRadius: 16,
-        //             minWidth: 0,
-        //           }}
-        //           labelStyle={{
-        //             margin: 0,
-        //             fontSize: 16
-        //           }}
-        //           onPress={() => setMenuVisible(true)}
-        //         />
-        //       )
-        //     >
-        //     <View>
-        //       <Menu.Item onPress={() => {console.log('Theme toggled')}} title="Toggle Theme" />
-        //       <Menu.Item onPress={() => {console.log('Font changed')}} title="Change Font Size" />
-        //       <Menu.Item onPress={() => {console.log('About pressed')}} title="About" />
-        //       </View>
-        //     </Menu>
-        //   )
-        // }}
       />
       <Tab.Screen 
         name="Verses"
